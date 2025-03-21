@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+#root {
+  min-width: 100px;
+  max-width: none;
+  margin: 0;
+  padding: 2rem;
+  text-align: center;
+  background-color: #b42929 !important;
+}
+
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
