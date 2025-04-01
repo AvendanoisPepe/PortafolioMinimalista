@@ -3,38 +3,35 @@ import "./navbar.scss"; // Importa el archivo SASS
 
 function Navbar() {
   return (
-    <header className="w-full text-black p-8 flex items-center justify-between">
-      {/* Logo */}
-      <div className="flex items-center gap-4">
-        <span className="p-4 text-5xl rounded-[12px]  logo">JS</span>
-        <p>Avendaño</p>
+    <header className="w-full flex justify-between items-center">
+      <div className="contentLogo w-[20%] flex items-center justify-center gap-4">
+        <span className="logo">
+          JS
+        </span>
+        <p className="nombre">Avendaño</p>
       </div>
-
-      {/* Navegación */}
-      <nav className="flex gap-6 rounded-[12px] bg-gray-500 p-4">
-        <Link to="/" className="hover:text-blue-400 transition ">
+      <nav className="menu w-[50%] flex justify-center items-center gap-6">
+        <Link to="/" className="transition ">
           Inicio
         </Link>
-        <Link to="/about" className="hover:text-blue-400 transition">
+        <Link to="/about" className="transition">
           Sobre mí
         </Link>
-        <Link to="/projects" className="hover:text-blue-400 transition">
+        <Link to="/projects" className="transition">
           Proyectos
         </Link>
-        <Link to="/contact" className="hover:text-blue-400 transition">
+        <Link to="/contact" className="transition">
           Estudios
         </Link>
-        <Link to="/contact" className="hover:text-blue-400 transition">
+        <Link to="/contact" className="transition">
           Referencias
         </Link>
       </nav>
-
-      {/* Botones */}
-      <div className="flex gap-4">
-        <button className="border border-blue-400 text-blue-400 px-4 py-2 rounded hover:bg-blue-400 hover:text-white transition">
+      <div className="botones flex justify-center items-center gap-4 w-[30%] ">
+        <button className="botonesOne w-[46%] transition">
           CV
         </button>
-        <button className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition">
+        <button className="botonesTwo w-[46%] transition">
           Contacto
         </button>
       </div>

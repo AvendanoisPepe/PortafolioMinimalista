@@ -2,48 +2,70 @@
 @use "../styles/variables.scss" as *;
 
 header {
-    // width: 1200px;
-    // color: white;
-    // display: flex;
-    // align-items: center;
-    // justify-content: space-between;
     background-color: $white;
-    border-bottom: rgba($primary-color, 1) solid 3px;
-    
-    .logo {
-        // font-size: 1.5rem;
-        // font-weight: bold;
-        // color: #4f46e5; // Azul Tailwind
-        background-color: $primary-color;
+    border-bottom: rgba($secondary-color, 0.2) solid 3px;
+    padding: 24px;
+    .contentLogo{
+        .logo {
+            font-size: 3rem;
+            line-height: 1;
+            background-color: $primary-color;
+            border-radius: 10px;
+            color: $white;
+            padding: 16px;
+        }
+        .nombre{
+            font-size: 2.25rem;
+            line-height: 1;
+        }
     }
 
-    nav {
-        display: flex;
-        gap: 20px;
-
+    nav { 
+        padding: 16px;
+        font-size: 1.4rem;
+        line-height: 1.4;     
+        font-weight: 500;
         a {
             text-decoration: none;
             transition: color 0.3s;
+            &:hover {
+                color: $primary-color2;
+            }
         }
-}
-
-.buttons {
-    display: flex;
-    gap: 10px;
-
-    button {
-    padding: 8px 16px;
-    border-radius: 5px;
-    border: 1px solid #4f46e5;
-    background: transparent;
-    color: #4f46e5;
-    cursor: pointer;
-    transition: all 0.3s;
-
-    &:hover {
-        background: #4f46e5;
-        color: white;
     }
+    .botones{
+        font-size: 1.25rem;
+        line-height: 1.4;
+        .botonesOne{
+            background-color: rgba($primary-color2, 0.2);
+            color: $primary-color2;
+            padding: 10px 10px;
+            border-radius: 6px;
+        }
+        .botonesTwo{
+            background-color: rgba($primary-color2, 1);
+            color: $white;
+            padding: 10px 10px;
+            border-radius: 6px;
+        }
     }
-}
+// .buttons {
+//     display: flex;
+//     gap: 10px;
+
+//     button {
+//     padding: 8px 16px;
+//     border-radius: 5px;
+//     border: 1px solid #4f46e5;
+//     background: transparent;
+//     color: #4f46e5;
+//     cursor: pointer;
+//     transition: all 0.3s;
+
+//     &:hover {
+//         background: #4f46e5;
+//         color: white;
+//     }
+//     }
+// }
 }
