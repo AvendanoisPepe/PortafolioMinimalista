@@ -2,20 +2,25 @@
 @use "../styles/variables.scss" as *;
 
 .Inicio {
-    color: #3F3F46;
-    // width: 100%;
-    // background-color: rgba($primary-color2, 0.2);
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // flex-wrap: wrap;
-    // padding: 20px;
+    color: rgba($primary-color, 0.8);
     .textual{
+        .textualUno{
+            color: #52525c;
+        }
+        .textualDos{
+            border-left: 2px solid #969696;
+        }
         .otroP{
             button{
                 background-color: rgba($primary-color2, 1);
                 border-radius: 4px;
                 box-shadow: -4px 4px 0px 0px rgba($secondary-color, 0.7);
+                color: $white;
+                cursor: pointer;
+                &:hover{
+                    background-color: rgba($primary-color, 1);
+                    box-shadow: 0px 0px 0px 4px rgba($secondary-color, 0.4);
+                }
             }
         }
     }
