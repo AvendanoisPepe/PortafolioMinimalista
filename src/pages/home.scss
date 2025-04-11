@@ -1,0 +1,37 @@
+// src/styles/navbar.scss
+@use "../styles/variables.scss" as *;
+
+.Inicio {
+    color: #3F3F46;
+    // width: 100%;
+    // background-color: rgba($primary-color2, 0.2);
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // flex-wrap: wrap;
+    // padding: 20px;
+    .textual{
+        .otroP{
+            button{
+                background-color: rgba($primary-color2, 1);
+                border-radius: 4px;
+                box-shadow: -4px 4px 0px 0px rgba($secondary-color, 0.7);
+            }
+        }
+    }
+    .derecha{
+        background-color: #3F3F46;
+        border-radius: 10px;
+        .unidad{
+            .imagen{
+                border-radius: 10px;
+                overflow: hidden;
+                border: solid 6px rgba($secondary-color, 0.6);
+            }
+            .cuadrado{
+                background-color: rgba($primary-color2, 1);
+                border-radius: 6px;
+            }
+        }
+    }
+}

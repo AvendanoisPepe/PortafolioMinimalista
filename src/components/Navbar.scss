@@ -7,7 +7,7 @@ header {
     // padding: 22px;
     .contentLogo{
         .logo {
-            font-size: 2.4rem;
+            // font-size: 2.4rem;
             line-height: 1;
             background-color: $primary-color;
             border-radius: 10px;
@@ -15,7 +15,7 @@ header {
             padding: 14px;
         }
         .nombre{
-            font-size: 2.25rem;
+            // font-size: 2.25rem;
             line-height: 1;
         }
     }
@@ -28,6 +28,12 @@ header {
         a {
             text-decoration: none;
             transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            svg{
+                margin-left: 10px;
+            }
             &:hover {
                 color: $primary-color2;
             }

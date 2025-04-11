@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import "./navbar.scss"; // Importa el archivo SASS
+import { FaArrowTrendDown } from "react-icons/fa6";
 
 function Navbar() {
   return (
     <header className="w-full flex justify-between items-center flex-wrap p-4 2xl:p-6">
       <div className="contentLogo md:w-[20%] flex items-center justify-center gap-4 mb-4 md:mb-0">
-        <span className="logo">JS</span>
-        <p className="nombre">Avendaño</p>
+        <span className="logo lg:text-4xl 2xl:text-5xl">JS</span>
+        <p className="nombre lg:text-3xl 2xl:text-4xl">Avendaño</p>
       </div>
       <nav className="menu w-full md:w-[50%] flex justify-center items-center gap-6">
         <Link to="/" className="transition text-xs lg:text-lg 2xl:text-2xl">
@@ -22,13 +23,14 @@ function Navbar() {
           to="/projects"
           className="transition text-xs lg:text-lg 2xl:text-2xl"
         >
-          Proyectos
+          Proyectos <FaArrowTrendDown />
         </Link>
         <Link
           to="/contact"
           className="transition text-xs lg:text-lg 2xl:text-2xl"
         >
           Estudios
+          <FaArrowTrendDown />
         </Link>
         <Link
           to="/contact"

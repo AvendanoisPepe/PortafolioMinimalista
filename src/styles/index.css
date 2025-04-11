@@ -11,6 +11,13 @@ html, body, #root {
   font-family: 'Raleway', sans-serif;
   font-weight: 900;
   /* font-family: "Big Shoulders Stencil", sans-serif; */
+  /* background-image: url('../assets/imagenes/uno.jpg'); */
+  /* background-image: url('../assets/imagenes/dos.jpg'); */
+  /* background-image: url('../assets/imagenes/tres.jpg'); */
+  background-image: url('../assets/imagenes/cuatro.jpg');
+  background-size: cover;
+  background-position: center;
+
 }
 
 /* Quitar el centrado que está causando el problema */
