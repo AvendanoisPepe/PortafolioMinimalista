@@ -113,12 +113,19 @@ header {
             color: $primary-color2;
             padding: 10px 10px;
             border-radius: 6px;
+            cursor: pointer;
         }
         .botonesTwo{
             background-color: rgba($primary-color2, 1);
             color: $white;
             padding: 10px 10px;
             border-radius: 6px;
+            cursor: pointer;
+            text-align: center;
+            &:hover{
+                background-color: rgba($primary-color, 1);
+                box-shadow: -4px 4px 0px 0px rgba($primary-color, 0.4);
+            }
         }
     }
 }
