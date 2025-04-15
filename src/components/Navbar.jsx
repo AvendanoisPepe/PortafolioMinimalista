@@ -3,13 +3,15 @@ import "./navbar.scss"; // Importa el archivo SASS
 import { FaArrowTrendDown } from "react-icons/fa6";
 import { useState, useRef, useEffect } from "react";
 import {
-  FaChevronDown,
-  FaCode,
-  FaGlobe,
-  FaDatabase,
-  FaLayerGroup,
   FaArrowRight,
 } from "react-icons/fa";
+import { IoLibrary } from "react-icons/io5";
+import { PiStudentBold } from "react-icons/pi";
+import { GrCompare } from "react-icons/gr";
+import { FaTree } from "react-icons/fa";
+
+
+import books from "../assets/imagenes/books.png"
 function Navbar() {
   const [isProjectsOpen, setIsProjectsOpen] = useState(false);
   const [isStudiesOpen, setIsStudiesOpen] = useState(false);
@@ -49,16 +51,16 @@ function Navbar() {
         >
           Sobre mí
         </Link>
-        {/* Dropdown de Proyectos */}
-        <div className="relative">
+
+        <div className="submenu relative">
           <button
             ref={projectsButtonRef}
-            className="flex items-center gap-1 transition text-xs lg:text-lg 2xl:text-2xl hover:text-zinc-500"
+            className="flex items-center gap-1 transition text-xs lg:text-lg 2xl:text-2xl"
             onClick={() => setIsProjectsOpen(!isProjectsOpen)}
           >
             Proyectos
-            <FaChevronDown
-              className={`h-4 w-4 transition-transform ${
+            <FaArrowTrendDown
+              className={`transition-transform ${
                 isProjectsOpen ? "rotate-180" : ""
               }`}
             />
@@ -67,109 +69,109 @@ function Navbar() {
           {isProjectsOpen && (
             <div
               ref={projectsRef}
-              className="absolute top-full left-1/2 transform -translate-x-1/2 mt-4 w-[1000px] bg-white shadow-lg rounded-sm border border-zinc-100 z-50"
+              className="contenedorSub absolute top-full left-1/2 transform -translate-x-1/2 mt-4 2xl:w-[1200px] md:w-[1000px]"
             >
-              {/* Flecha superior */}
-              <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-t border-l border-zinc-100 rotate-45"></div>
+              <div className="flechita absolute -top-2 left-1/2 transform -translate-x-1/2 rotate-45"></div>
 
-              <div className="flex">
-                {/* Sección izquierda - Lista de enlaces */}
-                <div className="w-[60%] p-6 border-r border-zinc-100">
-                  <h3 className="text-lg font-medium mb-4">Mis Proyectos</h3>
+              <div className="contenido flex">
+                <div className="izquierda 2xl:w-[65%] md:w-[70%] p-6">
+                  <h3 className="titular 2xl:text-2xl md:text-lg font-bold mb-4">
+                    Mis Proyectos
+                  </h3>
 
-                  <div className="grid grid-cols-2 gap-4">
-                    {/* Proyecto 1 */}
+                  <div className="flex flex-wrap gap-2">
                     <Link
                       href="/projects/web"
-                      className="flex gap-3 p-3 hover:bg-zinc-50 rounded-sm group"
+                      className="w-[49%] flex gap-3 p-3 rounded-sm"
                     >
-                      <div className="shrink-0 mt-1">
-                        <div className="bg-zinc-100 p-2 rounded-sm group-hover:bg-zinc-200 transition-colors">
-                          <FaGlobe className="h-5 w-5 text-zinc-700" />
+                      <div className="iconico w-[30%] flex justify-center align-center">
+                        <div className="p-3 flex justify-center align-center">
+                          <IoLibrary className="2xl:text-3xl md:text-2xl" />
                         </div>
                       </div>
-                      <div>
-                        <h4 className="font-medium text-sm">Desarrollo Web</h4>
-                        <p className="text-xs text-zinc-500 mt-1">
-                          Sitios y aplicaciones web
+                      <div className="textito w-[70%]">
+                        <h4 className="font-bold 2xl:text-xl md:text-lg">
+                          Web Tr. Colpatria
+                        </h4>
+                        <p className="2xl:text-sm md:text-xs text-zinc-500 mt-1">
+                          Biblioteca de informacion (PDF)
                         </p>
                       </div>
                     </Link>
-
-                    {/* Proyecto 2 */}
                     <Link
                       href="/projects/mobile"
-                      className="flex gap-3 p-3 hover:bg-zinc-50 rounded-sm group"
+                      className="w-[49%] flex gap-3 p-3 rounded-sm"
                     >
-                      <div className="shrink-0 mt-1">
-                        <div className="bg-zinc-100 p-2 rounded-sm group-hover:bg-zinc-200 transition-colors">
-                          <FaLayerGroup className="h-5 w-5 text-zinc-700" />
+                      <div className="iconico w-[30%] flex justify-center align-center">
+                        <div className="p-3 flex justify-center align-center">
+                          <PiStudentBold className="2xl:text-3xl md:text-2xl" />
                         </div>
                       </div>
-                      <div>
-                        <h4 className="font-medium text-sm">Apps Móviles</h4>
-                        <p className="text-xs text-zinc-500 mt-1">
-                          Aplicaciones iOS y Android
+                      <div className="textito w-[70%]">
+                        <h4 className="font-bold 2xl:text-xl md:text-lg">
+                          Web Tr. JetSmart
+                        </h4>
+                        <p className="2xl:text-sm md:text-xs text-zinc-500 mt-1">
+                          Comandos de aprendizaje
                         </p>
                       </div>
                     </Link>
 
-                    {/* Proyecto 3 */}
                     <Link
                       href="/projects/backend"
-                      className="flex gap-3 p-3 hover:bg-zinc-50 rounded-sm group"
+                      className="w-[49%] flex gap-3 p-3 rounded-sm"
                     >
-                      <div className="shrink-0 mt-1">
-                        <div className="bg-zinc-100 p-2 rounded-sm group-hover:bg-zinc-200 transition-colors">
-                          <FaDatabase className="h-5 w-5 text-zinc-700" />
+                      <div className="iconico w-[30%] flex justify-center align-center">
+                        <div className="p-3 flex justify-center align-center">
+                          <GrCompare className="2xl:text-3xl md:text-2xl" />
                         </div>
                       </div>
-                      <div>
-                        <h4 className="font-medium text-sm">Backend</h4>
-                        <p className="text-xs text-zinc-500 mt-1">
-                          APIs y servicios
+                      <div className="textito w-[70%]">
+                        <h4 className="font-bold 2xl:text-xl md:text-lg">
+                          Web Tr. Televentas Col.
+                        </h4>
+                        <p className="2xl:text-sm md:text-xs text-zinc-500 mt-1">
+                          Versus de datos (Graficas)
                         </p>
                       </div>
                     </Link>
-
-                    {/* Proyecto 4 */}
                     <Link
                       href="/projects/other"
-                      className="flex gap-3 p-3 hover:bg-zinc-50 rounded-sm group"
+                      className="w-[49%] flex gap-3 p-3 rounded-sm"
                     >
-                      <div className="shrink-0 mt-1">
-                        <div className="bg-zinc-100 p-2 rounded-sm group-hover:bg-zinc-200 transition-colors">
-                          <FaCode className="h-5 w-5 text-zinc-700" />
+                      <div className="iconico w-[30%] flex justify-center align-center">
+                        <div className="p-3 flex justify-center align-center">
+                          <FaTree className="2xl:text-3xl md:text-2xl" />
                         </div>
                       </div>
-                      <div>
-                        <h4 className="font-medium text-sm">Otros Proyectos</h4>
-                        <p className="text-xs text-zinc-500 mt-1">
-                          Experimentos y más
+                      <div className="textito w-[70%]">
+                        <h4 className="font-bold 2xl:text-xl md:text-lg">
+                          Web Tr. Claro TMK
+                        </h4>
+                        <p className="2xl:text-sm md:text-xs mt-1">
+                          Argumentarios y tipificadores
                         </p>
                       </div>
                     </Link>
                   </div>
                 </div>
 
-                {/* Sección derecha - Contenido libre */}
-                <div className="w-[40%] p-6">
-                  <div className="h-full flex flex-col justify-between">
-                    <div>
-                      <h3 className="text-lg font-medium mb-2">
-                        Proyecto Destacado
-                      </h3>
-                      <p className="text-sm text-zinc-600 mb-4">
-                        E-commerce desarrollado con React y Node.js para una
-                        tienda de productos artesanales.
+                <div className="derecha 2xl:w-[35%] md:w-[30%] p-6">
+                  <div className="conjunto h-full flex flex-col justify-between">
+                    <div className="libre">
+                      <p className="2xl:text-sm md:text-xs mb-4">
+                        Conjunto de proyectos que acumulan muchos desarrollos
+                        diferentes en todo sentido.
                       </p>
 
                       <div className="aspect-video bg-zinc-100 rounded-sm mb-4 overflow-hidden">
-                        <img
-                          src="/placeholder.svg?height=150&width=200"
-                          alt="Proyecto destacado"
-                          className="w-full h-full object-cover"
-                        />
+                        <figure className="flex justify-center items-center w-full h-full">
+                          <img
+                            src={books}
+                            alt="Proyecto destacado"
+                            className="w-[50%] object-cover"
+                          />
+                        </figure>
                       </div>
                     </div>
 

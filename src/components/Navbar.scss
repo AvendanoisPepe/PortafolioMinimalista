@@ -21,9 +21,7 @@ header {
     }
 
     nav { 
-        padding: 16px;
-        // font-size: 1.4rem;
-        // line-height: 1.4;     
+        padding: 16px;  
         font-weight: 500;
         a {
             text-decoration: none;
@@ -36,6 +34,74 @@ header {
             }
             &:hover {
                 color: $primary-color2;
+            }
+        }
+        .submenu{
+            button{
+                cursor: pointer;
+                &:hover {
+                    color: $primary-color2;
+                }
+            }
+            .contenedorSub{
+                background-color: rgba($white2, 1);
+                // background-image: url('../assets/i}magenes/uno.jpg');
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                border: solid 4px $white;
+                z-index: 50;
+                .flechita{
+                    width: 40px;
+                    height: 40px;
+                    background-color: rgba($white2, 1);
+                    border-top: 1px solid $white;
+                    border-left: 1px solid $white;
+                }
+                .contenido{
+                    .izquierda{
+                        border-right: 4px solid rgba($white, 1);
+                        .titular{
+                            color: rgba($secondary-color, 0.4);
+                            padding-bottom: 20px;
+                            border-bottom: 4px solid rgba($white, 1);
+                        }
+                        a{
+                            &:hover{
+                                background-color: rgba($primary-color, 0.4);
+                                color: rgba($primary-color, 1);
+                                .textito{
+                                    p{
+                                        color: rgba($white, 1);
+                                    }
+                                }
+                            }
+                            .iconico{
+                                background-color: rgba($primary-color, 1);
+                                border-radius: 4px;
+                                div{
+                                    svg{
+                                        width: auto;
+                                        margin-left: 0px;
+                                        color: $white;
+                                    }
+                                }
+                            }
+                            .textito{
+                                p{
+                                    color: #494949;
+                                }
+                            }
+                        }
+                    }
+                    .derecha{
+                        .conjunto{
+                            .libre{
+                                color: rgba($secondary-color, 0.6);
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
