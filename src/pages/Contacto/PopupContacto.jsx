@@ -95,25 +95,25 @@ function PopupContacto({ isOpen, onClose }) {
     };
     return (
         <div className="popup-overlay w-full h-full flex justify-center items-center z-50 top-0 left-0 fixed">
-            <div className="popup-content p-8 md:p-10 relative w-[95%] md:w-[80%] max-w-3xl rounded-lg overflow-hidden">
+            <div className="popup-content p-8 md:p-10 relative max-w-3xl rounded-lg overflow-hidden">
             <button
                 className="close-btn absolute top-4 right-5 z-10"
                 onClick={onClose}
             >
-                <IoClose className="w-10 h-10" />
+                <IoClose className="2xl:w-10 2xl:h-10 md:w-10 md:h-10" />
             </button>
 
             <div className="relative z-10">
                 <div className="text-center mb-8">
-                    <h2 className="text-5xl font-bold gradient-text">¡Hablemos!</h2>
-                    <p className="text-gray-600 mt-2">
+                    <h2 className="2xl:text-5xl md:text-4xl font-bold gradient-text">¡Hablemos!</h2>
+                    <p className="text-gray-600 mt-2 2xl:text-base md:text-sm">
                         Completa el formulario y me pondré en contacto contigo pronto
                     </p>
                 </div>
                 <form onSubmit={envioCorreo} className="space-y-6 flex justify-between align-center flex-wrap">
                     <div className="relative flex align-center w-full">
-                        <div className="absolute left-6 top-4 z-1">
-                            <FiUser className="w-[18px] h-[18px]" />
+                        <div className="absolute 2xl:left-6 2xl:top-4 md:left-6 md:top-3 z-1">
+                            <FiUser className="2xl:w-[18px] 2xl:h-[18px] md:w-[14px] md:h-[14px]" />
                         </div>
                         <input
                             type="text"
@@ -121,7 +121,7 @@ function PopupContacto({ isOpen, onClose }) {
                             value={nombreCompleto}
                             onChange={e => setNombreCompleto(e.target.value)}
                             placeholder="Nombre"
-                            className="form-input w-full text-base p-3 pl-13"
+                            className="form-input w-full 2xl:text-base md:text-sm 2xl:p-3 2xl:pl-13 md:p-2 md:pl-12"
                             required
                             autoComplete="off"
                             style={{
@@ -136,8 +136,8 @@ function PopupContacto({ isOpen, onClose }) {
                     </div>
 
                     <div className="relative flex align-center w-[49%]">
-                        <div className="absolute left-6 top-4 z-1">
-                            <FiMail className="w-[18px] h-[18px]" />
+                        <div className="absolute 2xl:left-6 2xl:top-4 md:left-6 md:top-3 z-1">
+                            <FiMail className="2xl:w-[18px] 2xl:h-[18px] md:w-[14px] md:h-[14px]" />
                         </div>
                         <input
                             type="email"
@@ -149,15 +149,15 @@ function PopupContacto({ isOpen, onClose }) {
                                     validaciones.correo === null ? '' : validaciones.correo ? 'green' : 'red',
                             }}
                             placeholder="Email"
-                            className="form-input w-full text-base p-3 pl-13"
+                            className="form-input w-full 2xl:text-base md:text-sm 2xl:p-3 2xl:pl-13 md:p-2 md:pl-12"
                             required
                             autoComplete="off"
                         />
                     </div>
 
                     <div className="relative flex align-center w-[49%]">
-                        <div className="absolute left-6 top-4 z-1">
-                            <IoMdPhonePortrait   className="w-[18px] h-[18px]" />
+                        <div className="absolute 2xl:left-6 2xl:top-4 md:left-6 md:top-3 z-1">
+                            <IoMdPhonePortrait className="2xl:w-[18px] 2xl:h-[18px] md:w-[14px] md:h-[14px]" />
                         </div>
                         <input
                             type="text"
@@ -169,13 +169,13 @@ function PopupContacto({ isOpen, onClose }) {
                                     validaciones.asunto === null ? '' : validaciones.asunto ? 'green' : 'red',
                             }}
                             placeholder="Celular"
-                            className="form-input w-full text-base p-3 pl-13"
+                            className="form-input w-full 2xl:text-base md:text-sm 2xl:p-3 2xl:pl-13 md:p-2 md:pl-12"
                             autoComplete="off"
                         />
                     </div>
                     <div className="relative flex align-center w-full">
-                        <div className="absolute left-6 top-4 z-1">
-                            <FiMessageSquare className="w-[18px] h-[18px]" />
+                        <div className="absolute 2xl:left-6 2xl:top-4 md:left-6 md:top-3 z-1">
+                            <FiMessageSquare className="2xl:w-[18px] 2xl:h-[18px] md:w-[14px] md:h-[14px]" />
                         </div>
                         <input
                             type="text"
@@ -187,7 +187,7 @@ function PopupContacto({ isOpen, onClose }) {
                                     validaciones.asunto === null ? '' : validaciones.asunto ? 'green' : 'red',
                             }}
                             placeholder="Asunto"
-                            className="form-input w-full text-base p-3 pl-13"
+                            className="form-input w-full 2xl:text-base md:text-sm 2xl:p-3 2xl:pl-13 md:p-2 md:pl-12"
                             autoComplete="off"
                         />
                     </div>
@@ -201,18 +201,18 @@ function PopupContacto({ isOpen, onClose }) {
 										validaciones.mensaje === null ? '' : validaciones.mensaje ? 'green' : 'red',
 								}}
                             placeholder="Tu mensaje"
-                            className="form-textarea w-full text-base p-3 pl-11"
+                            className="form-textarea w-full 2xl:text-base md:text-sm 2xl:p-3 2xl:pl-13 md:p-2 md:pl-12"
                             rows="4"
                             required
                         ></textarea>
                     </div>
 
                     <div className="flex justify-center items-center w-full">
-                        <button type="reset" onClick={resetForm} className="reset-button inline-flex justify-center items-center px-8 py-3 text-xl mr-6">
+                        <button type="reset" onClick={resetForm} className="reset-button inline-flex justify-center items-center 2xl:px-8 md:px-6 2xl:py-3 md:py-2 2xl:text-xl md:text-lg mr-6">
                         <span>Resetear</span>
                             <IoReload className="ml-2" />
                         </button>
-                        <button type="submit" className="submit-button inline-flex justify-center items-center px-8 py-3 text-xl">
+                        <button type="submit" className="submit-button inline-flex justify-center items-center 2xl:px-8 md:px-6 2xl:py-3 md:py-2 2xl:text-xl md:text-lg 2xl:mr-6">
                         <span>Enviar mensaje</span>
                             <FiSend className="ml-2" />
                         </button>

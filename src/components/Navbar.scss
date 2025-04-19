@@ -114,6 +114,9 @@ header {
             padding: 10px 10px;
             border-radius: 6px;
             cursor: pointer;
+            &:hover{
+                box-shadow: -4px 4px 0px 0px rgba($primary-color2, 0.4);
+            }
         }
         .botonesTwo{
             background-color: rgba($primary-color2, 1);
