@@ -15,6 +15,7 @@ import { TbFileTypeSql } from "react-icons/tb";
 import books from "../assets/imagenes/books.png"
 import codigo from "../assets/imagenes/timeline.png"
 import PopupContacto from "../pages/Contacto/PopupContacto";
+import PopupCv from "../pages/CV/CV";
 function Navbar() {
   const [isProjectsOpen, setIsProjectsOpen] = useState(false);
   const [isStudiesOpen, setIsStudiesOpen] = useState(false);
@@ -23,6 +24,7 @@ function Navbar() {
   const studiesRef = useRef(null);
   const studiesButtonRef = useRef(null);
   const [isContactoOpen, setIsContactoOpen] = useState(false);
+  const [cv, setCv] = useState(false);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -345,7 +347,10 @@ function Navbar() {
         </Link>
       </nav>
       <div className="botones w-full md:w-[30%] flex justify-center items-center gap-4 mt-4 md:mt-0">
-        <button className="botonesOne w-[46%] transition text-xs md:text-sm 2xl:text-lg">
+        <button
+          className="botonesOne w-[46%] transition text-xs md:text-sm 2xl:text-lg"
+          onClick={() => setCv(true)}
+        >
           CV
         </button>
         <button
@@ -359,6 +364,7 @@ function Navbar() {
         isOpen={isContactoOpen}
         onClose={() => setIsContactoOpen(false)}
       />
+      <PopupCv isOpen={cv} onClose={() => setCv(false)} />
     </header>
   );
 }

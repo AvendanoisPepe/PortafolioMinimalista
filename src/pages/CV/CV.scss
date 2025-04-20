@@ -1,0 +1,110 @@
+@use "../../styles/variables.scss" as *;
+
+// components/popupContacto.scss
+
+.popup-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease-out;
+    .popup-content {
+        background-color: white;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        animation: slideUp 0.4s ease-out;
+        .close-btn{
+            cursor: pointer;
+            background-color: rgba($naranaj, 0.2);
+            border-radius: 4px;
+            svg{
+                color: rgba($naranaj, 1);
+            }
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, $primary-color, $primary-color2, $primary-color);
+            background-size: 300%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: gradientMove 4s linear infinite;
+        }
+        .opciones{
+            background-color: rgba($primary-color, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            .botones{
+                cursor: pointer;
+                &:hover{
+                    background-color: rgba($primary-color, 0.4);
+                }
+            }
+            .botones.active {
+                background-color: $naranaOscuro;
+                color: white;
+                font-weight: bold;
+                border-radius: 6px;
+            }
+        }
+        .ifrma{
+            background-color: rgba($primary-color, 0.2);
+            border-radius: 8px;
+            iframe{
+                border-radius: 8px;
+            }
+        }
+    }
+}
+.color-dots {
+    position: absolute;
+    z-index: -1;
+}
+
+.dot {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+    
+    &.dot-1 {
+        width: 200px;
+        height: 200px;
+        background: linear-gradient(135deg, $primary-color2, $primary-color);
+        top: -100px;
+        right: -800px;
+        filter: blur(10px);
+    }
+    
+    &.dot-2 {
+        width: 300px;
+        height: 200px;
+        background: linear-gradient(135deg, $primary-color, $primary-color2);
+        top: -40px;
+        left: -80px;
+        filter: blur(10px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes gradientMove {
+	0% {
+		background-position: 0% 50%;
+	}
+	100% {
+		background-position: 100% 50%;
+	}
+}
