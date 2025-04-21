@@ -1,15 +1,33 @@
 @use "../../styles/variables.scss" as *;
 .Temas{
     .primero{
-        button{
+        .butonT{
             border-radius: 4px;
-            background-color: rgba($secondary-color, 0.8);
-            border: solid 2px rgba($secondary-color, 1);
+            background-color: rgba($white2, 1);
+            border: solid 3px rgba($primary-color, 0.4);
+            cursor: pointer;
             .letras{
-                color: $white;
+                color: $secondary-color
             }
-            .iconos{
-
+            .flechita{
+                color: $primary-color;
+            }
+        }
+        .listado{
+            background-color: rgba($white2, 1);
+            border: solid 3px rgba($primary-color, 0.4);
+            border-radius: 4px;
+            button{
+                &:hover{
+                    background-color: rgba($primary-color, 0.2);
+                    cursor: pointer;
+                }
+                .nombre{
+                    color: $text-color
+                }
+                .check{
+                    color: $naranaOscuro
+                }
             }
         }
     }

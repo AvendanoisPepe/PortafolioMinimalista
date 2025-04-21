@@ -76,13 +76,13 @@ const Temas = () => {
                         setIsThemeOpen(!isThemeOpen);
                         setIsLanguageOpen(false);
                     }}
-                    className="flex items-center space-x-2 py-2 px-4 shadow-sm hover:shadow-md transition-all duration-300">
+                    className="butonT flex items-center space-x-2 py-2 px-4 shadow-sm hover:shadow-md transition-all duration-300">
                     <span className="letras 2xl:text-xl font-bold">Tema</span>
                     <span className="iconos 2xl:text-2xl flex items-center justify-center 2xl:w-10 2xl:h-8">
                         {getCurrentTheme().icon}
                     </span>
                     <FaChevronUp
-                        className={`text-zinc-400 text-xs transition-transform duration-300 ${
+                        className={`flechita 2xl:text-base transition-transform duration-300 ${
                         isThemeOpen ? "" : "rotate-180"
                     }`}
                     />
@@ -90,25 +90,25 @@ const Temas = () => {
 
                 {/* Dropdown de Temas */}
                 {isThemeOpen && (
-                    <div className="absolute bottom-full left-0 mb-2 bg-white border border-zinc-200 rounded-lg shadow-lg overflow-hidden min-w-[180px] animate-fadeIn">
+                    <div className="listado absolute bottom-full left-0 mb-2 border shadow-lg overflow-hidden min-w-[180px]">
                         <div className="py-1">
                             {themes.map((theme) => (
                                 <button
                                     key={theme.id}
                                     onClick={() => handleThemeChange(theme.id)}
-                                        className={`w-full flex items-center justify-between px-4 py-2.5 hover:bg-zinc-50 transition-colors ${
+                                        className={`w-full flex items-center justify-between px-4 py-2.5 transition-colors ${
                                         currentTheme === theme.id ? "bg-zinc-50" : ""
                                     }`}>
                                     <div className="flex items-center space-x-3">
-                                        <span className="flex items-center justify-center w-5 h-5">
+                                        <span className="flex items-center justify-center 2xl:w-5 2xl:h-5 2xl:text-base">
                                             {theme.icon}
                                         </span>
-                                        <span className="text-sm text-zinc-800">
+                                        <span className="nombre 2xl:text-sm">
                                             {theme.name}
                                         </span>
                                     </div>
                                     {currentTheme === theme.id && (
-                                        <FaCheck className="text-green-500 text-xs" />
+                                        <FaCheck className="check 2xl:text-base" />
                                     )}
                                 </button>
                             ))}
@@ -118,43 +118,43 @@ const Temas = () => {
             </div>
 
             {/* Selector de Idioma */}
-            <div className="relative">
+            <div className="primero relative">
                 <button
                     onClick={() => {
                         setIsLanguageOpen(!isLanguageOpen);
                         setIsThemeOpen(false);
                     }}
-                    className="flex items-center space-x-2 bg-white border border-zinc-200 rounded-full py-2 px-4 shadow-sm hover:shadow-md transition-all duration-300">
-                    <FaGlobe className="text-zinc-600 text-sm" />
-                    <span className="text-zinc-800 text-sm font-medium">
+                    className="butonT flex items-center space-x-2 py-2 px-4 shadow-sm hover:shadow-md transition-all duration-300">
+                    <FaGlobe className="text-zinc-600 2xl:text-xl" />
+                    <span className="letras 2xl:text-xl font-bold">
                         {getCurrentLanguage().name}
                     </span>
-                    <span className="text-base">{getCurrentLanguage().flag}</span>
+                    <span className="iconos 2xl:text-2xl flex items-center justify-center 2xl:w-8">{getCurrentLanguage().flag}</span>
                     <FaChevronUp
-                        className={`text-zinc-400 text-xs transition-transform duration-300 ${
+                        className={`flechita 2xl:text-base transition-transform duration-300 ${
                             isLanguageOpen ? "" : "rotate-180"
                         }`}/>
                 </button>
 
                 {/* Dropdown de Idiomas */}
                 {isLanguageOpen && (
-                    <div className="absolute bottom-full left-0 mb-2 bg-white border border-zinc-200 rounded-lg shadow-lg overflow-hidden min-w-[180px] animate-fadeIn">
+                    <div className="listado absolute bottom-full left-0 mb-2 border shadow-lg overflow-hidden min-w-[180px]">
                         <div className="py-1">
                             {languages.map((language) => (
                                 <button
                                     key={language.id}
                                     onClick={() => handleLanguageChange(language.id)}
-                                    className={`w-full flex items-center justify-between px-4 py-2.5 hover:bg-zinc-50 transition-colors ${
+                                    className={`w-full flex items-center justify-between px-4 py-2.5 transition-colors ${
                                     currentLanguage === language.id ? "bg-zinc-50" : ""
                                     }`}>
                                     <div className="flex items-center space-x-3">
-                                    <span className="text-base">{language.flag}</span>
-                                    <span className="text-sm text-zinc-800">
-                                        {language.name}
-                                    </span>
+                                        <span className="flex items-center justify-center 2xl:w-5 2xl:h-5 2xl:text-base">{language.flag}</span>
+                                        <span className="nombre 2xl:text-sm">
+                                            {language.name}
+                                        </span>
                                     </div>
                                     {currentLanguage === language.id && (
-                                        <FaCheck className="text-green-500 text-xs" />
+                                        <FaCheck className="check 2xl:text-base" />
                                     )}
                                 </button>
                             ))}
