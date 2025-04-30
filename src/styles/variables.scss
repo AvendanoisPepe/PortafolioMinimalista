@@ -1,7 +1,8 @@
 // variables.scss
-
+@import "./themes.scss";
 // 🎨 Paleta de colores
-$primary-color: #000054;
+// $primary-color: #000054;
+$primary-color: var(--primary-color);
 $primary-color2: #018abd;
 $primary-color3: #0d04a6;
 $primary-color4: #1407cf;

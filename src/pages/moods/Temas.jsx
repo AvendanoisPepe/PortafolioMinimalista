@@ -8,12 +8,14 @@ import {
     FaGlobe,
     FaCheck,
 } from "react-icons/fa";
+import { useGlobal } from "../../context/GlobalContext";
 
 const Temas = () => {
     const [isThemeOpen, setIsThemeOpen] = useState(false);
     const [isLanguageOpen, setIsLanguageOpen] = useState(false);
     const [currentTheme, setCurrentTheme] = useState("light");
     const [currentLanguage, setCurrentLanguage] = useState("es");
+    const { temaNombre, setTemaNombre } = useGlobal();
 
     // Temas disponibles
     const themes = [
@@ -49,6 +51,7 @@ const Temas = () => {
     // Función para cambiar tema (solo UI, sin lógica real)
     const handleThemeChange = (themeId) => {
         setCurrentTheme(themeId);
+        setTemaNombre(convertirNombreTema(themeId));
         setIsThemeOpen(false);
     };
 
@@ -67,6 +70,22 @@ const Temas = () => {
     const getCurrentLanguage = () => {
         return languages.find((lang) => lang.id === currentLanguage);
     };
+    const convertirNombreTema = (id) => {
+        switch (id) {
+            case "light":
+                return "claro";
+            case "dark":
+                return "oscuro";
+            case "purple":
+                return "violeta";
+            // Podés agregar más casos si sumás más temas:
+            // case "red": return "rojo";
+            // case "blue": return "azul";
+            default:
+                return "claro";
+        }
+    };
+
     return (
         <div className="Temas fixed bottom-3 left-6 z-40 flex flex-row space-y-3 space-x-4">
             {/* Selector de Tema */}
