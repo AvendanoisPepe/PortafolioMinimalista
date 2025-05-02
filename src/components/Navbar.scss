@@ -43,47 +43,47 @@ header {
                 background-color: var(--white2);
                 box-shadow: 0 10px 15px -3px color-mix(in srgb, var(--secondary-color) 20%, transparent), 0 4px 6px -4px color-mix(in srgb, var(--secondary-color) 20%, transparent);
                 border-radius: 10px;
-                border: solid 4px $white;
+                border: solid 4px var(--white);
                 z-index: 50;
                 .flechita{
                     width: 40px;
                     height: 40px;
-                    background-color: rgba($white2, 1);
-                    border-top: 1px solid $white;
-                    border-left: 1px solid $white;
+                    background-color: var(--white2);
+                    border-top: 1px solid var(--white);
+                    border-left: 1px solid var(--white);
                 }
                 .contenido{
                     .izquierda{
-                        border-right: 4px solid rgba($white, 1);
+                        border-right: 4px solid var(--white);
                         .titular{
-                            color: rgba($secondary-color, 0.4);
+                            color: color-mix(in srgb, var(--secondary-color) 40%, transparent);
                             padding-bottom: 20px;
-                            border-bottom: 4px solid rgba($white, 1);
+                            border-bottom: 4px solid var(--white);
                         }
                         a{
                             &:hover{
-                                background-color: rgba($primary-color, 0.4);
-                                color: rgba($primary-color, 1);
+                                background-color: color-mix(in srgb, var(--primary-color) 40%, transparent);
+                                color: var(--primary-color);
                                 .textito{
                                     p{
-                                        color: rgba($white, 1);
+                                        color: var(--white);
                                     }
                                 }
                             }
                             .iconico{
-                                background-color: rgba($primary-color, 1);
+                                background-color: var(--primary-color);
                                 border-radius: 4px;
                                 div{
                                     svg{
                                         width: auto;
                                         margin-left: 0px;
-                                        color: $white;
+                                        color: var(--white);
                                     }
                                 }
                             }
                             .textito{
                                 p{
-                                    color: #494949;
+                                    color: var(--text-color);
                                 }
                             }
                         }
@@ -91,7 +91,7 @@ header {
                     .derecha{
                         .conjunto{
                             .libre{
-                                color: rgba($secondary-color, 0.6);
+                                color: color-mix(in srgb, var(--secondary-color) 60%, transparent);
                                 text-align: center;
                             }
                         }
@@ -104,25 +104,25 @@ header {
         font-size: 1.25rem;
         line-height: 1.4;
         .botonesOne{
-            background-color: rgba($primary-color2, 0.2);
-            color: $primary-color2;
+            background-color: color-mix(in srgb, var(--primary-color2) 20%, transparent);
+            color: var(--primary-color2);
             padding: 10px 10px;
             border-radius: 6px;
             cursor: pointer;
             &:hover{
-                box-shadow: -4px 4px 0px 0px rgba($primary-color2, 0.4);
+                box-shadow: -4px 4px 0px 0px color-mix(in srgb, var(--primary-color2) 40%, transparent);
             }
         }
         .botonesTwo{
-            background-color: rgba($primary-color2, 1);
-            color: $white;
+            background-color: var(--primary-color2);
+            color: var(--white);
             padding: 10px 10px;
             border-radius: 6px;
             cursor: pointer;
             text-align: center;
             &:hover{
-                background-color: rgba($primary-color, 1);
-                box-shadow: -4px 4px 0px 0px rgba($primary-color, 0.4);
+                background-color: var(--primary-color);
+                box-shadow: -4px 4px 0px 0px color-mix(in srgb, var(--primary-color) 40%, transparent);
             }
         }
     }

@@ -1,25 +1,26 @@
 @use "../../styles/variables.scss" as *;
+@use "../../styles/_themes.scss";
 
 // components/popupContacto.scss
 
 .popup-overlay {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: color-mix(in srgb, var(--secondary-color) 60%, transparent);
     backdrop-filter: blur(5px);
     animation: fadeIn 0.3s ease-out;
     .popup-content {
-        background-color: white;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        background-color: var(--white2);
+        box-shadow: 0 10px 25px color-mix(in srgb, var(--secondary-color) 10%, transparent);
         animation: slideUp 0.4s ease-out;
         .close-btn{
             cursor: pointer;
-            background-color: rgba($naranaj, 0.2);
+            background-color: color-mix(in srgb, var(--naranaj) 30%, transparent);
             border-radius: 4px;
             svg{
-                color: rgba($naranaj, 1);
+                color: var(--naranaj)
             }
         }
         .gradient-text {
-            background: linear-gradient(90deg, $primary-color, $primary-color2, $primary-color);
+            background: linear-gradient(90deg, var(--primary-color), var(--primary-color2), var(--primary-color));
             background-size: 300%;
             background-clip: text;
             -webkit-background-clip: text;
@@ -27,24 +28,24 @@
             animation: gradientMove 4s linear infinite;
         }
         .opciones{
-            background-color: rgba($primary-color, 0.2);
+            background-color: color-mix(in srgb, var(--primary-color) 20%, transparent);
             border-radius: 8px;
             overflow: hidden;
             .botones{
                 cursor: pointer;
                 &:hover{
-                    background-color: rgba($primary-color, 0.4);
+                    background-color: color-mix(in srgb, var(--primary-color) 40%, transparent);
                 }
             }
             .botones.active {
-                background-color: $naranaOscuro;
-                color: white;
+                background-color: var(--naranaOscuro);
+                color: var(--white2);
                 font-weight: bold;
                 border-radius: 6px;
             }
         }
         .ifrma{
-            background-color: rgba($primary-color, 0.2);
+            background-color: color-mix(in srgb, var(--primary-color) 20%, transparent);
             border-radius: 8px;
             iframe{
                 border-radius: 8px;
@@ -65,7 +66,7 @@
     &.dot-1 {
         width: 200px;
         height: 200px;
-        background: linear-gradient(135deg, $primary-color2, $primary-color);
+        background: linear-gradient(135deg, var(--primary-color2), var(--primary-color));
         top: -100px;
         right: -800px;
         filter: blur(10px);
@@ -74,7 +75,7 @@
     &.dot-2 {
         width: 300px;
         height: 200px;
-        background: linear-gradient(135deg, $primary-color, $primary-color2);
+        background: linear-gradient(135deg, var(--primary-color), var(--primary-color2));
         top: -40px;
         left: -80px;
         filter: blur(10px);

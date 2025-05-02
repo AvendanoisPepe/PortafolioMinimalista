@@ -1,47 +1,47 @@
 @use "../../styles/variables.scss" as *;
-
+@use "../../styles/_themes.scss";
 // components/popupContacto.scss
 
 .popup-overlay {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: color-mix(in srgb, var(--secondary-color) 60%, transparent);
     backdrop-filter: blur(5px);
     animation: fadeIn 0.3s ease-out;
     .popup-content {
-        background-color: white;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        background-color: var(--white2);
+        box-shadow: 0 10px 25px color-mix(in srgb, var(--secondary-color) 10%, transparent);
         animation: slideUp 0.4s ease-out;
         .close-btn{
             cursor: pointer;
-            background-color: rgba($naranaj, 0.2);
+            background-color: color-mix(in srgb, var(--naranaj) 30%, transparent);
             border-radius: 4px;
             svg{
-                color: rgba($naranaj, 1);
+                color: var(--naranaj)
             }
         }
         .gradient-text {
-            background: linear-gradient(10deg, $primary-color, $primary-color2);
+            background: linear-gradient(10deg, var(--primary-color), var(--primary-color2));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
         .form-input, .form-textarea {
-            border: 2px solid #eee;
+            border: 2px solid var(--white2);
             border-radius: 8px;
             transition: all 0.3s;
-            background-color: #f9f9f9;
-            border-left: solid 6px $naranaj;
+            background-color: var(--white);
+            border-left: solid 6px var(--naranaj);
             &:focus {
                 outline: none;
-                border-color: $primary-color3;
-                box-shadow: 0 0 0 3px rgba($primary-color, 0.2);
+                border-color: var(--primary-color3);
+                box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color) 20%, transparent);
             }
         }
         .form-textarea {
             resize: none;
         }        
         .submit-button {
-            background: linear-gradient(90deg, $primary-color, $primary-color2);
-            color: white;
+            background: linear-gradient(90deg, var(--primary-color), var(--primary-color2));
+            color: var(--white2);
             border: none;
             border-radius: 8px;
             cursor: pointer;
@@ -49,7 +49,6 @@
             
             &:hover {
                 transform: translateY(-2px);
-                box-shadow: 0 7px 14px rgba(255, 126, 95, 0.2);
             }
             
             &:active {
@@ -57,17 +56,16 @@
             }
         }
         .reset-button {
-            background-color: rgba($white, 0.8);
-            color: $secondary-color;
+            background-color: color-mix(in srgb, var(--white2) 70%, transparent);
+            color: var(--secondary-color);
             border: none;
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s;
-            border: 2px solid rgba($secondary-color, 0.2);
+            border: 2px solid color-mix(in srgb, var(--secondary-color) 20%, transparent);
             
             &:hover {
                 transform: translateY(-2px);
-                box-shadow: 0 7px 14px rgba(255, 126, 95, 0.2);
             }
             
             &:active {
@@ -89,7 +87,7 @@
     &.dot-1 {
         width: 200px;
         height: 200px;
-        background: linear-gradient(135deg, $primary-color2, $primary-color);
+        background: linear-gradient(135deg, var(--primary-color2), var(--primary-color));
         top: -100px;
         right: -800px;
         filter: blur(10px);
@@ -98,7 +96,7 @@
     &.dot-2 {
         width: 300px;
         height: 200px;
-        background: linear-gradient(135deg, $primary-color, $primary-color2);
+        background: linear-gradient(135deg, var(--primary-color), var(--primary-color2));
         top: -40px;
         left: -80px;
         filter: blur(10px);
