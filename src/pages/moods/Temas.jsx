@@ -16,7 +16,7 @@ const Temas = () => {
     const [currentTheme, setCurrentTheme] = useState("light");
     const [currentLanguage, setCurrentLanguage] = useState("es");
     const { temaNombre, setTemaNombre } = useGlobal();
-
+    console.log(temaNombre);
     // Temas disponibles
     const themes = [
         {

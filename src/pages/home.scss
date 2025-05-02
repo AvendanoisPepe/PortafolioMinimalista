@@ -1,40 +1,40 @@
 // src/styles/navbar.scss
 @use "../styles/variables.scss" as *;
-
+@use "../styles/_themes.scss";
 .Inicio {
-    color: rgba($primary-color, 0.8);
+    color: color-mix(in srgb, var(--primary-color) 80%, transparent);
     .textual{
         .textualUno{
-            color: #52525c;
+            color: color-mix(in srgb, var(--text-color) 90%, transparent);
         }
         .textualDos{
-            border-left: 2px solid #969696;
+            border-left: 2px solid color-mix(in srgb, var(--text-color) 40%, transparent);
         }
         .otroP{
             button{
-                background-color: rgba($primary-color2, 1);
+                background-color: color-mix(in srgb, var(--primary-color2) 100%, transparent);
                 border-radius: 4px;
-                box-shadow: -4px 4px 0px 0px rgba($secondary-color, 0.7);
-                color: $white;
+                box-shadow: -4px 4px 0px 0px color-mix(in srgb, var(--secondary-color) 70%, transparent);
+                color: var(--white);
                 cursor: pointer;
                 &:hover{
-                    background-color: rgba($primary-color, 1);
-                    box-shadow: 0px 0px 0px 4px rgba($secondary-color, 0.4);
+                    background-color: var(--primary-color);
+                    box-shadow: 0px 0px 0px 4px color-mix(in srgb, var(--secondary-color) 40%, transparent);
                 }
             }
         }
     }
     .derecha{
-        background-color: #3F3F46;
+        background-color: var(--text-color);
         border-radius: 10px;
         .unidad{
             .imagen{
                 border-radius: 10px;
                 overflow: hidden;
-                border: solid 6px rgba($secondary-color, 0.6);
+                border: solid 6px color-mix(in srgb, var(--secondary-color) 60%, transparent);
             }
             .cuadrado{
-                background-color: rgba($primary-color2, 1);
+                background-color: var(--primary-color2);
                 border-radius: 6px;
             }
         }

@@ -35,8 +35,10 @@ export const GlobalProvider = ({ children }) => {
         const theme = themes[temaNombre];
         if (theme) {
             Object.entries(theme).forEach(([key, value]) => {
-            document.documentElement.style.setProperty(key, value);
+                document.documentElement.style.setProperty(key, value);
             });
+            // Aplica la clase de tema correspondiente al <html>
+            document.documentElement.className = `tema-${temaNombre}`;
         }
     }, [temaNombre]);
 

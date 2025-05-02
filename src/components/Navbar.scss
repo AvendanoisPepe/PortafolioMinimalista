@@ -1,27 +1,23 @@
 // src/styles/navbar.scss
 @use "../styles/variables.scss" as *;
-
+@use "../styles/_themes.scss";
 header {
-    background-color: $white;
-    border-bottom: rgba($secondary-color, 0.2) solid 3px;
-    // padding: 22px;
+    background-color: var(--white);
+    border-bottom: color-mix(in srgb, var(--secondary-color) 20%, transparent) solid 3px;
     .contentLogo{
         .logo {
-            // font-size: 2.4rem;
             line-height: 1;
-            background-color: $primary-color;
+            background-color: var(--primary-color);
             border-radius: 10px;
-            color: $white;
+            color: var(--white);
             padding: 14px;
         }
         .nombre{
-            // font-size: 2.25rem;
             line-height: 1;
         }
     }
 
     nav { 
-        padding: 16px;  
         font-weight: 500;
         a {
             text-decoration: none;
@@ -33,20 +29,19 @@ header {
                 margin-left: 10px;
             }
             &:hover {
-                color: $primary-color2;
+                color: var(--primary-color2);
             }
         }
         .submenu{
             button{
                 cursor: pointer;
                 &:hover {
-                    color: $primary-color2;
+                    color: var(--primary-color2);
                 }
             }
             .contenedorSub{
-                background-color: rgba($white2, 1);
-                // background-image: url('../assets/i}magenes/uno.jpg');
-                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+                background-color: var(--white2);
+                box-shadow: 0 10px 15px -3px color-mix(in srgb, var(--secondary-color) 20%, transparent), 0 4px 6px -4px color-mix(in srgb, var(--secondary-color) 20%, transparent);
                 border-radius: 10px;
                 border: solid 4px $white;
                 z-index: 50;
