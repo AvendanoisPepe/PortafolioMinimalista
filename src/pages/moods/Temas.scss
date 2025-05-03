@@ -1,32 +1,32 @@
-@use "../../styles/variables.scss" as *;
+@use "../../styles/_themes.scss" as *;
 .Temas{
     .primero{
         .butonT{
             border-radius: 4px;
-            background-color: rgba($white2, 1);
-            border: solid 3px rgba($primary-color, 0.4);
+            background-color: var(--white2);
+            border: solid 3px color-mix(in srgb, var(--primary-color) 40%, transparent);
             cursor: pointer;
             .letras{
-                color: $secondary-color
+                color: var(--secundary-color);
             }
             .flechita{
-                color: $primary-color;
+                color: var(--primary-color);
             }
         }
         .listado{
-            background-color: rgba($white2, 1);
-            border: solid 3px rgba($primary-color, 0.4);
+            background-color: var(--white2);
+            border: solid 3px color-mix(in srgb, var(--primary-color) 40%, transparent);
             border-radius: 4px;
             button{
                 &:hover{
-                    background-color: rgba($primary-color, 0.2);
+                    background-color: color-mix(in srgb, var(--primary-color) 20%, transparent);
                     cursor: pointer;
                 }
                 .nombre{
-                    color: $text-color
+                    color: var(--text-color);
                 }
                 .check{
-                    color: $naranaOscuro
+                    color: var(--naranaOscuro);
                 }
             }
         }
