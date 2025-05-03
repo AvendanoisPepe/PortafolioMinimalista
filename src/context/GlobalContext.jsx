@@ -4,24 +4,9 @@ import { createContext, useContext, useEffect, useState } from "react";
 // 1. Crear el contexto
 const GlobalContext = createContext();
 const themes = {
-    claro: {
-        "--primary-color": "#000054",
-        "--secondary-color": "#000000",
-        "--text-color": "#333",
-        "--bg-color": "#ffffff",
-    },
-    oscuro: {
-        "--primary-color": "#0d04a6",
-        "--secondary-color": "#041b2c",
-        "--text-color": "#f5f5f5",
-        "--bg-color": "#121212",
-    },
-    violeta: {
-        "--primary-color": "#6b21a8",
-        "--secondary-color": "#3f0e63",
-        "--text-color": "#ffffff",
-        "--bg-color": "#1f1b2e",
-    },
+    claro: {},
+    oscuro: {},
+    violeta: {},
 };
 
 // 2. Crear el provider
