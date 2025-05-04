@@ -8,8 +8,9 @@ import claro4 from "../../assets/imagenes/TemasWhite/cuatro.jpg";
 import dark1 from "../../assets/imagenes/TemasDark/unoDark.jpg"
 import dark2 from "../../assets/imagenes/TemasDark/dosDark.jpg";
 import dark3 from "../../assets/imagenes/TemasDark/tresDark.jpg";
+import dark4 from "../../assets/imagenes/TemasDark/cuatrodark.png";
 export const themeBackgrounds = {
     claro: claro4,
-    oscuro: dark3,
+    oscuro: dark4,
     violeta: claro3,
 };

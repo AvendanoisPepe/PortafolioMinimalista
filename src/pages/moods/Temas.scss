@@ -4,6 +4,7 @@
         .butonT{
             border-radius: 4px;
             background-color: var(--white2);
+            color: var(--secondary-color2);
             border: solid 3px color-mix(in srgb, var(--primary-color) 40%, transparent);
             cursor: pointer;
             .letras{
@@ -23,10 +24,16 @@
                     cursor: pointer;
                 }
                 .nombre{
-                    color: var(--text-color);
+                    color: var(--secondary-color2);
                 }
                 .check{
                     color: var(--naranaOscuro);
+                }
+            }
+            .seleccionado{
+                background-color: var(--secondary-color4);
+                .nombre{
+                    color: var(--primary-color2);
                 }
             }
         }

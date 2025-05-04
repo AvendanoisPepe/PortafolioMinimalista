@@ -116,7 +116,7 @@ const Temas = () => {
                                     key={theme.id}
                                     onClick={() => handleThemeChange(theme.id)}
                                         className={`w-full flex items-center justify-between px-4 py-2.5 transition-colors ${
-                                        currentTheme === theme.id ? "bg-zinc-50" : ""
+                                        currentTheme === theme.id ? "seleccionado" : ""
                                     }`}>
                                     <div className="flex items-center space-x-3">
                                         <span className="flex items-center justify-center 2xl:w-5 2xl:h-5 2xl:text-base">

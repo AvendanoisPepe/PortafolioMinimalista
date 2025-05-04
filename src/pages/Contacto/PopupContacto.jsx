@@ -112,7 +112,7 @@ function PopupContacto({ isOpen, onClose }) {
                 </div>
                 <form onSubmit={envioCorreo} className="space-y-6 flex justify-between align-center flex-wrap">
                     <div className="relative flex align-center w-full">
-                        <div className="absolute 2xl:left-6 2xl:top-4 md:left-6 md:top-3 z-1">
+                        <div className="iconito absolute 2xl:left-6 2xl:top-4 md:left-6 md:top-3 z-1">
                             <FiUser className="2xl:w-[18px] 2xl:h-[18px] md:w-[14px] md:h-[14px]" />
                         </div>
                         <input
@@ -136,7 +136,7 @@ function PopupContacto({ isOpen, onClose }) {
                     </div>
 
                     <div className="relative flex align-center w-[49%]">
-                        <div className="absolute 2xl:left-6 2xl:top-4 md:left-6 md:top-3 z-1">
+                        <div className="iconito absolute 2xl:left-6 2xl:top-4 md:left-6 md:top-3 z-1">
                             <FiMail className="2xl:w-[18px] 2xl:h-[18px] md:w-[14px] md:h-[14px]" />
                         </div>
                         <input
@@ -156,7 +156,7 @@ function PopupContacto({ isOpen, onClose }) {
                     </div>
 
                     <div className="relative flex align-center w-[49%]">
-                        <div className="absolute 2xl:left-6 2xl:top-4 md:left-6 md:top-3 z-1">
+                        <div className="iconito absolute 2xl:left-6 2xl:top-4 md:left-6 md:top-3 z-1">
                             <IoMdPhonePortrait className="2xl:w-[18px] 2xl:h-[18px] md:w-[14px] md:h-[14px]" />
                         </div>
                         <input
@@ -174,7 +174,7 @@ function PopupContacto({ isOpen, onClose }) {
                         />
                     </div>
                     <div className="relative flex align-center w-full">
-                        <div className="absolute 2xl:left-6 2xl:top-4 md:left-6 md:top-3 z-1">
+                        <div className="iconito absolute 2xl:left-6 2xl:top-4 md:left-6 md:top-3 z-1">
                             <FiMessageSquare className="2xl:w-[18px] 2xl:h-[18px] md:w-[14px] md:h-[14px]" />
                         </div>
                         <input
