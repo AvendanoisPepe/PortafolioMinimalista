@@ -106,7 +106,7 @@ function PopupContacto({ isOpen, onClose }) {
             <div className="relative z-10">
                 <div className="text-center mb-8">
                     <h2 className="2xl:text-5xl md:text-4xl font-bold gradient-text">¡Hablemos!</h2>
-                    <p className="text-gray-600 mt-2 2xl:text-base md:text-sm">
+                    <p className="ptexto mt-2 2xl:text-base md:text-sm">
                         Completa el formulario y me pondré en contacto contigo pronto
                     </p>
                 </div>

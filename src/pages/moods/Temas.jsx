@@ -164,7 +164,7 @@ const Temas = () => {
                                     key={language.id}
                                     onClick={() => handleLanguageChange(language.id)}
                                     className={`w-full flex items-center justify-between px-4 py-2.5 transition-colors ${
-                                    currentLanguage === language.id ? "bg-zinc-50" : ""
+                                    currentLanguage === language.id ? "seleccionado" : ""
                                     }`}>
                                     <div className="flex items-center space-x-3">
                                         <span className="flex items-center justify-center 2xl:w-5 2xl:h-5 2xl:text-base">{language.flag}</span>

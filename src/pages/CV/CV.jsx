@@ -28,7 +28,7 @@ const CV = ({ isOpen, onClose }) => {
             <div className="relative z-10">
                 <div className="text-center">
                     <h2 className="2xl:text-5xl md:text-4xl font-bold gradient-text">¡CV Personal hecho con amor!</h2>
-                    <p className="text-gray-600 2xl:text-lg md:text-sm 2xl:mb-4 md:mb-3 2xl:mt-2 md:mt-1">
+                    <p className="ptexto 2xl:text-lg md:text-sm 2xl:mb-4 md:mb-3 2xl:mt-2 md:mt-1">
                         Seleccion el Cv de tu idioma de preferencia
                     </p>
                     <div className="opciones w-full flex justify-center align-center">

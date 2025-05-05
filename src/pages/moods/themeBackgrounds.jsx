@@ -9,8 +9,12 @@ import dark1 from "../../assets/imagenes/TemasDark/unoDark.jpg"
 import dark2 from "../../assets/imagenes/TemasDark/dosDark.jpg";
 import dark3 from "../../assets/imagenes/TemasDark/tresDark.jpg";
 import dark4 from "../../assets/imagenes/TemasDark/cuatrodark.png";
+
+// violeta
+import violeta1 from "../../assets/imagenes/TemasViolet/violetUno.png";
+
 export const themeBackgrounds = {
     claro: claro4,
     oscuro: dark4,
-    violeta: claro3,
+    violeta: violeta1,
 };

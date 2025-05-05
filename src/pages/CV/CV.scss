@@ -27,6 +27,9 @@
             color: transparent;
             animation: gradientMove 4s linear infinite;
         }
+        .ptexto{
+            color: var(--secondary-color);
+        }
         .opciones{
             background-color: color-mix(in srgb, var(--primary-color) 20%, transparent);
             border-radius: 8px;
@@ -39,7 +42,7 @@
             }
             .botones.active {
                 background-color: var(--naranaOscuro);
-                color: var(--white2);
+                color: var(--secondary-color);
                 font-weight: bold;
                 border-radius: 6px;
             }
