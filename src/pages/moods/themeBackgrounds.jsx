@@ -13,8 +13,12 @@ import dark4 from "../../assets/imagenes/TemasDark/cuatrodark.png";
 // violeta
 import violeta1 from "../../assets/imagenes/TemasViolet/violetUno.png";
 
+// red
+import red1 from "../../assets/imagenes/TeamRed/red1.png";
+
 export const themeBackgrounds = {
     claro: claro4,
     oscuro: dark4,
     violeta: violeta1,
+    rojo: red1
 };

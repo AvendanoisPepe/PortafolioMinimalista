@@ -35,11 +35,6 @@ const Temas = () => {
             icon: <FaCircle className="text-purple-500" />,
         },
         { id: "red", name: "Red", icon: <FaCircle className="text-red-500" /> },
-        {
-            id: "blue",
-            name: "Blue",
-            icon: <FaCircle className="text-blue-500" />,
-        },
     ];
 
     // Idiomas disponibles
@@ -78,9 +73,7 @@ const Temas = () => {
                 return "oscuro";
             case "purple":
                 return "violeta";
-            // Podés agregar más casos si sumás más temas:
-            // case "red": return "rojo";
-            // case "blue": return "azul";
+            case "red": return "rojo";
             default:
                 return "claro";
         }

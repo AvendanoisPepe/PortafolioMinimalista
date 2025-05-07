@@ -7,6 +7,7 @@ const themes = {
     claro: {},
     oscuro: {},
     violeta: {},
+    rojo: {},
 };
 
 // 2. Crear el provider
