@@ -9,7 +9,7 @@ import { themeBackgrounds } from "./pages/moods/themeBackgrounds";
 function App() {
   const { temaNombre } = useGlobal();
   const fondo = themeBackgrounds[temaNombre] || "";
-  console.log(fondo);
+
   const style = {
     backgroundImage: `url(${fondo})`,
     backgroundSize: "cover",

@@ -14,9 +14,9 @@ const Temas = () => {
     const [isThemeOpen, setIsThemeOpen] = useState(false);
     const [isLanguageOpen, setIsLanguageOpen] = useState(false);
     const [currentTheme, setCurrentTheme] = useState("light");
-    const [currentLanguage, setCurrentLanguage] = useState("es");
-    const { temaNombre, setTemaNombre } = useGlobal();
-    console.log(temaNombre);
+    const [currentLanguage, setCurrentLanguage] = useState("Es");
+    const { setSistemaLenguaje, setTemaNombre, sistemaLenguaje } = useGlobal();
+
     // Temas disponibles
     const themes = [
         {
@@ -35,24 +35,26 @@ const Temas = () => {
             icon: <FaCircle className="text-purple-500" />,
         },
         { id: "red", name: "Red", icon: <FaCircle className="text-red-500" /> },
+        { id: "green", name: "Green", icon: <FaCircle className="text-lime-900" /> },
     ];
 
     // Idiomas disponibles
     const languages = [
-        { id: "es", name: "Español", flag: "🇪🇸" },
-        { id: "en", name: "English", flag: "🇺🇸" },
+        { id: "Es", name: "Español", flag: "🇪🇸" },
+        { id: "En", name: "English", flag: "🇺🇸" },
     ];
 
-    // Función para cambiar tema (solo UI, sin lógica real)
+    
     const handleThemeChange = (themeId) => {
         setCurrentTheme(themeId);
         setTemaNombre(convertirNombreTema(themeId));
         setIsThemeOpen(false);
     };
 
-    // Función para cambiar idioma (solo UI, sin lógica real)
+    
     const handleLanguageChange = (langId) => {
         setCurrentLanguage(langId);
+        setSistemaLenguaje(langId);
         setIsLanguageOpen(false);
     };
 
@@ -73,7 +75,10 @@ const Temas = () => {
                 return "oscuro";
             case "purple":
                 return "violeta";
-            case "red": return "rojo";
+            case "red":
+                return "rojo";
+            case "green":
+                return "camila";
             default:
                 return "claro";
         }
@@ -89,7 +94,7 @@ const Temas = () => {
                         setIsLanguageOpen(false);
                     }}
                     className="butonT flex items-center space-x-2 py-2 px-4 shadow-sm hover:shadow-md transition-all duration-300">
-                    <span className="letras 2xl:text-xl font-bold">Tema</span>
+                    <span className="letras 2xl:text-xl font-bold">{sistemaLenguaje === "Es" ? "Tema" : "Theme"}</span>
                     <span className="iconos 2xl:text-2xl flex items-center justify-center 2xl:w-10 2xl:h-8">
                         {getCurrentTheme().icon}
                     </span>

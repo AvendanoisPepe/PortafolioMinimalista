@@ -1,32 +1,63 @@
 import img from "../assets/imagenes/yop.png";
 import { Link } from "react-router-dom";
 import "./home.scss";
+import { useGlobal } from "../context/GlobalContext";
 function Home() {
+  const { sistemaLenguaje } = useGlobal();
+  
   return (
     <section className="Inicio w-full flex flex-col items-center justify-center gap-8 md:flex-row md:p-16">
       <div className="textual w-full  space-y-8 md:w-[60%]">
         <h1 className="font-light tracking-tight md:text-4xl 2xl:text-5xl">
-          <span className="font-bold">Portafolio</span> Minimalista
+          {sistemaLenguaje === "Es" ? (
+            <>
+              <span className="font-bold">Portafolio</span> Minimalista
+            </>
+          ) : (
+            <>
+              <span className="font-bold">Minimalist</span> Portfolio
+            </>
+          )}
         </h1>
 
         <div className="textualUno space-y-4">
-          <p className="leading-relaxed text-lg 2xl:text-2xl">
-            Bienvenido a mi portafolio minimalista en proceso (Versión 1.2.0),
-            esta es la segunda versión de mi portafolio, la idea es correr el
-            riesgo con estilos minimalistas para ver cómo nos va y salir de la
-            zona de conform.
-          </p>
+          {sistemaLenguaje === "Es" ? (
+            <>
+              <p className="leading-relaxed text-lg 2xl:text-2xl">
+                Bienvenido a mi portafolio minimalista en proceso (Versión
+                1.2.0), esta es la segunda versión de mi portafolio, la idea es
+                correr el riesgo con estilos minimalistas para ver cómo nos va y
+                salir de la zona de conform.
+              </p>
 
-          <p className="textualDos text-sm italic pl-4 py-1 2xl:text-lg">
-            Entre más diferente sea el desarrollo, más interés me genera, todo
-            sea por la anécdota.
-          </p>
+              <p className="textualDos text-sm italic pl-4 py-1 2xl:text-lg">
+                Entre más diferente sea el desarrollo, más interés me genera,
+                todo sea por la anécdota.
+              </p>
+            </>
+          ) : (
+            <>
+              <p className="leading-relaxed text-lg 2xl:text-2xl">
+                Welcome to my minimalist portfolio in progress (Version 1.2.0),
+                this is the second version of my portfolio, the idea is to take
+                a risk with minimalist styles to see how we do and get out of
+                the comfort zone.
+              </p>
+
+              <p className="textualDos text-sm italic pl-4 py-1 2xl:text-lg">
+                The more different the development, the more interest it
+                generates for me, just for the anecdote.
+              </p>
+            </>
+          )}
         </div>
 
         <div className="otroP pt-6">
           <Link href="/v1">
             <button className="px-6 py-3 transition-colors rounded-none tracking-wide md:w-[46%] 2xl:w-[50%] md:text-sm 2xl:text-2xl">
-              Portafolio Versión 1.0.0
+              {sistemaLenguaje === "Es"
+                ? "Portafolio Versión 1.0.0"
+                : "Portfolio Version 1.0.0"}
             </button>
           </Link>
         </div>

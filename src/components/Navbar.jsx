@@ -16,6 +16,7 @@ import books from "../assets/imagenes/books.png"
 import codigo from "../assets/imagenes/timeline.png"
 import PopupContacto from "../pages/Contacto/PopupContacto";
 import PopupCv from "../pages/CV/CV";
+import { useGlobal } from "../context/GlobalContext";
 function Navbar() {
   const [isProjectsOpen, setIsProjectsOpen] = useState(false);
   const [isStudiesOpen, setIsStudiesOpen] = useState(false);
@@ -25,6 +26,8 @@ function Navbar() {
   const studiesButtonRef = useRef(null);
   const [isContactoOpen, setIsContactoOpen] = useState(false);
   const [cv, setCv] = useState(false);
+  const { sistemaLenguaje } = useGlobal();
+  
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -59,13 +62,13 @@ function Navbar() {
       </div>
       <nav className="menu w-full md:w-[50%] flex justify-center items-center gap-6">
         <Link to="/" className="transition text-xs lg:text-lg 2xl:text-2xl">
-          Inicio
+          {sistemaLenguaje === "Es" ? "Inicio" : "Home"}
         </Link>
         <Link
           to="/about"
           className="transition text-xs lg:text-lg 2xl:text-2xl"
         >
-          Sobre mí
+          {sistemaLenguaje === "Es" ? "Sobre mí" : "About me"}
         </Link>
 
         <div className="submenu relative">
@@ -74,7 +77,7 @@ function Navbar() {
             className="flex items-center gap-1 transition text-xs lg:text-lg 2xl:text-2xl"
             onClick={() => setIsProjectsOpen(!isProjectsOpen)}
           >
-            Proyectos
+            {sistemaLenguaje === "Es" ? "Proyectos" : "Projects"}
             <FaArrowTrendDown
               className={`transition-transform ${
                 isProjectsOpen ? "rotate-180" : ""
@@ -210,7 +213,7 @@ function Navbar() {
             className="flex items-center gap-1 transition text-xs lg:text-lg 2xl:text-2xl"
             onClick={() => setIsStudiesOpen(!isStudiesOpen)}
           >
-            Estudios
+            {sistemaLenguaje === "Es" ? "Estudios" : "Studies"}
             <FaArrowTrendDown
               className={`transition-transform ${
                 isStudiesOpen ? "rotate-180" : ""
@@ -343,7 +346,7 @@ function Navbar() {
           to="/contact"
           className="transition text-xs lg:text-lg 2xl:text-2xl"
         >
-          Referencias
+          {sistemaLenguaje === "Es" ? "Referencias" : "References"}
         </Link>
       </nav>
       <div className="botones w-full md:w-[30%] flex justify-center items-center gap-4 mt-4 md:mt-0">
@@ -357,7 +360,7 @@ function Navbar() {
           className="botonesTwo w-[46%] transition text-xs md:text-sm 2xl:text-lg"
           onClick={() => setIsContactoOpen(true)}
         >
-          Contacto
+          {sistemaLenguaje === "Es" ? "Contacto" : "Contact"}
         </button>
       </div>
       <PopupContacto
