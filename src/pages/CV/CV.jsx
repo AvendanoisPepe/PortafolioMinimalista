@@ -27,21 +27,22 @@ const CV = ({ isOpen, onClose }) => {
 
             <div className="relative z-10">
                 <div className="text-center">
-                    <h2 className="2xl:text-5xl md:text-4xl font-bold gradient-text">¡CV Personal hecho con amor!</h2>
+                    <h2 className="2xl:text-5xl md:text-4xl font-bold gradient-text">
+                        {sistemaLenguaje === "Es" ? "¡CV Personal hecho con amor!" : "Personal CV made with love!"}</h2>
                     <p className="ptexto 2xl:text-lg md:text-sm 2xl:mb-4 md:mb-3 2xl:mt-2 md:mt-1">
-                        Seleccion el Cv de tu idioma de preferencia
+                        {sistemaLenguaje === "Es" ? "Seleccion el Cv de tu idioma de preferencia" : "Select the CV of your preferred language"}                        
                     </p>
                     <div className="opciones w-full flex justify-center align-center">
                         <button
                             className={`botones 2xl:p-4 md:p-2 2xl:text-lg md:text-xs w-[50%] ${language === "Español" ? "active" : ""}`}
                             onClick={() => setLanguage("Español")}>
-                            Español
+                            {sistemaLenguaje === "Es" ? "Español" : "Spanish"}
                         </button>
 
                         <button
                             className={`botones 2xl:p-4 md:p-2 2xl:text-lg md:text-sm w-[50%] ${language === "Ingles" ? "active" : ""}`}
                             onClick={() => setLanguage("Ingles")}>
-                            Ingles
+                            {sistemaLenguaje === "Es" ? "Ingles" : "English"}
                         </button>
 
                     </div>

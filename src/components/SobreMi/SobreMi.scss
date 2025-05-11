@@ -1,0 +1,16 @@
+// src/styles/navbar.scss
+@use "../../styles//variables.scss" as *;
+@use "../../styles/_themes.scss";
+.SobreMi {
+    color: color-mix(in srgb, var(--primary-color) 80%, transparent);
+    // background-color: aqua;
+    .primero{
+        background-color: rgb(255, 0, 0);
+    }
+    .segundo{
+        background-color: rgb(17, 0, 255);
+    }
+    .tercero{
+        background-color: rgb(72, 255, 0);
+    }
+}

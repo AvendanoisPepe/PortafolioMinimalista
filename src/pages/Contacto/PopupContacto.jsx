@@ -6,8 +6,10 @@ import { FiUser, FiMail, FiMessageSquare, FiSend } from "react-icons/fi";
 import { useState } from "react";
 import emailjs from "emailjs-com";
 import toast from "react-hot-toast";
+import { useGlobal } from "../../context/GlobalContext";
 
 function PopupContacto({ isOpen, onClose }) {
+    const { sistemaLenguaje } = useGlobal();
     // Estados de cada campo para el color de validación
     const [nombreCompleto, setNombreCompleto] = useState('')
     const [telefono, setTelefono] = useState('')
@@ -45,17 +47,17 @@ function PopupContacto({ isOpen, onClose }) {
             )
             .then(
                 () => {
-                    toast.success("Correo enviado exitosamente ✉️", {
-                    duration: 6000,
-                    style: {
-                        fontSize: "18px",
-                        padding: "16px",
-                        background: "#f0fdf4",
-                        color: "#065f46",
-                        border: "2px solid #34d399",
-                        width: "800px",
-                        textAlign: "center"
-                    },
+                    toast.success(sistemaLenguaje === "Es" ? "Correo enviado con éxito" : "Email sent successfully", {
+                        duration: 6000,
+                        style: {
+                            fontSize: "18px",
+                            padding: "16px",
+                            background: "#f0fdf4",
+                            color: "#065f46",
+                            border: "2px solid #34d399",
+                            width: "800px",
+                            textAlign: "center",
+                        },
                     });
                     resetForm();
                 },
@@ -105,9 +107,9 @@ function PopupContacto({ isOpen, onClose }) {
 
             <div className="relative z-10">
                 <div className="text-center mb-8">
-                    <h2 className="2xl:text-5xl md:text-4xl font-bold gradient-text">¡Hablemos!</h2>
+                    <h2 className="2xl:text-5xl md:text-4xl font-bold gradient-text">{sistemaLenguaje === "Es" ? "¡Hablemos!" : "Let's Talk!"}</h2>
                     <p className="ptexto mt-2 2xl:text-base md:text-sm">
-                        Completa el formulario y me pondré en contacto contigo pronto
+                        {sistemaLenguaje === "Es" ? "Completa el formulario y me pondré en contacto contigo pronto" : "Complete the form and I'll get back to you soon"}                        
                     </p>
                 </div>
                 <form onSubmit={envioCorreo} className="space-y-6 flex justify-between align-center flex-wrap">
@@ -120,7 +122,7 @@ function PopupContacto({ isOpen, onClose }) {
                             name="nombre_completo"
                             value={nombreCompleto}
                             onChange={e => setNombreCompleto(e.target.value)}
-                            placeholder="Nombre"
+                            placeholder={sistemaLenguaje === "Es" ? "Nombre completo" : "Name complete"}                        
                             className="form-input w-full 2xl:text-base md:text-sm 2xl:p-3 2xl:pl-13 md:p-2 md:pl-12"
                             required
                             autoComplete="off"
@@ -148,7 +150,7 @@ function PopupContacto({ isOpen, onClose }) {
                                 borderColor:
                                     validaciones.correo === null ? '' : validaciones.correo ? 'green' : 'red',
                             }}
-                            placeholder="Email"
+                            placeholder={sistemaLenguaje === "Es" ? "Correo" : "Email"}
                             className="form-input w-full 2xl:text-base md:text-sm 2xl:p-3 2xl:pl-13 md:p-2 md:pl-12"
                             required
                             autoComplete="off"
@@ -168,7 +170,7 @@ function PopupContacto({ isOpen, onClose }) {
                                 borderColor:
                                     validaciones.asunto === null ? '' : validaciones.asunto ? 'green' : 'red',
                             }}
-                            placeholder="Celular"
+                            placeholder={sistemaLenguaje === "Es" ? "Celular" : "Phone"}
                             className="form-input w-full 2xl:text-base md:text-sm 2xl:p-3 2xl:pl-13 md:p-2 md:pl-12"
                             autoComplete="off"
                         />
@@ -185,8 +187,8 @@ function PopupContacto({ isOpen, onClose }) {
                             style={{
                                 borderColor:
                                     validaciones.asunto === null ? '' : validaciones.asunto ? 'green' : 'red',
-                            }}
-                            placeholder="Asunto"
+                            }}                            
+                            placeholder={sistemaLenguaje === "Es" ? "Asunto" : "Subject"}
                             className="form-input w-full 2xl:text-base md:text-sm 2xl:p-3 2xl:pl-13 md:p-2 md:pl-12"
                             autoComplete="off"
                         />
@@ -200,7 +202,7 @@ function PopupContacto({ isOpen, onClose }) {
 									borderColor:
 										validaciones.mensaje === null ? '' : validaciones.mensaje ? 'green' : 'red',
 								}}
-                            placeholder="Tu mensaje"
+                                placeholder={sistemaLenguaje === "Es" ? "Tu mensaje" : "Your message"}
                             className="form-textarea w-full 2xl:text-base md:text-sm 2xl:p-3 2xl:pl-13 md:p-2 md:pl-12"
                             rows="4"
                             required
@@ -209,11 +211,11 @@ function PopupContacto({ isOpen, onClose }) {
 
                     <div className="flex justify-center items-center w-full">
                         <button type="reset" onClick={resetForm} className="reset-button inline-flex justify-center items-center 2xl:px-8 md:px-6 2xl:py-3 md:py-2 2xl:text-xl md:text-lg mr-6">
-                        <span>Resetear</span>
+                        <span>{sistemaLenguaje === "Es" ? "Resetear" : "Reset"}</span>
                             <IoReload className="ml-2" />
                         </button>
                         <button type="submit" className="submit-button inline-flex justify-center items-center 2xl:px-8 md:px-6 2xl:py-3 md:py-2 2xl:text-xl md:text-lg 2xl:mr-6">
-                        <span>Enviar mensaje</span>
+                        <span>{sistemaLenguaje === "Es" ? "Enviar mensaje" : "Send message"}</span>
                             <FiSend className="ml-2" />
                         </button>
                     </div>

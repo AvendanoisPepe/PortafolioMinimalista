@@ -95,7 +95,7 @@ function Navbar() {
               <div className="contenido flex">
                 <div className="izquierda 2xl:w-[65%] md:w-[70%] p-6">
                   <h3 className="titular 2xl:text-2xl md:text-lg font-bold mb-4">
-                    Mis Proyectos
+                    {sistemaLenguaje === "Es" ? "Mis Proyectos" : "My projects"}
                   </h3>
 
                   <div className="flex flex-wrap gap-2">
@@ -113,7 +113,9 @@ function Navbar() {
                           Web Tr. Colpatria
                         </h4>
                         <p className="2xl:text-sm md:text-xs text-zinc-500 mt-1">
-                          Biblioteca de informacion (PDF)
+                          {sistemaLenguaje === "Es"
+                            ? "Biblioteca de informacion (PDF)"
+                            : "Library of information (PDF)"}
                         </p>
                       </div>
                     </Link>
@@ -131,7 +133,9 @@ function Navbar() {
                           Web Tr. JetSmart
                         </h4>
                         <p className="2xl:text-sm md:text-xs text-zinc-500 mt-1">
-                          Comandos de aprendizaje
+                          {sistemaLenguaje === "Es"
+                            ? "Comandos de aprendizaje"
+                            : "Learning commands"}
                         </p>
                       </div>
                     </Link>
@@ -150,7 +154,9 @@ function Navbar() {
                           Web Tr. Televentas Col.
                         </h4>
                         <p className="2xl:text-sm md:text-xs text-zinc-500 mt-1">
-                          Versus de datos (Graficas)
+                          {sistemaLenguaje === "Es"
+                            ? "Versus de datos (Graficas)"
+                            : "Data versus (Charts)"}
                         </p>
                       </div>
                     </Link>
@@ -168,7 +174,9 @@ function Navbar() {
                           Web Tr. Claro TMK
                         </h4>
                         <p className="2xl:text-sm md:text-xs mt-1">
-                          Argumentarios y tipificadores
+                          {sistemaLenguaje === "Es"
+                            ? "Argumentarios y tipificadores"
+                            : "Argumentators and typifiers"}
                         </p>
                       </div>
                     </Link>
@@ -179,8 +187,9 @@ function Navbar() {
                   <div className="conjunto h-full flex flex-col justify-between">
                     <div className="libre">
                       <p className="2xl:text-sm md:text-xs mb-4">
-                        Conjunto de proyectos que acumulan muchos desarrollos
-                        diferentes en todo sentido.
+                        {sistemaLenguaje === "Es"
+                          ? "Conjunto de proyectos que acumulan muchos desarrollos diferentes en todo sentido."
+                          : "Set of projects that accumulate many different developments in every aspect."}
                       </p>
 
                       <div className="aspect-video bg-zinc-100 rounded-sm mb-4 overflow-hidden">
@@ -198,7 +207,9 @@ function Navbar() {
                       href="/projects"
                       className="inline-flex items-center text-sm font-medium hover:underline"
                     >
-                      Ver todos los proyectos
+                      {sistemaLenguaje === "Es"
+                        ? "Ver todos los proyectos"
+                        : "See all projects"}
                       <FaArrowRight className="ml-1 h-4 w-4" />
                     </Link>
                   </div>
@@ -231,7 +242,7 @@ function Navbar() {
               <div className="contenido flex">
                 <div className="izquierda 2xl:w-[65%] md:w-[70%] p-6">
                   <h3 className="titular 2xl:text-2xl md:text-lg font-bold mb-4">
-                    Mis Estudios
+                    {sistemaLenguaje === "Es" ? "Mis Estudios" : "My Studies"}
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     <Link
@@ -245,7 +256,9 @@ function Navbar() {
                       </div>
                       <div className="textito w-[70%]">
                         <h4 className="font-bold 2xl:text-xl md:text-lg">
-                          Proximos Estudios
+                          {sistemaLenguaje === "Es"
+                            ? "Proximos Estudios"
+                            : "Future Studies"}
                         </h4>
                         <p className="2xl:text-sm md:text-xs text-zinc-500 mt-1">
                           Next.js - Tailwind - TypeScript
@@ -263,7 +276,9 @@ function Navbar() {
                       </div>
                       <div className="textito w-[70%]">
                         <h4 className="font-bold 2xl:text-xl md:text-lg">
-                          Estudios Laborales
+                          {sistemaLenguaje === "Es"
+                            ? "Estudios Laborales"
+                            : "Work Studies"}
                         </h4>
                         <p className="2xl:text-sm md:text-xs text-zinc-500 mt-1">
                           React.js - Node.js - WebPack
@@ -282,7 +297,9 @@ function Navbar() {
                       </div>
                       <div className="textito w-[70%]">
                         <h4 className="font-bold 2xl:text-xl md:text-lg">
-                          Estudios Universitarios
+                          {sistemaLenguaje === "Es"
+                            ? "Estudios Universitarios"
+                            : "University Studies"}
                         </h4>
                         <p className="2xl:text-sm md:text-xs text-zinc-500 mt-1">
                           Php - Java - Mysql - Mongo DB
@@ -300,7 +317,9 @@ function Navbar() {
                       </div>
                       <div className="textito w-[70%]">
                         <h4 className="font-bold 2xl:text-xl md:text-lg">
-                          Primeros Estudios
+                          {sistemaLenguaje === "Es"
+                            ? "Primeros Estudios"
+                            : "First Studies"}
                         </h4>
                         <p className="2xl:text-sm md:text-xs mt-1">
                           Front-End Development
@@ -314,8 +333,9 @@ function Navbar() {
                   <div className="conjunto h-full flex flex-col justify-between">
                     <div className="libre">
                       <p className="2xl:text-sm md:text-xs mb-4">
-                        Un resumen de certificaciones, formaciones y títulos
-                        obtenidos.
+                        {sistemaLenguaje === "Es"
+                          ? "Un resumen de certificaciones, formaciones y títulos obtenidos."
+                          : "A summary of certifications, training and titles obtained."}
                       </p>
 
                       <div className="aspect-video bg-zinc-100 rounded-sm mb-4 overflow-hidden">
@@ -333,7 +353,9 @@ function Navbar() {
                       to="/studies"
                       className="inline-flex items-center text-sm font-medium hover:underline"
                     >
-                      Ver todos los estudios
+                      {sistemaLenguaje === "Es"
+                        ? "Ver todos los estudios"
+                        : "See all studies"}
                       <FaArrowRight className="ml-1 h-4 w-4" />
                     </Link>
                   </div>

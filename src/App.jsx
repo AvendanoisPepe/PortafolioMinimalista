@@ -6,6 +6,7 @@ import { Toaster } from "react-hot-toast";
 import Temas from "./pages/moods/Temas";
 import { GlobalProvider, useGlobal } from './context/GlobalContext'; // Ajusta ruta si cambias carpeta
 import { themeBackgrounds } from "./pages/moods/themeBackgrounds";
+import SobreMi from "./components/SobreMi/SobreMi";
 function App() {
   const { temaNombre } = useGlobal();
   const fondo = themeBackgrounds[temaNombre] || "";
@@ -24,6 +25,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contacto />} />
+        <Route path="/about" element={<SobreMi />} />
       </Routes>
       <Temas />
     </div>
