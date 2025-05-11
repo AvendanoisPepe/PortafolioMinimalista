@@ -4,6 +4,9 @@
 .SobreMi {
     color: color-mix(in srgb, var(--primary-color) 80%, transparent);
     // background-color: aqua;
+    div{
+        border-radius: 10px;
+    }
     .primero{
         background-color: rgb(255, 0, 0);
     }
