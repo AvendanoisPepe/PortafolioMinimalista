@@ -2,18 +2,60 @@
 @use "../../styles//variables.scss" as *;
 @use "../../styles/_themes.scss";
 .SobreMi {
-    color: color-mix(in srgb, var(--primary-color) 80%, transparent);
-    // background-color: aqua;
-    div{
-        border-radius: 10px;
-    }
-    .primero{
-        background-color: rgb(255, 0, 0);
-    }
-    .segundo{
-        background-color: rgb(17, 0, 255);
-    }
-    .tercero{
-        background-color: rgb(72, 255, 0);
+    .conjunto{
+        h2{
+            color: color-mix(in srgb, var(--primary-color) 80%, transparent);
+        }
+        .unidad{
+            background-color: color-mix(in srgb, var(--white2) 100%, transparent);
+            border-radius: 8px;
+            box-shadow: 10px 10px 2px 0 rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            &:hover {
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                            0 2px 4px -1px rgba(0, 0, 0, 0.06); // shadow-md
+            }
+            .gradiante{
+                background-image: linear-gradient(to right, #f4f4f5, #e4e4e7);
+                .icono{
+                    color: var(--primary-color);
+                }
+            }
+            .gradiante2{
+                background-image: linear-gradient(to right, #e4e4e7, #d4d4d8);
+                .icono{
+                    color: var(--primary-color);
+                }
+            }
+            .gradiante3{
+                background-image: linear-gradient(to right, #d4d4d8, #a1a1aa);
+                .icono{
+                    color: var(--primary-color);
+                }
+            }
+            .contenido{
+                .circulo{
+                    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+                    border-radius: 50%;
+                    background-color: var(--primary-color2);
+                    div{
+                        background-color: var(--white);                
+                        border-radius: 50%;
+                        span{
+                            color: var(--primary-color);
+                        }
+                    }
+                }
+                h3{
+                    color: color-mix(in srgb, var(--secondary-color) 80%, transparent);
+                }
+                .linea{
+                    background-color: var(--primary-color2);
+                }
+                p{
+                    color: color-mix(in srgb, var(--text-color) 90%, transparent);
+                }
+            }
+        }
     }
 }
