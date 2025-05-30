@@ -100,7 +100,7 @@ function Navbar() {
 
                   <div className="flex flex-wrap gap-2">
                     <Link
-                      href="/projects/web"
+                      to="/colpatriaWeb"
                       className="w-[49%] flex gap-3 p-3 rounded-sm"
                     >
                       <div className="iconico w-[30%] flex justify-center align-center">

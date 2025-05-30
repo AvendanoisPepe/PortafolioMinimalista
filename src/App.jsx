@@ -7,6 +7,7 @@ import Temas from "./pages/moods/Temas";
 import { GlobalProvider, useGlobal } from './context/GlobalContext'; // Ajusta ruta si cambias carpeta
 import { themeBackgrounds } from "./pages/moods/themeBackgrounds";
 import SobreMi from "./components/SobreMi/SobreMi";
+import Colpatria from "./components/Estudios/Colpatria";
 function App() {
   const { temaNombre } = useGlobal();
   const fondo = themeBackgrounds[temaNombre] || "";
@@ -26,6 +27,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contacto />} />
         <Route path="/about" element={<SobreMi />} />
+        <Route path="/colpatriaWeb" element={<Colpatria />} />
       </Routes>
       <Temas />
     </div>

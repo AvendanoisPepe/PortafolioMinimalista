@@ -1,0 +1,82 @@
+// src/styles/navbar.scss
+@use "../../styles//variables.scss" as *;
+@use "../../styles/_themes.scss";
+.estudio {
+    .primero{
+        border-left-color: color-mix(in srgb, var(--primary-color2) 40%, transparent);
+        .fecha{
+            border-color: var(--white);
+            border-left-color: color-mix(in srgb, var(--primary-color2) 100%, transparent);   
+            background-color: var(--white2);
+            .arriba{
+                div{
+                    background-color: color-mix(in srgb, var(--primary-color) 20%, transparent); 
+                    svg{
+                        color: var(--primary-color);
+                    }
+                }
+                h3{
+                    color: color-mix(in srgb, var(--secondary-color2) 80%, transparent);
+                }                
+            }
+            .pUno{
+                color: color-mix(in srgb, var(--secondary-color2) 80%, transparent);                  
+            }
+            .lista{
+                div{
+                    background-color: color-mix(in srgb, var(--primary-color) 20%, transparent);
+                    &:hover{
+                        background-color: color-mix(in srgb, var(--primary-color) 40%, transparent);
+                    }
+                    .nombre{
+                        color: color-mix(in srgb, var(--secondary-color2) 80%, transparent);
+                    }
+                }
+            }
+        }
+    }
+    .segundo{
+        .arriba{
+            .icon{
+                background-color: color-mix(in srgb, var(--secondary-color4) 100%, transparent);
+            }
+            h2{
+                color: color-mix(in srgb, var(--white2) 100%, transparent);
+            }
+            button{
+                color: var(--white);
+                cursor: pointer;
+                &:hover{
+                    background-color: var(--primary-color);
+                    box-shadow: 0px 0px 0px 4px color-mix(in srgb, var(--secondary-color) 40%, transparent);
+                }
+            }
+        }
+        .abajo{            
+            p{
+                color: color-mix(in srgb, var(--white2) 100%, transparent);
+            }
+        }
+        .control{
+            background-color: color-mix(in srgb, var(--white) 60%, transparent);
+            cursor: pointer;
+            &:hover{
+                background-color: color-mix(in srgb, var(--primary-color2) 60%, transparent);
+                box-shadow: 0px 0px 0px 4px color-mix(in srgb, var(--primary-color2) 100%, transparent);
+            }
+        }
+    }
+    .adicional{
+        span{
+            color: color-mix(in srgb, var(--secondary-color) 80%, transparent);
+        }
+        button{
+            background-color: color-mix(in srgb, var(--primary-color2) 100%, transparent);
+            color: var(--white);
+            cursor: pointer;
+            &:hover{
+                box-shadow: 0px 0px 0px 4px color-mix(in srgb, var(--secondary-color) 40%, transparent);
+            }
+        }
+    }
+}
