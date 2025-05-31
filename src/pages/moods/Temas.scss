@@ -7,6 +7,7 @@
             color: var(--secondary-color2);
             border: solid 3px color-mix(in srgb, var(--primary-color) 40%, transparent);
             cursor: pointer;
+            box-shadow: 0 0px 10px rgb(0, 0, 0);
             .letras{
                 color: var(--secundary-color);
             }

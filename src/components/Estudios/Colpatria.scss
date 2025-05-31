@@ -38,13 +38,18 @@
     .segundo{
         .arriba{
             .icon{
-                background-color: color-mix(in srgb, var(--secondary-color4) 100%, transparent);
+                background-color: color-mix(in srgb, var(--primary-color) 100%, transparent);
             }
             h2{
                 color: color-mix(in srgb, var(--white2) 100%, transparent);
+                box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+                text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+                text-shadow: 0 0 5px color-mix(in srgb, var(--secondary-color) 100%, transparent) , 0 0 10px color-mix(in srgb, var(--secondary-color) 100%, transparent) , 0 0 20px color-mix(in srgb, var(--secondary-color) 100%, transparent) ;
+                // text-shadow: 3px 3px 0 #000;
             }
             button{
                 color: var(--white);
+                background-color: color-mix(in srgb, var(--secondary-color) 60%, transparent);
                 cursor: pointer;
                 &:hover{
                     background-color: var(--primary-color);
@@ -53,12 +58,14 @@
             }
         }
         .abajo{            
+            background-color: color-mix(in srgb, var(--white) 40%, transparent);
             p{
-                color: color-mix(in srgb, var(--white2) 100%, transparent);
+                color: color-mix(in srgb, var(--white) 100%, transparent);
             }
         }
         .control{
-            background-color: color-mix(in srgb, var(--white) 60%, transparent);
+            background-color: color-mix(in srgb, var(--secondary-color) 100%, transparent);
+            color: var(--white2);
             cursor: pointer;
             &:hover{
                 background-color: color-mix(in srgb, var(--primary-color2) 60%, transparent);
@@ -67,6 +74,7 @@
         }
     }
     .adicional{
+        border-color: color-mix(in srgb, var(--primary-color) 20%, transparent);
         span{
             color: color-mix(in srgb, var(--secondary-color) 80%, transparent);
         }
@@ -76,6 +84,30 @@
             cursor: pointer;
             &:hover{
                 box-shadow: 0px 0px 0px 4px color-mix(in srgb, var(--secondary-color) 40%, transparent);
+            }
+        }
+    }
+    .desarrollos{
+        h3{
+            color: color-mix(in srgb, var(--secondary-color) 80%, transparent);
+        }
+        .card{
+            button{
+                background-color: color-mix(in srgb, var(--white2) 100%, transparent);
+                border-color: color-mix(in srgb, var(--secondary-color) 40%, transparent);
+                cursor: pointer;
+                div{
+                    background-color: color-mix(in srgb, var(--secondary-color4) 100%, transparent);
+                    color: color-mix(in srgb, var(--primary-color2) 100%, transparent);
+                }
+                span{
+                    color: color-mix(in srgb, var(--primary-color) 100%, transparent);
+                }
+                &:hover{
+                    border: 2px solid #292c35;
+                    box-shadow: 0 10px 0 2px #292c35;
+                    color: #292c35;
+                }
             }
         }
     }
