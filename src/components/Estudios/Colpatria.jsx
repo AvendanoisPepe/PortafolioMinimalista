@@ -3,121 +3,19 @@ import { useState } from "react";
 import {
     FaChevronLeft,
     FaChevronRight,
-    FaExternalLinkAlt,
     FaCalendarAlt,
     FaInfoCircle,
     FaCode,
-    FaCheckSquare,
-    FaRobot,
-    FaStickyNote,
-    FaChartLine,
-    FaCog,
     FaTimes,
 } from "react-icons/fa";
-import { BsFileEarmarkPdfFill } from "react-icons/bs";
-
-import col1 from "../../assets/imagenes/trabajos/col1.png";
-import col2 from "../../assets/imagenes/trabajos/col2.png";
-import col3 from "../../assets/imagenes/trabajos/col3.png";
-const images = [col1, col2, col3];
 
 const Colpatria = ({ projectData }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [activePopup, setActivePopup] = useState(null);
     const [popupImageIndex, setPopupImageIndex] = useState(0);
     const [isImageTransitioning, setIsImageTransitioning] = useState(false);
-    // Datos por defecto si no se pasan props
-    const defaultProject = {
-        title: "Web Training Colpatria Sac",
-        dates: "Noviembre 2022 - Enero 2025",
-        description:
-            "Variacion en procesos como (Checklist, Generadores de notas, Macros, Tipificadores, Galerías), con un buscador general y un menú diseñado por secciones principales como (Personas, Empresas, Fidelización, etc.) y submenús para cada sección previamente mencionada, en los cuales se dividió la información de forma clara.",
-        technologies: [
-            { name: "HTML", icon: "📄" },
-            { name: "JSON", icon: "🧾" },
-            { name: "SASS", icon: "🎀" },
-            { name: "jQuery", icon: "💠" },
-            { name: "JavaScript", icon: "📜" },
-            // { name: "React", icon: "⚛️" },
-            // { name: "Node.js", icon: "🟢" },
-            // { name: "MongoDB", icon: "🍃" },
-            // { name: "Tailwind", icon: "🎨" },
-            // { name: "Express", icon: "🚀" },
-        ],
-        images: [
-            images[0],
-            images[1],
-            images[2],
-        ],
-        projectIcon: "🛒",
-        actionIcon: <FaExternalLinkAlt />,
-        slideDescription:
-            "Biblioteca de información con varacion de documentos tantos pdfs, excel, power ponts, words, entre otros. Seccionado de forma ordenada con buscador general y global",
-        developments: [
-            {
-                id: "checklist",
-                name: "Checklist",
-                icon: <FaCheckSquare />,
-                description: "Sistema de checklist interactivo que permite a los usuarios crear, organizar y completar tareas de manera eficiente. Incluye categorías, prioridades y fechas de vencimiento.",
-                images: [
-                    "/placeholder.svg?height=600&width=800&text=Checklist-1",
-                    "/placeholder.svg?height=600&width=800&text=Checklist-2",
-                    "/placeholder.svg?height=600&width=800&text=Checklist-3",
-                    "/placeholder.svg?height=600&width=800&text=Checklist-4",
-                ],
-            },
-            {
-                id: "macros",
-                name: "Macros",
-                icon: <FaCog />,
-                description: "Herramienta de automatización que permite crear secuencias de acciones personalizadas para optimizar flujos de trabajo repetitivos. Incluye editor visual y programación de eventos.",
-                images: [
-                    "/placeholder.svg?height=600&width=800&text=Macros-1",
-                    "/placeholder.svg?height=600&width=800&text=Macros-2",
-                    "/placeholder.svg?height=600&width=800&text=Macros-3",
-                ],
-            },
-            {
-                id: "notes",
-                name: "Generador de Notas",
-                icon: <FaStickyNote />,
-                description: "Sistema avanzado para crear y gestionar notas con formato enriquecido, etiquetas, búsqueda inteligente y sincronización entre dispositivos.",
-                images: [
-                    "/placeholder.svg?height=600&width=800&text=Notes-1",
-                    "/placeholder.svg?height=600&width=800&text=Notes-2",
-                    "/placeholder.svg?height=600&width=800&text=Notes-3",
-                    "/placeholder.svg?height=600&width=800&text=Notes-4",
-                    "/placeholder.svg?height=600&width=800&text=Notes-5",
-                ],
-            },
-            { 
-                id: "documentacion", 
-                name: "Consulta de documentacion", 
-                icon: <BsFileEarmarkPdfFill />,
-                description: "Panel de análisis de datos con visualizaciones interactivas, informes personalizables y métricas en tiempo real para tomar decisiones basadas en datos.",
-                images: [
-                    "/placeholder.svg?height=600&width=800&text=Analytics-1",
-                    "/placeholder.svg?height=600&width=800&text=Analytics-2",
-                    "/placeholder.svg?height=600&width=800&text=Analytics-3",
-                ], 
-            },
-            { 
-                id: "tipificacion", 
-                name: "Tipificador", 
-                icon: <FaRobot />, 
-                description: "Sistema de automatización inteligente que utiliza reglas y condiciones para ejecutar acciones predefinidas, optimizando procesos y reduciendo tareas manuales.",
-                images: [
-                    "/placeholder.svg?height=600&width=800&text=Automation-1",
-                    "/placeholder.svg?height=600&width=800&text=Automation-2",
-                    "/placeholder.svg?height=600&width=800&text=Automation-3",
-                    "/placeholder.svg?height=600&width=800&text=Automation-4",
-                ],
-            },
-        ],
-        };
 
     const project = projectData || defaultProject;
-
     const nextImage = () => {
         setCurrentImageIndex((prev) => (prev + 1) % project.images.length);
     };
@@ -320,67 +218,59 @@ const Colpatria = ({ projectData }) => {
                     visibility: activePopup ? "visible" : "hidden",
                     }}
                 >
-                    <div
-                    className="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden transform transition-transform duration-300"
-                    style={{
-                        transform: activePopup ? "scale(1)" : "scale(0.9)",
-                    }}
+                    <div className="poput flex justify-center align-center flex-wrap rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden transform transition-transform duration-300"
+                        style={{
+                            transform: activePopup ? "scale(1)" : "scale(0.9)",
+                        }}
                     >
                     {/* Header del popup */}
-                    <div className="flex justify-between items-center p-5 border-b border-gray-100">
-                        <div className="flex items-center gap-3">
-                        <div className="p-2 bg-gray-100 rounded-lg">{activeDevelopment.icon}</div>
-                        <h3 className="text-xl font-semibold text-gray-800">{activeDevelopment.name}</h3>
+                    <div className="header flex justify-between items-center p-4 border-b w-[94%]">
+                        <div className="union flex items-center gap-3">
+                            <div className="p-2 rounded-lg 2xl:text-4xl lg:text-3xl">{activeDevelopment.icon}</div>
+                            <h3 className="font-semibold 2xl:text-3xl lg:text-3xl">{activeDevelopment.name}</h3>
                         </div>
-                        <button
-                        onClick={closePopup}
-                        className="p-2 rounded-full hover:bg-gray-100 transition-colors"
-                        aria-label="Cerrar"
-                        >
-                        <FaTimes className="text-gray-500" />
+                        <button onClick={closePopup} className="p-2 rounded-full transition-colors">
+                            <FaTimes className="2xl:text-4xl lg:text-3xl" />
                         </button>
                     </div>
 
                     {/* Contenido del popup */}
-                    <div className="p-5 overflow-y-auto max-h-[calc(90vh-130px)]">
+                    <div className="contenido p-5 overflow-y-auto max-h-[calc(90vh-130px)]">
                         {/* Descripción */}
-                        <p className="text-gray-600 mb-6 leading-relaxed">{activeDevelopment.description}</p>
+                        <p className="2xl:text-base lg:text-lg mb-6 leading-relaxed rounded-lg p-4">{activeDevelopment.description}</p>
 
                         {/* Imagen principal */}
-                        <div className="relative w-full aspect-video bg-gray-100 rounded-lg overflow-hidden mb-4">
-                        <img
-                            src={activeDevelopment.images[popupImageIndex] || "/placeholder.svg"}
-                            alt={`${activeDevelopment.name} - Imagen ${popupImageIndex + 1}`}
-                            className={`w-full h-full object-contain transition-opacity duration-300 ${
-                            isImageTransitioning ? "opacity-0" : "opacity-100"
-                            }`}
-                        />
+                        <div className="principal relative w-full pt-6 pb-6 rounded-lg overflow-hidden mb-4">
+                            <img
+                                src={activeDevelopment.images[popupImageIndex] || "/placeholder.svg"}
+                                alt={`${activeDevelopment.name} - Imagen ${popupImageIndex + 1}`}
+                                className={`w-full h-full object-contain transition-opacity duration-300 ${
+                                isImageTransitioning ? "opacity-0" : "opacity-100"
+                                }`}
+                            />
                         </div>
 
                         {/* Carrusel de miniaturas */}
-                        <div className="flex gap-2 overflow-x-auto pb-2 snap-x">
-                        {activeDevelopment.images.map((img, index) => (
-                            <button
-                            key={index}
-                            onClick={() => changePopupImage(index)}
-                            className={`flex-shrink-0 w-20 h-20 rounded-md overflow-hidden snap-start transition-all duration-200 ${
-                                popupImageIndex === index
-                                ? "ring-2 ring-blue-500 ring-offset-2"
-                                : "opacity-70 hover:opacity-100"
-                            }`}
-                            >
-                            <img
-                                src={img || "/placeholder.svg"}
-                                alt={`Miniatura ${index + 1}`}
-                                className="w-full h-full object-cover"
-                            />
-                            </button>
-                        ))}
+                        <div className="carrusel flex justify-center align-center gap-4 overflow-x-auto p-4 snap-x rounded-lg">
+                            {activeDevelopment.images.map((img, index) => (
+                                <button key={index} onClick={() => changePopupImage(index)}
+                                    className={`flex-shrink-0 w-30 h-30 rounded-md overflow-hidden snap-start transition-all duration-200 ${
+                                    popupImageIndex === index
+                                    ? "ring-3 ring-blue-500 ring-offset-2"
+                                    : "opacity-70 hover:opacity-100"
+                                }`}>
+                                <img
+                                    src={img || "/placeholder.svg"}
+                                    alt={`Miniatura ${index + 1}`}
+                                    className="w-full h-full object-cover"
+                                />
+                                </button>
+                            ))}
                         </div>
 
                         {/* Contador de imágenes */}
-                        <div className="mt-4 text-sm text-gray-500 text-right">
-                        {popupImageIndex + 1} de {activeDevelopment.images.length}
+                        <div className="mt-3 2xl:text-base text-gray-500 text-right">
+                            {popupImageIndex + 1} de {activeDevelopment.images.length}
                         </div>
                     </div>
                     </div>
