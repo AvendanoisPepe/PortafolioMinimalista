@@ -50,15 +50,15 @@ const ColpatriaV1 = {
             name: "Checklist",
             icon: <FaCheckSquare />,
             description:
-                "Sistema de checklist interactivo que permite a los usuarios crear, organizar y completar tareas de manera eficiente. Incluye categorías, prioridades y fechas de vencimiento.",
+                "Compilacion de procesos y paso a paso para optimizar flujos de trabajo repetitivos. Para minimizar tareas manuales y aumentar la eficiencia. Incluyendo todo tipo de contenido, imagenes, Pdfs, Listas desplegables, Recopilacion de datos, entre otras cosas.",
             images: [images[3], images[4], images[5]],
-            },
+        },
         {
             id: "macros",
             name: "Macros",
             icon: <FaCog />,
             description:
-                "Herramienta de automatización que permite crear secuencias de acciones personalizadas para optimizar flujos de trabajo repetitivos. Incluye editor visual y programación de eventos.",
+                "Buscador basado en un codigo macro, que cuenta con contenido diverso al encontrar coincidencia para informar en todo aspecto al usuario, al igual que mostrarle que conjunto de datos debe ingresar para completar el proceso.",
             images: [images[2], images[6]],
         },
         {
@@ -66,7 +66,7 @@ const ColpatriaV1 = {
         name: "Generador de Notas",
         icon: <FaStickyNote />,
         description:
-            "Sistema avanzado para crear y gestionar notas con formato enriquecido, etiquetas, búsqueda inteligente y sincronización entre dispositivos.",
+            "Sistema avanzado para crear y gestionar notas con formato enriquecido, donde se verifica campo por campo con sus diferentes validaciones, recolectando datos para formar la nota deseada.",
             images: [images[7], images[8], images[9]],
         },
         {
@@ -74,7 +74,7 @@ const ColpatriaV1 = {
         name: "Consulta de documentacion",
         icon: <BsFileEarmarkPdfFill />,
         description:
-            "Panel de análisis de datos con visualizaciones interactivas, informes personalizables y métricas en tiempo real para tomar decisiones basadas en datos.",
+            "Sistema de consulta de documentación para todo tipo de formato PDF, WORD, EXCEL, POWER POINT, etc.",
         images: [images[0]],
         },
         {
@@ -82,7 +82,7 @@ const ColpatriaV1 = {
         name: "Tipificador",
         icon: <FaRobot />,
         description:
-            "Sistema de automatización inteligente que utiliza reglas y condiciones para ejecutar acciones predefinidas, optimizando procesos y reduciendo tareas manuales.",
+            "Sistema de decision donde el usuario debe seguir las ramificaciones dadas por el sistemas para hayar la respuesta correcta al caso de uso en este caso, de igual forma como es un ayudante se debe medir el tiempo de respuesta del mismo.",
         images: [
             images[10], images[11]
         ],
