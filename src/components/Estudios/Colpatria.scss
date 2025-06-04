@@ -58,9 +58,9 @@
             }
         }
         .abajo{            
-            background-color: color-mix(in srgb, var(--white) 40%, transparent);
+            background-color: color-mix(in srgb, var(--white) 60%, transparent);
             p{
-                color: color-mix(in srgb, var(--white) 100%, transparent);
+                color: color-mix(in srgb, var(--secondary-color2) 100%, transparent);
             }
         }
         .control{
@@ -78,7 +78,7 @@
         span{
             color: color-mix(in srgb, var(--secondary-color) 80%, transparent);
         }
-        button{
+        .link{
             background-color: color-mix(in srgb, var(--primary-color2) 100%, transparent);
             color: var(--white);
             cursor: pointer;
@@ -120,10 +120,13 @@
             border-color: color-mix(in srgb, var(--secondary-color) 20%, transparent);
             .union{
                 div{
-                    background-color: color-mix(in srgb, var(--secondary-color4) 100%, transparent);
+                    background-color: color-mix(in srgb, var(--secondary-color4) 100%, transparent);                    
                     svg{
                         color: color-mix(in srgb, var(--white2) 100%, transparent);
                     }
+                }
+                h3{
+                    color: color-mix(in srgb, var(--primary-color2) 100%, transparent);
                 }
             }
             button{
@@ -137,7 +140,7 @@
         .contenido{
             p{
                 background-color: color-mix(in srgb, var(--secondary-color4) 20%, transparent);
-                color: color-mix(in srgb, var(--secondary-color) 70%, transparent);
+                color: color-mix(in srgb, var(--secondary-color) 90%, transparent);
             }
             .principal{
                 background-color: color-mix(in srgb, var(--secondary-color4) 20%, transparent);

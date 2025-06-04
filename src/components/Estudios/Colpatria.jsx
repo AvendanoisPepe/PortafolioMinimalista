@@ -8,6 +8,7 @@ import {
     FaCode,
     FaTimes,
 } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const Colpatria = ({ projectData }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -180,13 +181,18 @@ const Colpatria = ({ projectData }) => {
                         <div className="adicional 2xl:mt-6 lg:mt-4 flex justify-between items-center border-b-6 pb-6">
                             <span className="2xl:text-xl lg:text-lg">
                                 {currentImageIndex + 1} de {project.images.length}
-                            </span>
-                            <div className="flex gap-2">
-                                <button className="flex items-center gap-2 px-4 py-2 rounded-lg transition-colors">
-                                    <FaTimes className='2xl:text-3xl mr-1'/>
-                                    <span className="2xl:text-xl">Version Actual</span>
-                                </button>
-                            </div>
+                            </span>                            
+                            {project.button && (
+                                <div className="flex gap-2">                                    
+                                    <Link
+                                        to={project.button.url}
+                                        className="link flex items-center gap-2 px-4 py-2 rounded-lg transition-colors"
+                                    >
+                                        <FaTimes className="2xl:text-3xl mr-1" />
+                                        <span className="2xl:text-xl">{project.button.text}</span>
+                                    </Link>
+                                </div>
+                            )}
                         </div>
                         {/* Nueva sección de Desarrollos */}
                         <div className="desarrollos mt-6">

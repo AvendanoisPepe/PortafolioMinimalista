@@ -10,6 +10,7 @@ import SobreMi from "./components/SobreMi/SobreMi";
 import Colpatria from "./components/Estudios/Colpatria";
 // BASES
 import ColpatriaV1 from "./components/Estudios/Bases/ColpatriaV1";
+import ColpatriaV2 from "./components/Estudios/Bases/ColpatriaV2";
 function App() {
   const { temaNombre } = useGlobal();
   const fondo = themeBackgrounds[temaNombre] || "";
@@ -29,7 +30,14 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contacto />} />
         <Route path="/about" element={<SobreMi />} />
-        <Route path="/colpatriaWeb" element={<Colpatria projectData={ColpatriaV1}/>} />
+        <Route
+          path="/colpatriaWeb"
+          element={<Colpatria projectData={ColpatriaV1} />}
+        />
+        <Route
+          path="/colpatriaWebV2"
+          element={<Colpatria projectData={ColpatriaV2} />}
+        />
       </Routes>
       <Temas />
     </div>

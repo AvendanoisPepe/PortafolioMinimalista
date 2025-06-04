@@ -7,7 +7,7 @@ import {
 } from "react-icons/fa";
 import { BsFileEarmarkPdfFill } from "react-icons/bs";
 
-import col1 from "../../../assets/imagenes/trabajos/col1.png";
+import col1 from "../../../assets/imagenes/trabajos/Colpatria/V2/col1.png";
 import col2 from "../../../assets/imagenes/trabajos/col2.png";
 import col3 from "../../../assets/imagenes/trabajos/Colpatria/macro1.png";
 import col4 from "../../../assets/imagenes/trabajos/Colpatria/check1.png";
@@ -24,25 +24,25 @@ const images = [col1, col2, col3, col4, col5, col6, col7, col8, col9, col10, col
 
 const ColpatriaV1 = {
     title: "Web Training Colpatria Sac",
-    dates: "Noviembre 2022 - Enero 2024",
+    dates: "Enero 2024 - Actualidad",
     description:
         "Variacion en procesos como (Checklist, Generadores de notas, Macros, Tipificadores, Galerías), con un buscador general y un menú diseñado por secciones principales como (Personas, Empresas, Fidelización, etc.) y submenús para cada sección previamente mencionada, en los cuales se dividió la información de forma clara.",
     technologies: [
-        { name: "HTML", icon: "📄" },
-        { name: "JSON", icon: "🧾" },
-        { name: "SASS", icon: "🎀" },
-        { name: "jQuery", icon: "💠" },
-        { name: "JavaScript", icon: "📜" },
+        { name: "React", icon: "⚛️" },
+        { name: "Node.js", icon: "🟢" },
+        { name: "LocalBase", icon: "🍃" },
+        { name: "Sass", icon: "🎨" },
+        { name: "WebPack", icon: "🚀" },
     ],
     images: [images[0], images[1], images[2]],
     projectIcon: "🛒",
     actionIcon: <FaExternalLinkAlt />,
     slideDescription:
         "Biblioteca de información con varacion de documentos tantos pdfs, excel, power ponts, words, entre otros. Seccionado de forma ordenada con buscador general y global",
-    button: {
-        text: "Version Actual",
-        url: "/colpatriaWebV2"
-    },
+        button: {
+            text: "Version Anterior",
+            url: "/colpatriaWeb"
+        },
     developments: [
         {
             id: "checklist",
