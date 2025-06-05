@@ -100,8 +100,9 @@ function Navbar() {
 
                   <div className="flex flex-wrap gap-2">
                     <Link
-                      to="/colpatriaWeb"
+                      to="/colpatriaWebV2"
                       className="w-[49%] flex gap-3 p-3 rounded-sm"
+                      onClick={() => setIsProjectsOpen(!isProjectsOpen)}
                     >
                       <div className="iconico w-[30%] flex justify-center align-center">
                         <div className="p-3 flex justify-center align-center">
@@ -120,8 +121,9 @@ function Navbar() {
                       </div>
                     </Link>
                     <Link
-                      href="/projects/mobile"
+                      to="/jetsmart"
                       className="w-[49%] flex gap-3 p-3 rounded-sm"
+                      onClick={() => setIsProjectsOpen(!isProjectsOpen)}
                     >
                       <div className="iconico w-[30%] flex justify-center align-center">
                         <div className="p-3 flex justify-center align-center">
@@ -141,8 +143,9 @@ function Navbar() {
                     </Link>
 
                     <Link
-                      href="/projects/backend"
+                      to="/televentasCol"
                       className="w-[49%] flex gap-3 p-3 rounded-sm"
+                      onClick={() => setIsProjectsOpen(!isProjectsOpen)}
                     >
                       <div className="iconico w-[30%] flex justify-center align-center">
                         <div className="p-3 flex justify-center align-center">
@@ -161,8 +164,9 @@ function Navbar() {
                       </div>
                     </Link>
                     <Link
-                      href="/projects/other"
+                      to="/claroTmk"
                       className="w-[49%] flex gap-3 p-3 rounded-sm"
+                      onClick={() => setIsProjectsOpen(!isProjectsOpen)}
                     >
                       <div className="iconico w-[30%] flex justify-center align-center">
                         <div className="p-3 flex justify-center align-center">

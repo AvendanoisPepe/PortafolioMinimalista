@@ -11,6 +11,7 @@ import Colpatria from "./components/Estudios/Colpatria";
 // BASES
 import ColpatriaV1 from "./components/Estudios/Bases/ColpatriaV1";
 import ColpatriaV2 from "./components/Estudios/Bases/ColpatriaV2";
+import ClaroTmk from "./components/Estudios/Bases/ClaroTmk";
 function App() {
   const { temaNombre } = useGlobal();
   const fondo = themeBackgrounds[temaNombre] || "";
@@ -30,14 +31,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contacto />} />
         <Route path="/about" element={<SobreMi />} />
-        <Route
-          path="/colpatriaWeb"
-          element={<Colpatria projectData={ColpatriaV1} />}
-        />
-        <Route
-          path="/colpatriaWebV2"
-          element={<Colpatria projectData={ColpatriaV2} />}
-        />
+        <Route path="/colpatriaWebV2" element={<Colpatria projectData={ColpatriaV2} />}/>
+        <Route path="/colpatriaWeb" element={<Colpatria projectData={ColpatriaV1} />}/>
+        <Route path="/claroTmk" element={<Colpatria projectData={ClaroTmk} />}/>
       </Routes>
       <Temas />
     </div>
