@@ -17,16 +17,16 @@ import cla8 from "../../../assets/imagenes/trabajos/ClaroTmk/cla8.png";
 
 const images = [cla1, cla2, cla3, cla4, cla5, cla6, cla7, cla8];
 
-const ClaroTmk = {
-  title: "Web Training Claro Tmk",
-  dates: "Enero 2024 - Marzo 2024",
+const JetSmart = {
+  title: "Web Training JetSmart",
+  dates: "2024 Marzo - 2024 Mayo",
   description:
-    "Este proyecto llevó la visualización de datos al siguiente nivel, con un nuevo sistema que compara múltiples características entre dos celulares y destaca cuál es la mejor opción. Además, se incorporaron desarrollos clave como aplicaciones web y un argumentario TYT, organizado en las tres secciones principales del sistema para una mejor experiencia y análisis.",
+    "Este sistema está diseñado para visualizar múltiples escenarios posibles ante una situación específica, integrando diversos scripts y procesos clave. Se desarrollaron herramientas como casos DINSIDE, aplicaciones, asistentes de comandos, glosarios y vocabularios, todos enfocados en ofrecer a nuevos usuarios una ruta clara y detallada para solucionar sus necesidades rápidamente.",
   technologies: [
     { name: "React", icon: "⚛️" },
     { name: "Node.js", icon: "🟢" },
     { name: "LocalBase", icon: "🍃" },
-    { name: "Chart.js", icon: "📊" },
+    { name: "JavaScript", icon: "🟨" },
     { name: "WebPack", icon: "🚀" },
   ],
   images: [images[0], images[2], images[4], images[5]],
@@ -61,4 +61,4 @@ const ClaroTmk = {
     },
   ],
 };
-export default ClaroTmk;
+export default JetSmart;
