@@ -11,6 +11,7 @@ import { GrCompare } from "react-icons/gr";
 import { FaTree, FaReact, FaHtml5 } from "react-icons/fa";
 import { SiTypescript } from "react-icons/si";
 import { TbFileTypeSql } from "react-icons/tb";
+import { CiCalculator2 } from "react-icons/ci";
 
 import books from "../assets/imagenes/books.png"
 import codigo from "../assets/imagenes/timeline.png"
@@ -181,6 +182,27 @@ function Navbar() {
                           {sistemaLenguaje === "Es"
                             ? "Argumentarios y tipificadores"
                             : "Argumentators and typifiers"}
+                        </p>
+                      </div>
+                    </Link>
+                    <Link
+                      to="/bsc"
+                      className="w-[49%] flex gap-3 p-3 rounded-sm"
+                      onClick={() => setIsProjectsOpen(!isProjectsOpen)}
+                    >
+                      <div className="iconico w-[30%] flex justify-center align-center">
+                        <div className="p-3 flex justify-center align-center">
+                          <CiCalculator2 className="2xl:text-3xl md:text-2xl" />
+                        </div>
+                      </div>
+                      <div className="textito w-[70%]">
+                        <h4 className="font-bold 2xl:text-xl md:text-lg">
+                          Web Tr. Bsc Inbound
+                        </h4>
+                        <p className="2xl:text-sm md:text-xs mt-1">
+                          {sistemaLenguaje === "Es"
+                            ? "Calculadoras y estados"
+                            : "Calculators and states"}
                         </p>
                       </div>
                     </Link>
