@@ -11,7 +11,7 @@ import { GrCompare } from "react-icons/gr";
 import { FaTree, FaReact, FaHtml5 } from "react-icons/fa";
 import { SiTypescript } from "react-icons/si";
 import { TbFileTypeSql } from "react-icons/tb";
-import { CiCalculator2 } from "react-icons/ci";
+import { MdCalculate  } from "react-icons/md";
 
 import books from "../assets/imagenes/books.png"
 import codigo from "../assets/imagenes/timeline.png"
@@ -192,7 +192,7 @@ function Navbar() {
                     >
                       <div className="iconico w-[30%] flex justify-center align-center">
                         <div className="p-3 flex justify-center align-center">
-                          <CiCalculator2 className="2xl:text-3xl md:text-2xl" />
+                          <MdCalculate  className="2xl:text-3xl md:text-2xl" />
                         </div>
                       </div>
                       <div className="textito w-[70%]">

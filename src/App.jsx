@@ -14,6 +14,7 @@ import ColpatriaV2 from "./components/Estudios/Bases/ColpatriaV2";
 import ClaroTmk from "./components/Estudios/Bases/ClaroTmk";
 import JetSmart from "./components/Estudios/Bases/JetSmart";
 import TelColombia from "./components/Estudios/Bases/TeleventasCol";
+import Bsc from "./components/Estudios/Bases/Bsc";
 function App() {
   const { temaNombre } = useGlobal();
   const fondo = themeBackgrounds[temaNombre] || "";
@@ -53,6 +54,7 @@ function App() {
           path="/televentasCol"
           element={<Colpatria projectData={TelColombia} />}
         />
+        <Route path="/bsc" element={<Colpatria projectData={Bsc} />} />
       </Routes>
       <Temas />
     </div>
