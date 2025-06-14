@@ -192,7 +192,7 @@ function Navbar() {
                     >
                       <div className="iconico w-[30%] flex justify-center align-center">
                         <div className="p-3 flex justify-center align-center">
-                          <MdCalculate  className="2xl:text-3xl md:text-2xl" />
+                          <MdCalculate className="2xl:text-3xl md:text-2xl" />
                         </div>
                       </div>
                       <div className="textito w-[70%]">
@@ -230,7 +230,7 @@ function Navbar() {
                     </div>
 
                     <Link
-                      href="/projects"
+                      to="/CompletoEstudios"
                       className="inline-flex items-center text-sm font-medium hover:underline"
                     >
                       {sistemaLenguaje === "Es"
