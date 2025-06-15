@@ -1,0 +1,12 @@
+@use "../../styles//variables.scss" as *;
+@use "../../styles/_themes.scss";
+.completo{
+    .header{
+        h1{
+            color: var(--primary-color);
+        }
+        p{
+            color: color-mix(in srgb, var(--secondary-color) 80%, transparent);
+        }
+    }
+}
