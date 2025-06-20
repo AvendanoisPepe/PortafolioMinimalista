@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import img1 from "../../assets/imagenes/trabajos/Bsc/bsc2.png";
 import img2 from "../../assets/imagenes/trabajos/Colpatria/V2/col13.png";
-import img3 from "../../assets/imagenes/trabajos/ClaroTmk/cla3.png";
+import img3 from "../../assets/imagenes/trabajos/ClaroTmk/cla10.png";
 import img4 from "../../assets/imagenes/trabajos/Colombia/tel11.png";
 import img5 from "../../assets/imagenes/trabajos/JetSmart/jet10.png";
 export default function Completo() {
@@ -14,58 +14,76 @@ export default function Completo() {
     const projects = [
       {
         id: "web-ecommerce",
-        title: "E-commerce Platform",
+        title: "Web Training Colpatria Sac",
         description:
-          "Plataforma de comercio electrónico completa con carrito de compras, sistema de pagos integrado y panel administrativo. Desarrollada con React y Node.js.",
+          "Biblioteca de información con varacion de documentos tantos pdfs, excel, power ponts, words, entre otros. Seccionado de forma ordenada con buscador general y global",
         deviceType: "laptop",
-        image: img1,
-        link: "/projects/web",
-        category: "Web Development",
-        technologies: ["React", "Node.js", "MongoDB"],
-      },
-      {
-        id: "mobile-fitness",
-        title: "Fitness Tracker App",
-        description:
-          "Aplicación móvil para seguimiento de ejercicios y rutinas de entrenamiento. Incluye métricas de progreso y sincronización con dispositivos wearables.",
-        deviceType: "mobile",
         image: img2,
-        link: "/projects/mobile",
-        category: "Mobile App",
-        technologies: ["React Native", "Firebase", "Redux"],
+        link: "/colpatriaWebV2",
+        category: "Web Development",
+        technologies: ["React", "Node.js", "WebPack", "LocalBase"],
       },
       {
         id: "web-dashboard",
-        title: "Analytics Dashboard",
+        title: "Web Training Bsc Inbound",
         description:
-          "Dashboard interactivo para análisis de datos empresariales con visualizaciones en tiempo real y reportes personalizables.",
+          "Este proyecto representa un desafío importante al apostar por herramientas modernas como React, shadcn UI y Tailwind CSS.  Bsc Inbound no solo moderniza los procesos, sino que también refleja el compromiso por mejorar la interacción y accesibilidad para los usuarios.",
         deviceType: "tablet",
-        image: img3,
-        link: "/projects/backend",
+        image: img1,
+        link: "/bsc",
         category: "Web Application",
-        technologies: ["Vue.js", "D3.js", "Express"],
+        technologies: [
+          "React",
+          "Tailwind",
+          "Ui shadcn",
+          "Node.js",
+          "LocalBase",
+        ],
       },
       {
         id: "web-portfolio",
-        title: "Creative Portfolio",
+        title: "Web Training Televentas Colombia",
         description:
-          "Portafolio creativo para artistas y diseñadores con galería interactiva, animaciones suaves y diseño responsive.",
+          "Primer proyecto de gráficas comparativas, optimizado con varias actualizaciones e integrando herramientas clave como scripts de ventas, noticias y seguimiento de indicadores",
         deviceType: "laptop",
         image: img4,
-        link: "/projects/web",
+        link: "/televentasCol",
         category: "Web Design",
-        technologies: ["Next.js", "Framer Motion", "Tailwind"],
+        technologies: ["React", "Node.js", "LocalBase", "Chart.js", "WebPack"],
       },
       {
         id: "mobile-social",
-        title: "Social Network App",
+        title: "Web Training JetSmart",
         description:
-          "Red social móvil con funciones de chat en tiempo real, compartir contenido multimedia y sistema de notificaciones push.",
-        deviceType: "mobile",
+          "Sistema de visualización de escenarios con herramientas clave para guiar a nuevos usuarios en la resolución de sus necesidades.",
+        deviceType: "tablet",
         image: img5,
-        link: "/projects/mobile",
+        link: "/jetsmart",
+        category: "Web Design",
+        technologies: [
+          "React",
+          "Node.js",
+          "LocalBase",
+          "WebPack",
+          "JavaScript",
+        ],
+      },
+      {
+        id: "mobile-fitness",
+        title: "Web Training Claro Tmk",
+        description:
+          "Se optimizó el sistema de gráficos para comparar distintas características entre dos celulares, logrando una visualización más clara e intuitiva que facilita la toma de decisiones.",
+        deviceType: "mobile",
+        image: img3,
+        link: "/claroTmk",
         category: "Mobile App",
-        technologies: ["Flutter", "Firebase", "WebRTC"],
+        technologies: [
+          "React Native",
+          "Node.js",
+          "LocalBase",
+          "Chart.js",
+          "WebPack",
+        ],
       },
     ];
 
@@ -74,25 +92,25 @@ export default function Completo() {
         
 
         if (deviceType === "laptop") {
-        return (
+            return (
             <div>
                 <div className="relative">
-                    {/* Laptop frame */}
-                    <div className="bg-gray-800 rounded-t-lg p-2 shadow-2xl">
-                        <div className="bg-black rounded-lg overflow-hidden aspect-video">
-                            <img
-                                src={image || "/placeholder.svg"}
-                                alt={title}
-                                className="w-full h-full object-contain bg-white"
-                            />
-                        </div>
+                {/* Laptop frame */}
+                <div className="bg-gray-800 rounded-t-lg p-2 shadow-2xl">
+                    <div className="bg-black rounded-lg overflow-hidden aspect-video">
+                    <img
+                        src={image || "/placeholder.svg"}
+                        alt={title}
+                        className="w-full h-full object-contain bg-gray-600"
+                    />
                     </div>
-                    {/* Laptop base */}
-                    <div className="bg-gray-300 h-4 rounded-b-xl shadow-lg transform perspective-1000 rotateX-5"></div>
-                    <div className="bg-gray-400 h-2 rounded-full mx-auto w-32 transform translate-y-1"></div>
+                </div>
+                {/* Laptop base */}
+                <div className="bg-gray-300 h-4 rounded-b-xl shadow-lg transform perspective-1000 rotateX-5"></div>
+                <div className="bg-gray-400 h-2 rounded-full mx-auto w-32 transform translate-y-1"></div>
                 </div>
             </div>
-        );
+            );
         }
 
         if (deviceType === "tablet") {
@@ -103,7 +121,7 @@ export default function Completo() {
                 <img
                     src={image || "/placeholder.svg"}
                     alt={title}
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-contain bg-gray-700"
                 />
                 </div>
             </div>
@@ -113,19 +131,19 @@ export default function Completo() {
 
         if (deviceType === "mobile") {
         return (
-            <div>
-            <div className="bg-gray-800 rounded-3xl p-2 shadow-2xl max-w-[200px] mx-auto">
-                <div className="bg-black rounded-2xl overflow-hidden aspect-[9/16] relative">
+          <div>
+            <div className="bg-gray-800 rounded-3xl p-2 shadow-2xl max-w-[300px] mx-auto">
+              <div className="bg-black rounded-2xl overflow-hidden aspect-[2/3] relative">
                 {/* Notch */}
                 <div className="absolute top-2 left-1/2 transform -translate-x-1/2 bg-gray-800 rounded-full w-16 h-4 z-10"></div>
                 <img
-                    src={image || "/placeholder.svg"}
-                    alt={title}
-                    className="w-full h-full object-cover"
+                  src={image || "/placeholder.svg"}
+                  alt={title}
+                  className="w-full h-full object-contain rounded-2xl bg-gray-700"
                 />
-                </div>
+              </div>
             </div>
-            </div>
+          </div>
         );
         }
     };
@@ -194,7 +212,7 @@ export default function Completo() {
                                 {/* Action Buttons */}
                                 <div className="tercero flex gap-4 pt-4">
                                     <Link
-                                        href={project.link}
+                                        to={project.link}
                                         className="enlace inline-flex items-center gap-2 px-6 py-3 font-semibold rounded-lg transition-colors"
                                     >
                                         <span>Ver Proyecto</span>
@@ -207,17 +225,17 @@ export default function Completo() {
                 </div>
 
                 {/* Call to Action */}
-                <div className="text-center mt-20 p-8 bg-white rounded-xl shadow-sm">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                    ¿Tienes un proyecto en mente?
-                </h3>
-                <p className="text-gray-600 mb-6">
-                    Me encantaría ayudarte a convertir tu idea en realidad. Hablemos
-                    sobre tu próximo proyecto.
-                </p>
-                <button className="inline-flex items-center gap-2 px-8 py-3 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors">
-                    Contactar
-                </button>
+                <div className="footer text-center mt-20 p-8 rounded-xl shadow-sm">
+                    <h3 className="text-3xl font-semibold mb-4">
+                        ¿Tienes un proyecto en mente?
+                    </h3>
+                    <p className="mb-6">
+                        Me encantaría ayudarte a convertir tu idea en realidad. Hablemos
+                        sobre tu próximo proyecto.
+                    </p>
+                    <button className="inline-flex items-center gap-2 px-8 py-3 font-semibold rounded-lg transition-colors">
+                        Contactar
+                    </button>
                 </div>
             </div>
         </div>

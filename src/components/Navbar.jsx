@@ -232,6 +232,7 @@ function Navbar() {
                     <Link
                       to="/CompletoEstudios"
                       className="inline-flex items-center text-sm font-medium hover:underline"
+                      onClick={() => setIsProjectsOpen(!isProjectsOpen)}
                     >
                       {sistemaLenguaje === "Es"
                         ? "Ver todos los proyectos"
