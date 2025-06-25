@@ -31,13 +31,7 @@ const Bsc = {
     { name: "Node.js", icon: "🟢" },
     { name: "LocalBase", icon: "🍃" },
   ],
-  images: [
-    images[0],
-    images[1],
-    images[4],
-    images[7],
-    images[8],
-  ],
+  images: [images[0], images[1], images[4], images[7], images[8]],
   projectIcon: "🛒",
   actionIcon: <FaExternalLinkAlt />,
   slideDescription:
@@ -66,6 +60,15 @@ const Bsc = {
       description:
         "´Permite una clasificación precisa de los casos según el segmento correspondiente, con niveles de profundidad que van desde el nivel 2 hasta el nivel 5. Según la selección, se resaltan datos clave y se habilitan cuadros de ingreso personalizados, facilitando la gestión de información de manera ordenada y accesible.",
       images: [images[4], images[5], images[6]],
+    },
+    {
+      id: "default",
+      name: "Resumen del Proyecto",
+      icon: <FaExternalLinkAlt />,
+      hidden: true,
+      description:
+        "Este proyecto representa un desafío importante al apostar por herramientas modernas como React, shadcn UI y Tailwind CSS. Bsc Inbound no solo moderniza los procesos, sino que también refleja el compromiso por mejorar la interacción y accesibilidad para los usuarios.",
+      images: [images[0], images[7], images[1], images[4]],
     },
   ],
 };

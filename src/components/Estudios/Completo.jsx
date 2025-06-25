@@ -7,9 +7,11 @@ import img2 from "../../assets/imagenes/trabajos/Colpatria/V2/col13.png";
 import img3 from "../../assets/imagenes/trabajos/ClaroTmk/cla10.png";
 import img4 from "../../assets/imagenes/trabajos/Colombia/tel11.png";
 import img5 from "../../assets/imagenes/trabajos/JetSmart/jet10.png";
+import PopupContacto from "../../pages/Contacto/PopupContacto";
+
 export default function Completo() {
     const [hoveredProject, setHoveredProject] = useState(null);
-
+    const [isContactoOpen, setIsContactoOpen] = useState(false);
     // Datos de ejemplo de todos los proyectos
     const projects = [
       {
@@ -233,11 +235,15 @@ export default function Completo() {
                         Me encantaría ayudarte a convertir tu idea en realidad. Hablemos
                         sobre tu próximo proyecto.
                     </p>
-                    <button className="inline-flex items-center gap-2 px-8 py-3 font-semibold rounded-lg transition-colors">
+                    <button onClick={() => setIsContactoOpen(true)} className="inline-flex items-center gap-2 px-8 py-3 font-semibold rounded-lg transition-colors">
                         Contactar
                     </button>
                 </div>
             </div>
+            <PopupContacto
+              isOpen={isContactoOpen}
+              onClose={() => setIsContactoOpen(false)}
+            />
         </div>
     );
 }

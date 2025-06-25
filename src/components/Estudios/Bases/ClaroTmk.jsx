@@ -59,6 +59,15 @@ const ClaroTmk = {
         "Sistema a base LOCALBASE en el cual se cargan los datos, se recorren y muestran todas las opciones posibles para los multiples casos, donde puedes tener una amplia variedad de respuestas.",
       images: [images[5], images[6]],
     },
+    {
+      id: "default",
+      name: "Resumen del Proyecto",
+      icon: <FaExternalLinkAlt />,
+      hidden: true,
+      description:
+        "Se optimizó el sistema de gráficos para comparar distintas características entre dos celulares, logrando una visualización más clara e intuitiva que facilita la toma de decisiones.",
+      images: [images[0], images[1], images[2], images[4], images[6]],
+    },
   ],
 };
 export default ClaroTmk;

@@ -96,6 +96,22 @@ const JetSmart = {
         "Cada empresa cuenta con sus propios terminos tecnicos para el uso de sus productos, servicios y procesos. Este sistema a base LOCALBASE contiene toda la informacion de los terminos y su significado para el usuario.",
       images: [images[13], images[14]],
     },
+    {
+      id: "default",
+      name: "Resumen del Proyecto",
+      icon: <FaExternalLinkAlt />,
+      hidden: true,
+      description:
+        "Sistema de visualización de escenarios con herramientas clave para guiar a nuevos usuarios en la resolución de sus necesidades.",
+      images: [
+        images[0],
+        images[2],
+        images[9],
+        images[5],
+        images[11],
+        images[14],
+      ],
+    },
   ],
 };
 export default JetSmart;

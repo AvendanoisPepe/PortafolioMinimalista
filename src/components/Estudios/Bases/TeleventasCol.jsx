@@ -94,6 +94,15 @@ const TelColombia = {
         "Sistema de noticias para que el cliente actualice sus eventos, anuncios, entre otras.",
       images: [images[1], images[2]],
     },
+    {
+      id: "default",
+      name: "Resumen del Proyecto",
+      icon: <FaExternalLinkAlt />,
+      hidden: true,
+      description:
+        "Primer proyecto de gráficas comparativas, optimizado con varias actualizaciones e integrando herramientas clave como scripts de ventas, noticias y seguimiento de indicadores",
+      images: [images[0], images[3], images[10], images[12], images[15], images[14]],
+    },
   ],
 };
 export default TelColombia;

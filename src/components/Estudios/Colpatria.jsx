@@ -1,5 +1,5 @@
 import './Colpatria.scss'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
     FaChevronLeft,
     FaChevronRight,
@@ -51,7 +51,25 @@ const Colpatria = ({ projectData }) => {
     }
     // Encontrar el desarrollo activo
     const activeDevelopment = project.developments.find((dev) => dev.id === activePopup)
-
+    
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === "Escape") {
+                closePopup();
+            }
+            };
+        
+            if (activePopup) {
+            window.addEventListener("keydown", handleKeyDown);
+            }
+        
+            return () => {
+            window.removeEventListener("keydown", handleKeyDown);
+            };
+      }, [activePopup]); // Se ejecuta solo cuando el popup está abierto
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);      
     return (
         <div className="estudio min-h-screen py-6">
             <div className="mx-auto px-10 mb-20">
@@ -135,7 +153,7 @@ const Colpatria = ({ projectData }) => {
                                         </h2>
                                     </div>
 
-                                    <button className="p-3 transition-colors 2xl:text-4xl lg:text-3xl rounded-lg">
+                                    <button onClick={() => openPopup("default")} className="p-3 transition-colors 2xl:text-4xl lg:text-3xl rounded-lg">
                                         {project.actionIcon}
                                     </button>
                                 </div>
@@ -198,7 +216,7 @@ const Colpatria = ({ projectData }) => {
                         <div className="desarrollos mt-6">
                             <h3 className="2xl:text-3xl lg:text-2xl font-semibold mb-6">Desarrollos</h3>
                             <div className="card w-auto flex justify-center items-center flex-wrap gap-4">
-                                {project.developments.map((dev) => (
+                                {project.developments.filter(dev => !dev.hidden).map((dev) => (
                                 <button
                                     key={dev.id}
                                     onClick={() => openPopup(dev.id)}
