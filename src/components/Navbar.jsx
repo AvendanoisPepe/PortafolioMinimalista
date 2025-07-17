@@ -12,6 +12,7 @@ import { FaTree, FaReact, FaHtml5 } from "react-icons/fa";
 import { SiTypescript } from "react-icons/si";
 import { TbFileTypeSql } from "react-icons/tb";
 import { MdCalculate  } from "react-icons/md";
+import { MdOutlineMenuBook } from "react-icons/md";
 
 import books from "../assets/imagenes/books.png"
 import codigo from "../assets/imagenes/timeline.png"
@@ -57,17 +58,18 @@ function Navbar() {
   }, []);
   return (
     <header className="w-full flex justify-between items-center flex-wrap p-4 2xl:p-6">
-      <div className="contentLogo md:w-[20%] flex items-center justify-center gap-4 mb-4 md:mb-0">
-        <span className="logo lg:text-4xl 2xl:text-5xl">JS</span>
-        <p className="nombre lg:text-3xl 2xl:text-4xl">Avendaño</p>
+      <div className="contentLogo w-[50%] md:w-auto lg:w-[20%] flex items-center justify-center gap-4 mb-4 md:mb-0">
+        <span className="logo text-xl lg:text-4xl 2xl:text-5xl">JS</span>
+        <p className="nombre text-3xl md:hidden lg:flex lg:text-3xl 2xl:text-4xl">Avendaño</p>
       </div>
-      <nav className="menu w-full md:w-[50%] flex justify-center items-center gap-6">
-        <Link to="/" className="transition text-xs lg:text-lg 2xl:text-2xl">
+      <div className="menupeque flex sm:hidden text-5xl mb-4"><MdOutlineMenuBook /></div>
+      <nav className="menu w-full hidden md:w-[50%] sm:flex justify-center items-center gap-6">
+        <Link to="/" className="transition text-sm lg:text-lg 2xl:text-2xl">
           {sistemaLenguaje === "Es" ? "Inicio" : "Home"}
         </Link>
         <Link
           to="/about"
-          className="transition text-xs lg:text-lg 2xl:text-2xl"
+          className="transition text-center text-sm lg:text-lg 2xl:text-2xl"
         >
           {sistemaLenguaje === "Es" ? "Sobre mí" : "About me"}
         </Link>
@@ -75,7 +77,7 @@ function Navbar() {
         <div className="submenu relative">
           <button
             ref={projectsButtonRef}
-            className="flex items-center gap-1 transition text-xs lg:text-lg 2xl:text-2xl"
+            className="flex items-center gap-1 transition text-sm lg:text-lg 2xl:text-2xl"
             onClick={() => setIsProjectsOpen(!isProjectsOpen)}
           >
             {sistemaLenguaje === "Es" ? "Proyectos" : "Projects"}
@@ -248,7 +250,7 @@ function Navbar() {
         <div className="submenu relative">
           <button
             ref={studiesButtonRef}
-            className="flex items-center gap-1 transition text-xs lg:text-lg 2xl:text-2xl"
+            className="flex items-center gap-1 transition text-sm lg:text-lg 2xl:text-2xl"
             onClick={() => setIsStudiesOpen(!isStudiesOpen)}
           >
             {sistemaLenguaje === "Es" ? "Estudios" : "Studies"}
@@ -393,7 +395,7 @@ function Navbar() {
         </div>
         <Link
           to="/contact"
-          className="transition text-xs lg:text-lg 2xl:text-2xl"
+          className="transition text-sm lg:text-lg 2xl:text-2xl"
         >
           {sistemaLenguaje === "Es" ? "Referencias" : "References"}
         </Link>
