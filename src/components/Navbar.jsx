@@ -18,6 +18,7 @@ import books from "../assets/imagenes/books.png"
 import codigo from "../assets/imagenes/timeline.png"
 import PopupContacto from "../pages/Contacto/PopupContacto";
 import PopupCv from "../pages/CV/CV";
+import Movil from "./Movil"
 import { useGlobal } from "../context/GlobalContext";
 function Navbar() {
   const [isProjectsOpen, setIsProjectsOpen] = useState(false);
@@ -29,7 +30,7 @@ function Navbar() {
   const [isContactoOpen, setIsContactoOpen] = useState(false);
   const [cv, setCv] = useState(false);
   const { sistemaLenguaje } = useGlobal();
-  
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -56,13 +57,22 @@ function Navbar() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+    // Bloquear/desbloquear scroll del body
+    if (!isMenuOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "auto"
+    }
+  }
   return (
     <header className="w-full flex justify-between items-center flex-wrap p-4 2xl:p-6">
-      <div className="contentLogo w-[50%] md:w-auto lg:w-[20%] flex items-center justify-center gap-4 mb-4 md:mb-0">
+      <div className="contentLogo w-[50%] md:w-auto lg:w-[10%] xl:w-[20%] flex items-center justify-center gap-4 mb-4 md:mb-0">
         <span className="logo text-xl lg:text-4xl 2xl:text-5xl">JS</span>
-        <p className="nombre text-3xl md:hidden lg:flex lg:text-3xl 2xl:text-4xl">Avendaño</p>
+        <p className="nombre text-3xl md:hidden xl:flex lg:text-3xl 2xl:text-4xl">Avendaño</p>
       </div>
-      <div className="menupeque flex sm:hidden text-5xl mb-4"><MdOutlineMenuBook /></div>
+      <div className="menupeque flex sm:hidden text-5xl mb-4"><MdOutlineMenuBook onClick={toggleMenu}/></div>
       <nav className="menu w-full hidden md:w-[50%] sm:flex justify-center items-center gap-6">
         <Link to="/" className="transition text-sm lg:text-lg 2xl:text-2xl">
           {sistemaLenguaje === "Es" ? "Inicio" : "Home"}
@@ -419,6 +429,9 @@ function Navbar() {
         onClose={() => setIsContactoOpen(false)}
       />
       <PopupCv isOpen={cv} onClose={() => setCv(false)} />
+      {isMenuOpen && (
+        <Movil toggleMenu={toggleMenu}/>
+      )}
     </header>
   );
 }

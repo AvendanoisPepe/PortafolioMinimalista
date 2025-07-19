@@ -35,19 +35,19 @@ export default function AboutMe() {
 
     return (
         <section className="SobreMi py-20 px-4 md:px-10">
-            <div className="conjunto max-w-[90%] mx-auto">
-                <h2 className="md:text-4xl 2xl:text-5xl font-light text-center mb-10">
+            <div className="conjunto lg:max-w-[90%] mx-auto">
+                <h2 className="text-4xl md:text-4xl xl:text-6xl font-light text-center mb-10">
                     Sobre <span className="font-bold">Mí</span>
                 </h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 2xl:gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-6 2xl:gap-8">
                     <div
                         ref={sectionRefs[0]}
                         className="unidad overflow-hidden transition-all duration-600 opacity-0 translate-y-10"
                     >
                         <div className="gradiante h-48 relative overflow-hidden">
                             <div className="absolute inset-0 flex items-center justify-center opacity-80">
-                                <FaCode className="icono 2xl:text-7xl md:text-6xl" />
+                                <FaCode className="icono text-6xl 2xl:text-7xl" />
                             </div>
                             <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-white to-transparent"></div>
                         </div>
@@ -59,7 +59,7 @@ export default function AboutMe() {
                                 </div>
                             </div>
 
-                            <h3 className="2xl:text-2xl font-medium text-center mt-6 mb-4">
+                            <h3 className="text-2xl lg:text-3xl font-medium text-center mt-6 mb-4">
                                 Inicios
                             </h3>
                             <div className="linea w-16 h-1 mx-auto mb-6"></div>
@@ -83,7 +83,7 @@ export default function AboutMe() {
                     >
                         <div className="gradiante2 h-48 relative overflow-hidden">
                             <div className="absolute inset-0 flex items-center justify-center opacity-80">
-                                <FaLaptopCode className="icono 2xl:text-7xl md:text-6xl" />
+                                <FaLaptopCode className="icono text-6xl 2xl:text-7xl" />
                             </div>
                             <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-white to-transparent"></div>
                         </div>
@@ -95,7 +95,7 @@ export default function AboutMe() {
                                 </div>
                             </div>
 
-                            <h3 className="2xl:text-2xl font-medium text-center mt-6 mb-4">
+                            <h3 className="text-2xl lg:text-3xl font-medium text-center mt-6 mb-4">
                                 Objetivo actual
                             </h3>
                             <div className="linea w-16 h-1 mx-auto mb-6"></div>
@@ -120,7 +120,7 @@ export default function AboutMe() {
                     >
                         <div className="gradiante3 h-48  relative overflow-hidden">
                             <div className="absolute inset-0 flex items-center justify-center opacity-80">
-                                <FaBookReader className="icono 2xl:text-7xl md:text-6xl" />
+                                <FaBookReader className="icono text-6xl 2xl:text-7xl" />
                             </div>
                         <   div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-white to-transparent"></div>
                         </div>
@@ -132,7 +132,7 @@ export default function AboutMe() {
                                 </div>
                             </div>
 
-                            <h3 className="2xl:text-2xl font-medium text-center mt-6 mb-4">
+                            <h3 className="text-2xl lg:text-3xl font-medium text-center mt-6 mb-4">
                                 Pasatiempos
                             </h3>
                             <div className="linea w-16 h-1 mx-auto mb-6"></div>

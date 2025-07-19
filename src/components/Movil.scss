@@ -1,0 +1,47 @@
+@use "../styles/variables.scss" as *;
+@use "../styles/_themes.scss";
+.movil{
+    .arriba{
+        border-color: color-mix(in srgb, var(--secondary-color) 20%, transparent);
+        span:last-child{
+            color: var(--secondary-color);                
+        }
+        span:first-child{
+            color: var(--primary-color);                
+        }
+        button{
+            background-color: var(--primary-color);
+            svg{
+                color: var(--white2);
+            }
+        }
+    }
+    nav{
+        .fondo{
+            background-color: color-mix(in srgb, var(--white2) 60%, transparent);
+            div{
+                background-color: color-mix(in srgb, var(--naranaj) 20%, transparent);
+                svg{
+                    color: var(--naranaj);
+                }
+            }
+            span{
+                color: var(--text-color);
+            }
+        }
+        .fondo2{
+            background-color: color-mix(in srgb, var(--white2) 60%, transparent);
+            .icono{
+                div{
+                background-color: color-mix(in srgb, var(--primary-color2) 20%, transparent);
+                svg{
+                    color: var(--primary-color2);
+                }
+            }
+            span{
+                color: var(--text-color);
+            }
+            }
+        }
+    }
+}
