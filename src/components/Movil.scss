@@ -33,14 +33,33 @@
             background-color: color-mix(in srgb, var(--white2) 60%, transparent);
             .icono{
                 div{
-                background-color: color-mix(in srgb, var(--primary-color2) 20%, transparent);
-                svg{
-                    color: var(--primary-color2);
+                    background-color: color-mix(in srgb, var(--primary-color2) 20%, transparent);
+                    svg{
+                        color: var(--primary-color2);
+                    }
+                }
+                span{
+                    color: var(--text-color);
                 }
             }
-            span{
-                color: var(--text-color);
-            }
+            .submenu{
+                background-color: color-mix(in srgb, var(--primary-color2) 20%, transparent);
+                a{
+                    background-color: color-mix(in srgb, var(--primary-color2) 20%, transparent);                   
+                    div{
+                        color: var(--secondary-color);
+                    }
+                    span{
+                        color: var(--secondary-color);                        
+                    }
+                    &:last-child{
+                        background-color: var(--white2);
+                        color: var(--primary-color2);
+                        span{
+                            color: var(--primary-color);
+                        }
+                    }
+                }
             }
         }
     }

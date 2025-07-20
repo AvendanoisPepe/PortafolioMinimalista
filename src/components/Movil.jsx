@@ -110,27 +110,29 @@ export default function Movil({ onContactClick, toggleMenu }) {
                 )}
               </button>
               {isProjectsExpanded && (
-                <div className="px-4 pb-4 space-y-2 animate-fadeIn">
+                <div className="submenu px-4 py-4 space-y-2 animate-fadeIn">
                   {projects.map((project, index) => (
                     <Link
                       key={index}
                       href={project.link}
                       onClick={closeMenu}
-                      className="flex items-center gap-3 p-3 ml-4 rounded-lg bg-gray-50/80 hover:bg-gray-100/80 transition-colors"
+                      className="flex items-center p-3 rounded-lg hover:bg-gray-100/80 transition-colors"
                     >
-                      <div className="text-gray-600">{project.icon}</div>
-                      <span className="text-gray-700 text-sm">
-                        {project.name}
-                      </span>
+                      <div className="w-full flex items-start gap-2">
+                        <div className="">{project.icon}</div>
+                        <span className="text-sm">
+                          {project.name}
+                        </span>
+                      </div>
                     </Link>
                   ))}
                   <Link
                     href="/projects"
                     onClick={closeMenu}
-                    className="flex items-center gap-3 p-3 ml-4 rounded-lg bg-blue-50/80 hover:bg-blue-100/80 transition-colors"
+                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-100/80 transition-colors"
                   >
-                    <FaExternalLinkAlt className="text-blue-600" />
-                    <span className="text-blue-700 text-sm font-medium">
+                    <FaExternalLinkAlt className="" />
+                    <span className="text-sm font-medium">
                       Ver todos los proyectos
                     </span>
                   </Link>
