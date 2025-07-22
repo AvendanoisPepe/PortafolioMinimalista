@@ -285,7 +285,7 @@ function Navbar() {
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     <Link
-                      href="/projects/web"
+                      to="/projects/web"
                       className="w-[49%] flex gap-3 p-3 rounded-sm"
                     >
                       <div className="iconico w-[30%] flex justify-center align-center">
@@ -305,7 +305,7 @@ function Navbar() {
                       </div>
                     </Link>
                     <Link
-                      href="/projects/mobile"
+                      to="/projects/mobile"
                       className="w-[49%] flex gap-3 p-3 rounded-sm"
                     >
                       <div className="iconico w-[30%] flex justify-center align-center">
@@ -324,9 +324,8 @@ function Navbar() {
                         </p>
                       </div>
                     </Link>
-
                     <Link
-                      href="/projects/backend"
+                      to="/projects/backend"
                       className="w-[49%] flex gap-3 p-3 rounded-sm"
                     >
                       <div className="iconico w-[30%] flex justify-center align-center">
@@ -346,7 +345,7 @@ function Navbar() {
                       </div>
                     </Link>
                     <Link
-                      href="/projects/other"
+                      to="/projects/other"
                       className="w-[49%] flex gap-3 p-3 rounded-sm"
                     >
                       <div className="iconico w-[30%] flex justify-center align-center">

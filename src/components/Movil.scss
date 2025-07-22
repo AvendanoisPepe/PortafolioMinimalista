@@ -1,6 +1,14 @@
 @use "../styles/variables.scss" as *;
 @use "../styles/_themes.scss";
 .movil{
+    .fondo{
+        background-image: linear-gradient(
+            to bottom right,
+            color-mix(in srgb, var(--secondary-color3) 100%, transparent),
+            color-mix(in srgb, var(--secondary-color3) 100%, transparent),
+            color-mix(in srgb, var(--secondary-color3) 100%, transparent)
+        );
+    }
     .arriba{
         border-color: color-mix(in srgb, var(--secondary-color) 20%, transparent);
         span:last-child{
@@ -17,9 +25,9 @@
         }
     }
     nav{
-        .fondo{
+        .pere{
             background-color: color-mix(in srgb, var(--white2) 60%, transparent);
-            div{
+            .icono{
                 background-color: color-mix(in srgb, var(--naranaj) 20%, transparent);
                 svg{
                     color: var(--naranaj);
@@ -59,6 +67,21 @@
                             color: var(--primary-color);
                         }
                     }
+                }
+            }
+        }
+    }
+    .botones{
+        border-color: color-mix(in srgb, var(--secondary-color) 20%, transparent);
+        div{
+            button{
+                &:first-child{
+                    background-color: color-mix(in srgb, var(--primary-color) 20%, transparent);
+                    color: var(--primary-color);
+                }
+                &:last-child{
+                    background-color: color-mix(in srgb, var(--primary-color) 100%, transparent);
+                    color: var(--white2);
                 }
             }
         }

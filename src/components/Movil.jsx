@@ -2,7 +2,7 @@ import "./Movil.scss"; // Importa el archivo SASS
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  MdOutlineMenuBook,
+  MdCalculate,
   MdClose,
   MdExpandMore,
   MdExpandLess,
@@ -13,12 +13,18 @@ import {
   MdContacts,
 } from "react-icons/md";
 import {
-  FaGlobe,
-  FaLayerGroup,
-  FaDatabase,
+  FaTree,
+  FaReact,
   FaCode,
   FaExternalLinkAlt,
+  FaHtml5
 } from "react-icons/fa";
+import { SiTypescript } from "react-icons/si";
+
+import { PiStudentBold } from "react-icons/pi";
+import { IoLibrary } from "react-icons/io5";
+import { GrCompare } from "react-icons/gr";
+import { TbFileTypeSql } from "react-icons/tb";
 
 export default function Movil({ onContactClick, toggleMenu }) {
   const [isProjectsExpanded, setIsProjectsExpanded] = useState(false);
@@ -38,16 +44,24 @@ export default function Movil({ onContactClick, toggleMenu }) {
 
   // Proyectos del submenú
   const projects = [
-    { name: "Desarrollo Web", icon: <FaGlobe />, link: "/projects/web" },
-    { name: "Apps Móviles", icon: <FaLayerGroup />, link: "/projects/mobile" },
-    { name: "Backend", icon: <FaDatabase />, link: "/projects/backend" },
-    { name: "Otros Proyectos", icon: <FaCode />, link: "/projects/other" },
+    { name: "Web Tr. Colpatria", icon: <IoLibrary />, link: "/colpatriaWebV2" },
+    { name: "Web Tr. JetSmart", icon: <PiStudentBold />, link: "/jetsmart" },
+    { name: "Web Tr. Televentas Col.", icon: <GrCompare />, link: "/televentasCol" },
+    { name: "Web Tr. Claro TMK", icon: <FaTree />, link: "/claroTmk" },
+    { name: "Web Tr. Bsc Inbound", icon: <MdCalculate />, link: "/bsc" },
+    { name: "Ver todos los proyectos", icon: <FaCode />, link: "/CompletoEstudios" },
+  ];
+  const estudi = [
+    { name: "Proximos Estudios", icon: <SiTypescript />, link: "/colpatriaWebV2" },
+    { name: "Estudios Laborales", icon: <FaReact />, link: "/jetsmart" },
+    { name: "Estudios Universitarios", icon: <TbFileTypeSql />, link: "/televentasCol" },
+    { name: "Primeros Estudios", icon: <FaHtml5 />, link: "/claroTmk" },
   ];
 
   return (
     <div className="movil fixed inset-0 z-50 sm:hidden">
       {/* Fondo con blur */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 backdrop-blur-sm" />
+      <div className="fondo absolute inset-0 bg-gradient-to-br backdrop-blur-sm" />
 
       {/* Contenido del menú */}
       <div className="relative h-full flex flex-col">
@@ -67,31 +81,34 @@ export default function Movil({ onContactClick, toggleMenu }) {
 
         {/* Navegación principal */}
         <div className="flex-1 overflow-y-auto p-6">
-          <nav className="space-y-2">
-            <div className="fondo flex flex-col gap-2 items-start w-[100%] rounded-xl">
-                <Link
-                    to="/pedro"
-                    onClick={closeMenu}
-                    className=" flex items-center gap-4 p-4 rounded-xl transition-all duration-300 group"
-                >
-                    <div className="py-2 pr-2 rounded-lg group-hover:bg-blue-200 transition-colors">
+          <nav className="space-y-2">            
+            <div className="pere rounded-xl">
+              <Link
+                to="/"
+                onClick={closeMenu}
+                className="transition-all duration-300 group">
+                  <div className="flex gap-4 p-4  items-center w-[100%] ">
+                    <div className="icono py-2 pr-2 rounded-lg group-hover:bg-blue-200 transition-colors">
                         <MdHome className="text-xl" />
                     </div>
                     <span className="font-medium">Inicio</span>
-                </Link>
-            </div>
-            <div className="fondo flex flex-col gap-2 items-start w-[100%] rounded-xl">
-                <Link
-                    to="/about"
-                    onClick={closeMenu}
-                    className="flex items-center gap-4 p-4 rounded-xl transition-all duration-300 group"
-                >
-                <div className="py-2 pr-2 rounded-lg group-hover:bg-green-200 transition-colors">
-                    <MdPerson className="text-xl" />
+                  </div>
+                </Link>     
+            </div>    
+            <div className="pere rounded-xl">
+              <Link
+                  to="/about"
+                  onClick={closeMenu}
+                  className="transition-all duration-300 group"
+              >
+                <div className="flex gap-4 p-4  items-center w-[100%] rounded-xl">
+                  <div className="icono py-2 pr-2 rounded-lg group-hover:bg-green-200 transition-colors">
+                      <MdPerson className="text-xl" />
+                  </div>
+                  <span className="font-medium">Sobre mí</span>
                 </div>
-                <span className="font-medium">Sobre mí</span>
-                </Link>
-            </div>
+              </Link>
+            </div>       
             <div className="fondo2 rounded-xl overflow-hidden">
               <button
                 onClick={() => setIsProjectsExpanded(!isProjectsExpanded)}
@@ -114,7 +131,7 @@ export default function Movil({ onContactClick, toggleMenu }) {
                   {projects.map((project, index) => (
                     <Link
                       key={index}
-                      href={project.link}
+                      to={project.link}
                       onClick={closeMenu}
                       className="flex items-center p-3 rounded-lg hover:bg-gray-100/80 transition-colors"
                     >
@@ -127,7 +144,7 @@ export default function Movil({ onContactClick, toggleMenu }) {
                     </Link>
                   ))}
                   <Link
-                    href="/projects"
+                    to="/CompletoEstudios"
                     onClick={closeMenu}
                     className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-100/80 transition-colors"
                   >
@@ -139,7 +156,6 @@ export default function Movil({ onContactClick, toggleMenu }) {
                 </div>
               )}
             </div>
-
             <div className="fondo2 rounded-xl overflow-hidden">
               <button
                 onClick={() => setIsStudiesExpanded(!isStudiesExpanded)}
@@ -158,50 +174,59 @@ export default function Movil({ onContactClick, toggleMenu }) {
                 )}
               </button>
               {isStudiesExpanded && (
-                <div className="px-4 pb-4 space-y-2 animate-fadeIn">
+                <div className="submenu px-4 py-4 space-y-2 animate-fadeIn">
+                  {estudi.map((estu, index) => (
+                    <Link
+                      key={index}
+                      to={estu.link}
+                      onClick={closeMenu}
+                      className="flex items-center p-3 rounded-lg hover:bg-gray-100/80 transition-colors"
+                    >
+                      <div className="w-full flex items-start gap-2">
+                        <div className="">{estu.icon}</div>
+                        <span className="text-sm">
+                          {estu.name}
+                        </span>
+                      </div>
+                    </Link>
+                  ))}
                   <Link
-                    href="/studies/formal"
+                    to="/CompletoEstudios"
                     onClick={closeMenu}
-                    className="flex items-center gap-3 p-3 ml-4 rounded-lg bg-gray-50/80 hover:bg-gray-100/80 transition-colors"
+                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-100/80 transition-colors"
                   >
-                    <span className="text-gray-700 text-sm">
-                      Educación Formal
-                    </span>
-                  </Link>
-                  <Link
-                    href="/studies/certifications"
-                    onClick={closeMenu}
-                    className="flex items-center gap-3 p-3 ml-4 rounded-lg bg-gray-50/80 hover:bg-gray-100/80 transition-colors"
-                  >
-                    <span className="text-gray-700 text-sm">
-                      Certificaciones
+                    <FaExternalLinkAlt className="" />
+                    <span className="text-sm font-medium">
+                      Ver todos los estudios
                     </span>
                   </Link>
                 </div>
               )}
             </div>
-            <div className="fondo flex flex-col gap-2 items-start w-[100%] rounded-xl">
-                <Link
-                    href="/references"
-                    onClick={closeMenu}
-                    className="flex items-center gap-4 p-4 transition-all duration-300 group"
-                >
-                <div className="py-2 pr-2 rounded-lg group-hover:bg-pink-200 transition-colors">
-                    <MdContacts className="text-xl" />
+            <div className="pere rounded-xl">
+              <Link
+                  to="/references"
+                  onClick={closeMenu}
+                  className="transition-all duration-300 group"
+              >
+                <div className="flex gap-4 p-4 items-center w-[100%] rounded-xl">
+                  <div className="icono py-2 pr-2 rounded-lg group-hover:bg-pink-200 transition-colors">
+                      <MdContacts className="text-xl" />
+                  </div>
+                  <span className="font-medium">Referencias</span>
                 </div>
-                <span className="font-medium">Referencias</span>
-                </Link>
-            </div>
+              </Link>
+            </div>       
           </nav>
         </div>
-        <div className="p-6 border-t border-gray-200/50 space-y-4">
+        <div className="botones p-6 border-t space-y-4">
           <div className="flex gap-3">
             <button className="flex-1 py-3 px-4 bg-white/80 hover:bg-white text-gray-800 font-medium rounded-lg transition-colors">
               CV
             </button>
             <button
               onClick={handleContactClick}
-              className="flex-1 py-3 px-4 bg-gray-800 hover:bg-gray-700 text-white font-medium rounded-lg transition-colors"
+              className="flex-1 py-3 px-4 hover:bg-gray-700 font-medium rounded-lg transition-colors"
             >
               Contacto
             </button>
