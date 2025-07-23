@@ -69,11 +69,11 @@ function Navbar() {
   return (
     <header className="w-full flex justify-between items-center flex-wrap p-4 2xl:p-6">
       <div className="contentLogo w-[50%] md:w-auto lg:w-[10%] xl:w-[20%] flex items-center justify-center gap-4 mb-4 md:mb-0">
-        <span className="logo text-xl lg:text-4xl 2xl:text-5xl">JS</span>
-        <p className="nombre text-3xl md:hidden xl:flex lg:text-3xl 2xl:text-4xl">Avendaño</p>
+        <span className="logo text-xl md:text-3xl lg:text-4xl 2xl:text-5xl">JS</span>
+        <p className="nombre text-3xl lg:hidden xl:flex lg:text-3xl 2xl:text-4xl">Avendaño</p>
       </div>
-      <div className="menupeque flex sm:hidden text-5xl mb-4"><MdOutlineMenuBook onClick={toggleMenu}/></div>
-      <nav className="menu w-full hidden md:w-[50%] sm:flex justify-center items-center gap-6">
+      <div className="menupeque flex lg:hidden text-5xl mb-4 md:mb-0"><MdOutlineMenuBook onClick={toggleMenu}/></div>
+      <nav className="menu w-full hidden md:w-[50%] lg:flex justify-center items-center gap-6">
         <Link to="/" className="transition text-sm lg:text-lg 2xl:text-2xl">
           {sistemaLenguaje === "Es" ? "Inicio" : "Home"}
         </Link>

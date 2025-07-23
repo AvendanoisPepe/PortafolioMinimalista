@@ -102,20 +102,20 @@ function PopupContacto({ isOpen, onClose }) {
                 className="close-btn absolute top-4 right-5 z-10"
                 onClick={onClose}
             >
-                <IoClose className="2xl:w-10 2xl:h-10 md:w-10 md:h-10" />
+                <IoClose className="2xl:w-10 2xl:h-10 w-10 h-10" />
             </button>
 
             <div className="relative z-10">
                 <div className="text-center mb-8">
-                    <h2 className="2xl:text-5xl md:text-4xl font-bold gradient-text">{sistemaLenguaje === "Es" ? "¡Hablemos!" : "Let's Talk!"}</h2>
-                    <p className="ptexto mt-2 2xl:text-base md:text-sm">
+                    <h2 className="2xl:text-5xl text-4xl font-bold gradient-text">{sistemaLenguaje === "Es" ? "¡Hablemos!" : "Let's Talk!"}</h2>
+                    <p className="ptexto mt-2 2xl:text-base text-base">
                         {sistemaLenguaje === "Es" ? "Completa el formulario y me pondré en contacto contigo pronto" : "Complete the form and I'll get back to you soon"}                        
                     </p>
                 </div>
                 <form onSubmit={envioCorreo} className="space-y-6 flex justify-between align-center flex-wrap">
                     <div className="relative flex align-center w-full">
-                        <div className="iconito absolute 2xl:left-6 2xl:top-4 md:left-6 md:top-3 z-1">
-                            <FiUser className="2xl:w-[18px] 2xl:h-[18px] md:w-[14px] md:h-[14px]" />
+                        <div className="iconito absolute 2xl:left-6 2xl:top-4 left-6 top-4 z-1">
+                            <FiUser className="2xl:w-[18px] 2xl:h-[18px] w-[14px] h-[14px]" />
                         </div>
                         <input
                             type="text"
@@ -123,7 +123,7 @@ function PopupContacto({ isOpen, onClose }) {
                             value={nombreCompleto}
                             onChange={e => setNombreCompleto(e.target.value)}
                             placeholder={sistemaLenguaje === "Es" ? "Nombre completo" : "Name complete"}                        
-                            className="form-input w-full 2xl:text-base md:text-sm 2xl:p-3 2xl:pl-13 md:p-2 md:pl-12"
+                            className="form-input w-full 2xl:text-base md:text-sm 2xl:p-3 2xl:pl-13 p-3 pl-12"
                             required
                             autoComplete="off"
                             style={{
@@ -137,9 +137,9 @@ function PopupContacto({ isOpen, onClose }) {
                         />
                     </div>
 
-                    <div className="relative flex align-center w-[49%]">
-                        <div className="iconito absolute 2xl:left-6 2xl:top-4 md:left-6 md:top-3 z-1">
-                            <FiMail className="2xl:w-[18px] 2xl:h-[18px] md:w-[14px] md:h-[14px]" />
+                    <div className="relative flex align-center w-full lg:w-[49%]">
+                        <div className="iconito absolute 2xl:left-6 2xl:top-4 left-6 top-4 z-1">
+                            <FiMail className="2xl:w-[18px] 2xl:h-[18px] w-[14px] h-[14px]" />
                         </div>
                         <input
                             type="email"
@@ -151,15 +151,15 @@ function PopupContacto({ isOpen, onClose }) {
                                     validaciones.correo === null ? '' : validaciones.correo ? 'green' : 'red',
                             }}
                             placeholder={sistemaLenguaje === "Es" ? "Correo" : "Email"}
-                            className="form-input w-full 2xl:text-base md:text-sm 2xl:p-3 2xl:pl-13 md:p-2 md:pl-12"
+                            className="form-input w-full 2xl:text-base md:text-sm 2xl:p-3 2xl:pl-13 p-3 pl-12"
                             required
                             autoComplete="off"
                         />
                     </div>
 
-                    <div className="relative flex align-center w-[49%]">
-                        <div className="iconito absolute 2xl:left-6 2xl:top-4 md:left-6 md:top-3 z-1">
-                            <IoMdPhonePortrait className="2xl:w-[18px] 2xl:h-[18px] md:w-[14px] md:h-[14px]" />
+                    <div className="relative flex align-center w-full lg:w-[49%]">
+                        <div className="iconito absolute 2xl:left-6 2xl:top-4 left-6 top-4 z-1">
+                            <IoMdPhonePortrait className="2xl:w-[18px] 2xl:h-[18px] w-[14px] h-[14px]" />
                         </div>
                         <input
                             type="text"
@@ -171,13 +171,13 @@ function PopupContacto({ isOpen, onClose }) {
                                     validaciones.asunto === null ? '' : validaciones.asunto ? 'green' : 'red',
                             }}
                             placeholder={sistemaLenguaje === "Es" ? "Celular" : "Phone"}
-                            className="form-input w-full 2xl:text-base md:text-sm 2xl:p-3 2xl:pl-13 md:p-2 md:pl-12"
+                            className="form-input w-full 2xl:text-base md:text-sm 2xl:p-3 2xl:pl-13 p-3 pl-12"
                             autoComplete="off"
                         />
                     </div>
                     <div className="relative flex align-center w-full">
-                        <div className="iconito absolute 2xl:left-6 2xl:top-4 md:left-6 md:top-3 z-1">
-                            <FiMessageSquare className="2xl:w-[18px] 2xl:h-[18px] md:w-[14px] md:h-[14px]" />
+                        <div className="iconito absolute 2xl:left-6 2xl:top-4 left-6 top-4 z-1">
+                            <FiMessageSquare className="2xl:w-[18px] 2xl:h-[18px] w-[14px] h-[14px]" />
                         </div>
                         <input
                             type="text"
@@ -189,7 +189,7 @@ function PopupContacto({ isOpen, onClose }) {
                                     validaciones.asunto === null ? '' : validaciones.asunto ? 'green' : 'red',
                             }}                            
                             placeholder={sistemaLenguaje === "Es" ? "Asunto" : "Subject"}
-                            className="form-input w-full 2xl:text-base md:text-sm 2xl:p-3 2xl:pl-13 md:p-2 md:pl-12"
+                            className="form-input w-full 2xl:text-base md:text-sm 2xl:p-3 2xl:pl-13 p-3 pl-12"
                             autoComplete="off"
                         />
                     </div>
@@ -203,18 +203,18 @@ function PopupContacto({ isOpen, onClose }) {
 										validaciones.mensaje === null ? '' : validaciones.mensaje ? 'green' : 'red',
 								}}
                                 placeholder={sistemaLenguaje === "Es" ? "Tu mensaje" : "Your message"}
-                            className="form-textarea w-full 2xl:text-base md:text-sm 2xl:p-3 2xl:pl-13 md:p-2 md:pl-12"
+                            className="form-textarea w-full 2xl:text-base md:text-sm 2xl:p-3 2xl:pl-13 p-2 pl-12"
                             rows="4"
                             required
                         ></textarea>
                     </div>
 
                     <div className="flex justify-center items-center w-full">
-                        <button type="reset" onClick={resetForm} className="reset-button inline-flex justify-center items-center 2xl:px-8 md:px-6 2xl:py-3 md:py-2 2xl:text-xl md:text-lg mr-6">
+                        <button type="reset" onClick={resetForm} className="reset-button inline-flex justify-center items-center 2xl:px-8 px-6 2xl:py-3 py-2 2xl:text-xl text-lg mr-6">
                         <span>{sistemaLenguaje === "Es" ? "Resetear" : "Reset"}</span>
                             <IoReload className="ml-2" />
                         </button>
-                        <button type="submit" className="submit-button inline-flex justify-center items-center 2xl:px-8 md:px-6 2xl:py-3 md:py-2 2xl:text-xl md:text-lg 2xl:mr-6">
+                        <button type="submit" className="submit-button inline-flex justify-center items-center 2xl:px-8 px-6 2xl:py-3 py-2 2xl:text-xl text-lg 2xl:mr-6">
                         <span>{sistemaLenguaje === "Es" ? "Enviar mensaje" : "Send message"}</span>
                             <FiSend className="ml-2" />
                         </button>

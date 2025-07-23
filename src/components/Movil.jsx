@@ -1,4 +1,6 @@
 import "./Movil.scss"; // Importa el archivo SASS
+import PopupContacto from "../pages/Contacto/PopupContacto";
+import PopupCv from "../pages/CV/CV";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -29,7 +31,8 @@ import { TbFileTypeSql } from "react-icons/tb";
 export default function Movil({ onContactClick, toggleMenu }) {
   const [isProjectsExpanded, setIsProjectsExpanded] = useState(false);
   const [isStudiesExpanded, setIsStudiesExpanded] = useState(false);
-
+  const [isContactoOpen, setIsContactoOpen] = useState(false);
+  const [cv, setCv] = useState(false);
   const closeMenu = () => {
     setIsMenuOpen(false);
     document.body.style.overflow = "auto";
@@ -59,7 +62,7 @@ export default function Movil({ onContactClick, toggleMenu }) {
   ];
 
   return (
-    <div className="movil fixed inset-0 z-50 sm:hidden">
+    <div className="movil fixed inset-0 z-50 lg:hidden">
       {/* Fondo con blur */}
       <div className="fondo absolute inset-0 bg-gradient-to-br backdrop-blur-sm" />
 
@@ -221,11 +224,11 @@ export default function Movil({ onContactClick, toggleMenu }) {
         </div>
         <div className="botones p-6 border-t space-y-4">
           <div className="flex gap-3">
-            <button className="flex-1 py-3 px-4 bg-white/80 hover:bg-white text-gray-800 font-medium rounded-lg transition-colors">
+            <button onClick={() => setCv(true)} className="flex-1 py-3 px-4 bg-white/80 hover:bg-white text-gray-800 font-medium rounded-lg transition-colors">
               CV
             </button>
             <button
-              onClick={handleContactClick}
+              onClick={() => setIsContactoOpen(true)}
               className="flex-1 py-3 px-4 hover:bg-gray-700 font-medium rounded-lg transition-colors"
             >
               Contacto
@@ -233,6 +236,11 @@ export default function Movil({ onContactClick, toggleMenu }) {
           </div>
         </div>
       </div>
+      <PopupContacto
+        isOpen={isContactoOpen}
+        onClose={() => setIsContactoOpen(false)}
+      />
+      <PopupCv isOpen={cv} onClose={() => setCv(false)} />
     </div>
   );
 }
