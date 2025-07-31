@@ -73,9 +73,9 @@ const Colpatria = ({ projectData }) => {
     return (
         <div className="estudio min-h-screen py-6">
             <div className="mx-auto px-10 mb-20">
-                <div className="flex flex-col justify-around md:flex-row gap-6">
+                <div className="flex flex-col justify-around md:flex-row gap-6 flex-wrap lg:flex-nowrap">
                     {/* Primera sección - Información del proyecto (26% aprox) */}
-                    <div className="primero w-full md:w-[26%] space-y-6 border-l-2 rounded-lg">
+                    <div className="primero w-full lg:w-[26%] md:w-[100%] space-y-6 border-l-2 rounded-lg">
                         {/* Fechas */}
                         <div className="fecha rounded-lg p-5 shadow-sm border-4 border-l-8">
                             <div className="arriba flex items-center gap-3 mb-3">
@@ -128,8 +128,8 @@ const Colpatria = ({ projectData }) => {
                     </div>
 
                     {/* Segunda sección - Slider de imágenes (70% aprox) */}
-                    <div className="w-full md:w-[70%]">
-                        <div className="segundo relative 2xl:h-[520px] lg:h-[400px] rounded-xl overflow-hidden shadow-lg">
+                    <div className="w-full lg:w-[70%]">
+                        <div className="segundo relative 2xl:h-[520px] md:h-[400px] h-[500px] rounded-xl overflow-hidden shadow-lg">
                             {/* Imagen de fondo */}
                             <img
                                 src={project.images[currentImageIndex]}
@@ -196,7 +196,7 @@ const Colpatria = ({ projectData }) => {
                         </div>
 
                         {/* Información adicional debajo del slider */}
-                        <div className="adicional 2xl:mt-6 lg:mt-4 flex justify-between items-center border-b-6 pb-6">
+                        <div className="adicional 2xl:mt-6 mt-4 flex justify-between items-center border-b-6 pb-6">
                             <span className="2xl:text-xl lg:text-lg">
                                 {currentImageIndex + 1} de {project.images.length}
                             </span>                            
@@ -220,9 +220,9 @@ const Colpatria = ({ projectData }) => {
                                 <button
                                     key={dev.id}
                                     onClick={() => openPopup(dev.id)}
-                                    className="min-w-[32%] flex flex-col items-center justify-center p-4 rounded-lg border-4 transition-all duration-300"
+                                    className="xl:min-w-[32%] md:min-w-[48%] min-w-[90%] flex flex-col items-center justify-center p-4 rounded-lg border-4 transition-all duration-300"
                                 >
-                                    <div className="2xl:text-4xl 2xl:p-5 lg:text-4xl lg:p-4 rounded-full flex items-center justify-center">
+                                    <div className="2xl:text-4xl 2xl:p-5 text-4xl p-4 rounded-full flex items-center justify-center">
                                         {dev.icon}
                                     </div>
                                     <span className="2xl:text-2xl font-medium text-center mt-3">{dev.name}</span>

@@ -101,9 +101,9 @@ function Navbar() {
           {isProjectsOpen && (
             <div
               ref={projectsRef}
-              className="contenedorSub absolute top-full left-1/2 transform -translate-x-1/2 mt-4 2xl:w-[1200px] md:w-[1000px]"
+              className="contenedorSub absolute top-full lg:left-[200px] 2xl:left-1/2 transform -translate-x-1/2 mt-4 2xl:w-[1200px] md:w-[1000px]"
             >
-              <div className="flechita absolute -top-2 left-1/2 transform -translate-x-1/2 rotate-45"></div>
+              <div className="flechita absolute -top-2 lg:left-1/3 2xl:left-1/2 transform -translate-x-1/2 rotate-45"></div>
 
               <div className="contenido flex">
                 <div className="izquierda 2xl:w-[65%] md:w-[70%] p-6">
@@ -274,7 +274,7 @@ function Navbar() {
           {isStudiesOpen && (
             <div
               ref={studiesRef}
-              className="contenedorSub absolute top-full left-1/2 transform -translate-x-1/2 mt-4 2xl:w-[1200px] md:w-[1000px]"
+              className="contenedorSub absolute top-full lg:left-[70px] 2xl:left-1/2 transform -translate-x-1/2 mt-4 2xl:w-[1200px] md:w-[1000px]"
             >
               <div className="flechita absolute -top-2 left-1/2 transform -translate-x-1/2 rotate-45"></div>
 
