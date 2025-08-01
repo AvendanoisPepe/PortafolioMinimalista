@@ -1,0 +1,12 @@
+@use "../../styles/variables.scss" as *;
+@use "../../styles/_themes.scss";
+.trabajos{
+    .header{
+        h1{
+            color: var(--dark);
+        }
+        p{
+            color: var(--text-color);
+        }
+    }
+}

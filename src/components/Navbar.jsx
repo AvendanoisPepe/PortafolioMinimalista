@@ -388,7 +388,7 @@ function Navbar() {
                     </div>
 
                     <Link
-                      to="/studies"
+                      to="/allStudies"
                       className="inline-flex items-center text-sm font-medium hover:underline"
                     >
                       {sistemaLenguaje === "Es"

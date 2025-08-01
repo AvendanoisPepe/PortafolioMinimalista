@@ -16,6 +16,7 @@ import JetSmart from "./components/Estudios/Bases/JetSmart";
 import TelColombia from "./components/Estudios/Bases/TeleventasCol";
 import Bsc from "./components/Estudios/Bases/Bsc";
 import Completo from "./components/Estudios/Completo";
+import Trabajos from "./components/Trabajos/Trabajos";
 function App() {
   const { temaNombre } = useGlobal();
   const fondo = themeBackgrounds[temaNombre] || "";
@@ -57,6 +58,7 @@ function App() {
         />
         <Route path="/bsc" element={<Colpatria projectData={Bsc} />} />
         <Route path="/CompletoEstudios" element={<Completo />} />
+        <Route path="/allStudies" element={<Trabajos />} />
       </Routes>
       <Temas />
     </div>
