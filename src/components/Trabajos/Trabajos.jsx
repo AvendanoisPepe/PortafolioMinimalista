@@ -22,11 +22,11 @@ export default function StudiesDetail() {
   const [editingComment, setEditingComment] = useState(null)
   const [comments, setComments] = useState({
     primeros:
-      "Mis primeros pasos en el desarrollo web fueron emocionantes y desafiantes. HTML me enseñó la estructura, CSS la belleza visual, y JavaScript le dio vida a todo.",
+      "Mis primeros pasos en el desarrollo web fueron tortuosos, me costaban cosas como 'poner una imagen' pero el reto siempre fue creciendo, la motivacion y creacion de cosas 'simples' pero raras para alguien que nunca habua codificado, eran mi motor.",
     universitarios:
-      "Durante mis estudios universitarios profundicé en tecnologías backend y bases de datos. PHP y Java me dieron una base sólida en programación orientada a objetos.",
+      "Aprender es un arte y en esta epoca fui tan feliz aprendiendo con mis compañeros, con los retos de los profesores, con los proyectos que combinaban todo, era felicidad pura, aunque a veces me costaba entender conceptos nuevos, siempre encontraba la manera de superarlos.",
     laborales:
-      "En el ámbito laboral me especialicé en tecnologías modernas de frontend y herramientas de desarrollo que me permitieron crear aplicaciones más robustas y escalables.",
+      "Aca era aprender o aprender, ya que si no rendía no comía, pero la verdad es que me encantaba, cada día era un nuevo desafío, cada proyecto una nueva oportunidad de crecer y aprender, y aunque a veces me sentía abrumado, siempre encontraba la manera de seguir adelante.",
     proximos:
       "Estas son las tecnologías que planeo dominar próximamente para mantenerme actualizado con las últimas tendencias del desarrollo web moderno.",
   })
@@ -50,14 +50,14 @@ export default function StudiesDetail() {
           icon: <FaCss3Alt className="text-blue-600" />,
           description: "Hojas de estilo para diseño y presentación visual",
           level: "Avanzado",
-          year: "2019",
+          year: "Todos los años",
         },
         {
           name: "JavaScript",
           icon: <FaJs className="text-yellow-500" />,
           description: "Lenguaje de programación para interactividad web",
-          level: "Intermedio",
-          year: "2019",
+          level: "Avanzado",
+          year: "Todos los años",
         },
       ],
     },
@@ -85,8 +85,8 @@ export default function StudiesDetail() {
           name: "MySQL",
           icon: <SiMysql className="text-blue-700" />,
           description: "Sistema de gestión de bases de datos relacionales",
-          level: "Intermedio",
-          year: "2020-2021",
+          level: "Avanzado",
+          year: "Todos los años",
         },
         {
           name: "MongoDB",
@@ -108,21 +108,21 @@ export default function StudiesDetail() {
           icon: <FaReact className="text-cyan-500" />,
           description: "Biblioteca de JavaScript para interfaces de usuario",
           level: "Avanzado",
-          year: "2022-2023",
+          year: "2023-Actualidad",
         },
         {
           name: "Node.js",
           icon: <FaNodeJs className="text-green-600" />,
           description: "Entorno de ejecución de JavaScript del lado del servidor",
           level: "Intermedio",
-          year: "2022-2023",
+          year: "2023-Actualidad",
         },
         {
           name: "Webpack",
           icon: <SiWebpack className="text-blue-500" />,
           description: "Empaquetador de módulos para aplicaciones JavaScript",
           level: "Intermedio",
-          year: "2023",
+          year: "2023-Actualidad",
         },
       ],
     },
