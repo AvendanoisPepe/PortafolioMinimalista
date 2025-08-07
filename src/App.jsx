@@ -17,6 +17,7 @@ import TelColombia from "./components/Estudios/Bases/TeleventasCol";
 import Bsc from "./components/Estudios/Bases/Bsc";
 import Completo from "./components/Estudios/Completo";
 import Trabajos from "./components/Trabajos/Trabajos";
+import PrimerosEstudios from "./components/Trabajos/Primeros";
 function App() {
   const { temaNombre } = useGlobal();
   const fondo = themeBackgrounds[temaNombre] || "";
@@ -59,6 +60,7 @@ function App() {
         <Route path="/bsc" element={<Colpatria projectData={Bsc} />} />
         <Route path="/CompletoEstudios" element={<Completo />} />
         <Route path="/allStudies" element={<Trabajos />} />
+        <Route path="/primerosEstudios" element={<PrimerosEstudios />} />
       </Routes>
       <Temas />
     </div>

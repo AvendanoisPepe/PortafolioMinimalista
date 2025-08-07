@@ -19,7 +19,6 @@ import { SiMysql, SiMongodb, SiWebpack, SiNextdotjs, SiTailwindcss, SiTypescript
 
 export default function StudiesDetail() {
   const [activeCategory, setActiveCategory] = useState("primeros")
-  const [editingComment, setEditingComment] = useState(null)
   const [comments, setComments] = useState({
     primeros:
       "Mis primeros pasos en el desarrollo web fueron tortuosos, me costaban cosas como 'poner una imagen' pero el reto siempre fue creciendo, la motivacion y creacion de cosas 'simples' pero raras para alguien que nunca habua codificado, eran mi motor.",
@@ -159,18 +158,6 @@ export default function StudiesDetail() {
 
   const currentStudy = studiesData[activeCategory]
 
-  const handleCommentEdit = (category) => {
-    setEditingComment(category)
-  }
-
-  const handleCommentSave = (category, newComment) => {
-    setComments((prev) => ({
-      ...prev,
-      [category]: newComment,
-    }))
-    setEditingComment(null)
-  }
-
   const getLevelColor = (level) => {
     switch (level) {
       case "Avanzado":
@@ -195,6 +182,12 @@ export default function StudiesDetail() {
       <FaClock className="text-orange-500" />
     )
   }
+  const colorClasses = {
+    blue: "bg-blue-50 text-blue-700 border border-blue-200",
+    green: "bg-green-50 text-green-700 border border-green-200",
+    purple: "bg-purple-50 text-purple-700 border border-purple-200",
+    orange: "bg-orange-50 text-orange-700 border border-orange-200",
+  }
 
   return (
     <div className="trabajos min-h-screen py-20">
@@ -212,22 +205,22 @@ export default function StudiesDetail() {
           {/* Sidebar de categorías */}
           <div className="lg:w-1/4">
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 sticky top-8">
-              <h3 className="text-lg font-semibold text-gray-800 mb-4">Categorías</h3>
+              <h3 className="text-xl font-semibold text-gray-800 mb-4">Categorías</h3>
               <nav className="space-y-2">
                 {Object.entries(studiesData).map(([key, study]) => (
                   <button
                     key={key}
                     onClick={() => setActiveCategory(key)}
-                    className={`w-full flex items-center gap-3 p-3 rounded-lg transition-all ${
+                    className={`w-full flex items-center gap-3 p-3 rounded-lg transition-all border border-gray-100 ${
                       activeCategory === key
-                        ? `bg-${study.color}-50 text-${study.color}-700 border border-${study.color}-200`
+                        ? colorClasses[study.color]
                         : "hover:bg-gray-50 text-gray-600"
                     }`}
                   >
                     <div className="text-xl">{study.icon}</div>
                     <div className="text-left">
-                      <div className="font-medium text-sm">{study.title}</div>
-                      <div className="text-xs opacity-75">{study.technologies.length} tecnologías</div>
+                      <div className="font-medium text-base">{study.title}</div>
+                      <div className="text-sm opacity-75">{study.technologies.length} tecnologías</div>
                     </div>
                   </button>
                 ))}
@@ -278,47 +271,11 @@ export default function StudiesDetail() {
                 </div>
 
                 {/* Comentario personal */}
-                <div className="bg-blue-50 rounded-lg p-6">
+                <div className={`rounded-lg p-6 ${colorClasses[studiesData[activeCategory].color]}`}>
                   <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-lg font-semibold text-gray-800">Mi Experiencia Personal</h3>
-                    <button
-                      onClick={() => handleCommentEdit(activeCategory)}
-                      className="flex items-center gap-2 text-blue-600 hover:text-blue-700 text-sm"
-                    >
-                      <FaEdit />
-                      Editar
-                    </button>
+                    <h3 className="text-lg font-semibold text-gray-800">Mi Experiencia Personal</h3>                    
                   </div>
-
-                  {editingComment === activeCategory ? (
-                    <div className="space-y-3">
-                      <textarea
-                        defaultValue={comments[activeCategory]}
-                        className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
-                        rows="4"
-                        id={`comment-${activeCategory}`}
-                      />
-                      <div className="flex gap-2">
-                        <button
-                          onClick={() => {
-                            const textarea = document.getElementById(`comment-${activeCategory}`)
-                            handleCommentSave(activeCategory, textarea.value)
-                          }}
-                          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm"
-                        >
-                          Guardar
-                        </button>
-                        <button
-                          onClick={() => setEditingComment(null)}
-                          className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 text-sm"
-                        >
-                          Cancelar
-                        </button>
-                      </div>
-                    </div>
-                  ) : (
                     <p className="text-gray-700 leading-relaxed italic">"{comments[activeCategory]}"</p>
-                  )}
                 </div>
               </div>
             </div>

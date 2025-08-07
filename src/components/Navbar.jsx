@@ -345,7 +345,7 @@ function Navbar() {
                       </div>
                     </Link>
                     <Link
-                      to="/projects/other"
+                      to="/primerosEstudios"
                       className="w-[49%] flex gap-3 p-3 rounded-sm"
                     >
                       <div className="iconico w-[30%] flex justify-center align-center">
@@ -390,6 +390,7 @@ function Navbar() {
                     <Link
                       to="/allStudies"
                       className="inline-flex items-center text-sm font-medium hover:underline"
+                      onClick={() => setIsStudiesOpen(!isStudiesOpen)}
                     >
                       {sistemaLenguaje === "Es"
                         ? "Ver todos los estudios"
