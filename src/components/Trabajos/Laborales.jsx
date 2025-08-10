@@ -2,79 +2,77 @@ import "./Estudios.scss"
 import { useState } from "react"
 import { Link } from "react-router-dom";
 import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
   FaCalendarAlt,
   FaClock,
   FaCheckCircle,
   FaLightbulb,
   FaCode,
 } from "react-icons/fa"
-
-export default function PrimerosEstudios() {
-  const [personalComment, setPersonalComment] = useState(
-    "Mis primeros pasos en el desarrollo web fueron tortuosos, me costaban cosas como 'poner una imagen' pero el reto siempre fue creciendo, la motivacion y creacion de cosas 'simples' pero raras para alguien que nunca habua codificado, eran mi motor."
-  )
-  const technologies = [
-    {
-      name: "HTML5",
-      icon: <FaHtml5 className="text-6xl text-orange-600" />,
-      description: "Lenguaje de marcado para estructurar contenido web",
-      detailedInfo:
-        "HTML5 fue mi primera introducción al desarrollo web. Aprendí sobre elementos semánticos, formularios, multimedia y las mejores prácticas para crear estructuras web sólidas y accesibles.",
-      skills: [
-        "Elementos semánticos (header, nav, main, footer)",
-        "Formularios avanzados con validación",
-        "Multimedia (audio, video, canvas)",
-        "APIs de HTML5 (localStorage, geolocation)",
-        "Accesibilidad web (ARIA, roles)",
-      ],
-      level: "Avanzado",
-      duration: "3 meses",
-      year: "2019",
-      projects: "15+ (páginas / proyectos) de web estáticas",
-      color: "red",
-    },
-    {
-      name: "CSS3",
-      icon: <FaCss3Alt className="text-6xl text-blue-600" />,
-      description: "Hojas de estilo para diseño y presentación visual",
-      detailedInfo:
-        "CSS3 me abrió las puertas al mundo del diseño web. Desde selectores básicos hasta animaciones complejas, aprendí a dar vida visual a las estructuras HTML.",
-      skills: [
-        "Flexbox y CSS Grid para layouts",
-        "Animaciones y transiciones",
-        "Responsive design con media queries",
-        "Preprocesadores (Sass/SCSS)",
-        "Metodologías (BEM, OOCSS)",
-      ],
-      level: "Avanzado",
-      duration: "4 meses",
-      year: "2019",
-      projects: "20+ diseños responsive",
-      color: "blue",
-    },
-    {
-      name: "JavaScript",
-      icon: <FaJs className="text-6xl text-yellow-500" />,
-      description: "Lenguaje de programación para interactividad web",
-      detailedInfo:
-        "JavaScript fue el punto de inflexión en mi aprendizaje. Pasar de páginas estáticas a aplicaciones interactivas fue fascinante. Aprendí desde conceptos básicos hasta manipulación del DOM.",
-      skills: [
-        "Sintaxis y conceptos fundamentales",
-        "Manipulación del DOM",
-        "Eventos y event listeners",
-        "AJAX y fetch API",
-        "ES6+ (arrow functions, destructuring, modules)",
-      ],
-      level: "Avanzado",
-      duration: "6 meses",
-      year: "2019",
-      projects: "10+ aplicaciones interactivas",
-      color: "yellow",
-    },
-  ]
+import { FaReact, FaNodeJs } from "react-icons/fa"
+import { SiWebpack } from "react-icons/si"
+export default function EstudiosLaborales() {
+    const [personalComment, setPersonalComment] = useState(
+        "Aca era aprender o aprender, ya que si no rendía no comía, pero la verdad es que me encantaba, cada día era un nuevo desafío, cada proyecto una nueva oportunidad de crecer y aprender, y aunque a veces me sentía abrumado, siempre encontraba la manera de seguir adelante."
+    )
+    const technologies = [
+        {
+            name: "React.js",
+            icon: <FaReact className="text-6xl text-cyan-500" />,
+            description: "Biblioteca de JavaScript para construir interfaces",
+            detailedInfo:
+                "En el entorno laboral me especialicé en React: componentes reutilizables, hooks, manejo de estado y performance. Construí interfaces robustas y accesibles.",
+            skills: [
+                "Hooks (useState, useEffect, useMemo)",
+                "React Router y rutas protegidas",
+                "Context API y patrones de estado",
+                "Optimización y memoización",
+                "Buenas prácticas y accesibilidad",
+            ],
+            level: "Avanzado",
+            duration: "12 meses",
+            year: "Actualidad",
+            projects: "Dashboards, paneles administrativos, sitios corporativos",
+            color: "cyan",
+        },
+        {
+            name: "Node.js",
+            icon: <FaNodeJs className="text-6xl text-green-600" />,
+            description: "Entorno de ejecución para JavaScript del lado del servidor",
+            detailedInfo:
+                "Construcción de APIs REST con Express, autenticación, validación, middlewares y despliegues. Integraciones con bases de datos y servicios externos.",
+            skills: [
+                "Express y middlewares",
+                "Autenticación JWT",
+                "Validación y sanitización",
+                "Manejo de errores",
+                "Integración con BD y servicios",
+            ],
+            level: "Intermedio",
+            duration: "24 meses",
+            year: "Actualidad",
+            projects: "APIs para consumo por SPA y aplicaciones móviles",
+            color: "green",
+        },
+        {
+            name: "Webpack",
+            icon: <SiWebpack className="text-6xl text-blue-500" />,
+            description: "Empaquetador de módulos para aplicaciones JS modernas",
+            detailedInfo:
+                "Configuración de loaders y plugins, optimización de bundles, code splitting y manejo de assets para mejorar rendimiento y DX.",
+            skills: [
+                "Loaders y plugins",
+                "Code splitting y lazy loading",
+                "Optimización de producción",
+                "Dev server y HMR",
+                "Integración con Babel",
+            ],
+            level: "Intermedio",
+            duration: "24 meses",
+            year: "Actualidad",
+            projects: "Configuraciones base y avanzadas para proyectos SPA",
+            color: "blue",
+        },
+    ]
 
   const getLevelColor = (level) => {
     switch (level) {
@@ -89,13 +87,13 @@ export default function PrimerosEstudios() {
     }
   }
   const colorClasses = {
-    yellow: "bg-yellow-50 border-yellow-100",
+    cyan: "bg-cyan-50 border-cyan-100",
     blue: "bg-blue-50 border-blue-100",
     red: "bg-red-50 border-red-100",
     green: "bg-green-50 border-green-100",
   };
   const colorClassesUl = {
-    yellow: "bg-yellow-500 border-yellow-100",
+    cyan: "bg-cyan-500 border-cyan-100",
     blue: "bg-blue-500 border-blue-100",
     red: "bg-red-500 border-red-100",
     green: "bg-green-500 border-green-100",
@@ -108,14 +106,13 @@ export default function PrimerosEstudios() {
         <div className="header text-center mb-16">
           <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full mb-6">
             <FaLightbulb className="text-xl" />
-            <span className="font-semibold">Inicio</span>
+            <span className="font-semibold">Formación Profecional</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-light mb-4">
-            Mis <span className="font-bold">Primeros Pasos</span>
+            Estudios <span className="font-bold">Laborales</span>
           </h1>
           <p className="text-lg max-w-3xl mx-auto leading-relaxed">
-            El comienzo de mi viaje en el desarrollo web. Aquí aprendí los fundamentos que siguen siendo la base de
-            todo lo que hago hoy.
+            Tecnologías y herramientas aplicadas en proyectos reales, priorizando calidad y escalabilidad.
           </p>
         </div>
 
@@ -126,7 +123,7 @@ export default function PrimerosEstudios() {
               <FaCheckCircle className="text-green-600 text-xl" />
             </div>
             <h3 className="font-semibold mb-2">Estado</h3>
-            <p className="font-medium">Completado</p>
+            <p className="font-medium">Actualidad</p>
           </div>
 
           <div className="unidad rounded-xl p-6 shadow-sm border text-center">
@@ -134,7 +131,7 @@ export default function PrimerosEstudios() {
               <FaCalendarAlt className="text-blue-600 text-xl" />
             </div>
             <h3 className="font-semibold mb-2">Período</h3>
-            <p className="font-medium">2019</p>
+            <p className="font-medium">2022 - 2025</p>
           </div>
 
           <div className="unidad rounded-xl p-6 shadow-sm border text-center">
@@ -142,7 +139,7 @@ export default function PrimerosEstudios() {
               <FaClock className="text-purple-600 text-xl" />
             </div>
             <h3 className="font-semibold mb-2">Duración Total</h3>
-            <p className="font-medium">6 meses</p>
+            <p className="font-medium">Actualidad</p>
           </div>
         </div>
 
@@ -230,16 +227,16 @@ export default function PrimerosEstudios() {
           <h3 className="text-xl font-semibold mb-6">Continúa explorando mi formación</h3>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
+              to="/primerosEstudios"
+              className="px-6 py-3 rounded-lg hover:transition-colors font-bold"
+            >
+              Primeros Estudios →
+            </Link>
+            <Link
               to="/universityStudies"
               className="px-6 py-3 rounded-lg hover:transition-colors font-bold"
             >
               Estudios Universitarios →
-            </Link>
-            <Link
-              to="/laborales"
-              className="px-6 py-3 rounded-lg hover:transition-colors font-bold"
-            >
-              Estudios Laborales →
             </Link>
             <Link
               to="/proximosEstudios"

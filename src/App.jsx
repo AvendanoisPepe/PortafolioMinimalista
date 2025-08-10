@@ -18,6 +18,11 @@ import Bsc from "./components/Estudios/Bases/Bsc";
 import Completo from "./components/Estudios/Completo";
 import Trabajos from "./components/Trabajos/Trabajos";
 import PrimerosEstudios from "./components/Trabajos/Primeros";
+import EstudiosUniversitarios from "./components/Trabajos/Universitarios";
+import EstudiosLaborales from "./components/Trabajos/Laborales";
+import ProximosEstudios from "./components/Trabajos/Proximo";
+import ScrollToTop from "./components/Scroll/ScrollToTop";
+
 function App() {
   const { temaNombre } = useGlobal();
   const fondo = themeBackgrounds[temaNombre] || "";
@@ -33,6 +38,7 @@ function App() {
     <div style={style}>
       <Toaster position="top-center" reverseOrder={false} />
       <Navbar />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contacto />} />
@@ -61,6 +67,9 @@ function App() {
         <Route path="/CompletoEstudios" element={<Completo />} />
         <Route path="/allStudies" element={<Trabajos />} />
         <Route path="/primerosEstudios" element={<PrimerosEstudios />} />
+        <Route path="/universityStudies" element={<EstudiosUniversitarios />} />
+        <Route path="/laborales" element={<EstudiosLaborales />} />
+        <Route path="/proximosEstudios" element={<ProximosEstudios />} />
       </Routes>
       <Temas />
     </div>

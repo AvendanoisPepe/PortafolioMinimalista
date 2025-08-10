@@ -285,8 +285,9 @@ function Navbar() {
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     <Link
-                      to="/projects/web"
+                      to="/proximosEstudios"
                       className="w-[49%] flex gap-3 p-3 rounded-sm"
+                      onClick={() => setIsStudiesOpen(!isStudiesOpen)}
                     >
                       <div className="iconico w-[30%] flex justify-center align-center">
                         <div className="p-3 flex justify-center align-center">
@@ -305,8 +306,9 @@ function Navbar() {
                       </div>
                     </Link>
                     <Link
-                      to="/projects/mobile"
+                      to="/laborales"
                       className="w-[49%] flex gap-3 p-3 rounded-sm"
+                      onClick={() => setIsStudiesOpen(!isStudiesOpen)}
                     >
                       <div className="iconico w-[30%] flex justify-center align-center">
                         <div className="p-3 flex justify-center align-center">
@@ -325,8 +327,9 @@ function Navbar() {
                       </div>
                     </Link>
                     <Link
-                      to="/projects/backend"
+                      to="/universityStudies"
                       className="w-[49%] flex gap-3 p-3 rounded-sm"
+                      onClick={() => setIsStudiesOpen(!isStudiesOpen)}
                     >
                       <div className="iconico w-[30%] flex justify-center align-center">
                         <div className="p-3 flex justify-center align-center">
@@ -347,6 +350,7 @@ function Navbar() {
                     <Link
                       to="/primerosEstudios"
                       className="w-[49%] flex gap-3 p-3 rounded-sm"
+                      onClick={() => setIsStudiesOpen(!isStudiesOpen)}
                     >
                       <div className="iconico w-[30%] flex justify-center align-center">
                         <div className="p-3 flex justify-center align-center">

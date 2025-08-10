@@ -2,79 +2,96 @@ import "./Estudios.scss"
 import { useState } from "react"
 import { Link } from "react-router-dom";
 import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
   FaCalendarAlt,
   FaClock,
   FaCheckCircle,
   FaLightbulb,
   FaCode,
 } from "react-icons/fa"
-
-export default function PrimerosEstudios() {
+import { FaPhp, FaJava } from "react-icons/fa"
+import { SiMysql, SiMongodb } from "react-icons/si"
+export default function EstudiosUniversitarios() {
   const [personalComment, setPersonalComment] = useState(
-    "Mis primeros pasos en el desarrollo web fueron tortuosos, me costaban cosas como 'poner una imagen' pero el reto siempre fue creciendo, la motivacion y creacion de cosas 'simples' pero raras para alguien que nunca habua codificado, eran mi motor."
+    "Aprender es un arte y en esta epoca fui tan feliz aprendiendo con mis compañeros, con los retos de los profesores, con los proyectos que combinaban todo, era felicidad pura, aunque a veces me costaba entender conceptos nuevos, siempre encontraba la manera de superarlos."
   )
-  const technologies = [
-    {
-      name: "HTML5",
-      icon: <FaHtml5 className="text-6xl text-orange-600" />,
-      description: "Lenguaje de marcado para estructurar contenido web",
-      detailedInfo:
-        "HTML5 fue mi primera introducción al desarrollo web. Aprendí sobre elementos semánticos, formularios, multimedia y las mejores prácticas para crear estructuras web sólidas y accesibles.",
-      skills: [
-        "Elementos semánticos (header, nav, main, footer)",
-        "Formularios avanzados con validación",
-        "Multimedia (audio, video, canvas)",
-        "APIs de HTML5 (localStorage, geolocation)",
-        "Accesibilidad web (ARIA, roles)",
-      ],
-      level: "Avanzado",
-      duration: "3 meses",
-      year: "2019",
-      projects: "15+ (páginas / proyectos) de web estáticas",
-      color: "red",
-    },
-    {
-      name: "CSS3",
-      icon: <FaCss3Alt className="text-6xl text-blue-600" />,
-      description: "Hojas de estilo para diseño y presentación visual",
-      detailedInfo:
-        "CSS3 me abrió las puertas al mundo del diseño web. Desde selectores básicos hasta animaciones complejas, aprendí a dar vida visual a las estructuras HTML.",
-      skills: [
-        "Flexbox y CSS Grid para layouts",
-        "Animaciones y transiciones",
-        "Responsive design con media queries",
-        "Preprocesadores (Sass/SCSS)",
-        "Metodologías (BEM, OOCSS)",
-      ],
-      level: "Avanzado",
-      duration: "4 meses",
-      year: "2019",
-      projects: "20+ diseños responsive",
-      color: "blue",
-    },
-    {
-      name: "JavaScript",
-      icon: <FaJs className="text-6xl text-yellow-500" />,
-      description: "Lenguaje de programación para interactividad web",
-      detailedInfo:
-        "JavaScript fue el punto de inflexión en mi aprendizaje. Pasar de páginas estáticas a aplicaciones interactivas fue fascinante. Aprendí desde conceptos básicos hasta manipulación del DOM.",
-      skills: [
-        "Sintaxis y conceptos fundamentales",
-        "Manipulación del DOM",
-        "Eventos y event listeners",
-        "AJAX y fetch API",
-        "ES6+ (arrow functions, destructuring, modules)",
-      ],
-      level: "Avanzado",
-      duration: "6 meses",
-      year: "2019",
-      projects: "10+ aplicaciones interactivas",
-      color: "yellow",
-    },
-  ]
+    const technologies = [
+        {
+        name: "PHP",
+        icon: <FaPhp className="text-6xl text-purple-600" />,
+        description: "Lenguaje de programación del lado del servidor",
+        detailedInfo:
+            "Durante la etapa universitaria aprendí fundamentos de backend con PHP: programación orientada a objetos, manejo de sesiones, formularios seguros y consumo/creación de APIs REST. Practiqué patrones básicos y separación de capas.",
+        skills: [
+            "POO (clases, interfaces, namespaces)",
+            "Manejo de sesiones y autenticación",
+            "Validación de formularios y seguridad básica",
+            "Consumo y creación de APIs REST",
+            "Composer y autoloading",
+        ],
+        level: "Avanzado",
+        duration: "4 semestres",
+        year: "2020-2022",
+        projects: "CRUDs, sistemas de login, pequeños paneles administrativos",
+        color: "purple",
+        },
+        {
+        name: "Java",
+        icon: <FaJava className="text-6xl text-red-600" />,
+        description: "Lenguaje de programación orientado a objetos",
+        detailedInfo:
+            "Con Java reforcé conceptos de POO, estructuras de datos, manejo de excepciones y principios SOLID. Construí aplicaciones de consola y desktop sencillas y practiqué buenas prácticas.",
+        skills: [
+            "Colecciones (List, Map, Set)",
+            "Manejo de excepciones",
+            "Principios SOLID",
+            "POO avanzada (herencia, polimorfismo)",
+            "Patrones básicos",
+        ],
+        level: "Intermedio",
+        duration: "3 semestres",
+        year: "2020-2022",
+        projects: "Aplicaciones de consola y ejercicios de estructuras de datos",
+        color: "red",
+        },
+        {
+        name: "MySQL",
+        icon: <SiMysql className="text-6xl text-blue-700" />,
+        description: "Sistema de gestión de bases de datos relacionales",
+        detailedInfo:
+            "Modelado de bases de datos relacionales, consultas SQL, joins, vistas e índices. Práctica de normalización y diseño eficiente para rendimiento y consistencia.",
+        skills: [
+            "Modelado relacional y normalización",
+            "Consultas SQL con JOINs",
+            "Índices y vistas",
+            "Procedimientos almacenados básicos",
+            "Backups y restauración",
+        ],
+        level: "Avanzado",
+        duration: "4 semestre",
+        year: "2020 - 2022",
+        projects: "Modelos de datos para sistemas académicos y comerciales",
+        color: "blue",
+        },
+        {
+        name: "MongoDB",
+        icon: <SiMongodb className="text-6xl text-green-700" />,
+        description: "Base de datos NoSQL orientada a documentos",
+        detailedInfo:
+            "Introducción a documentos, colecciones, agregaciones y diseño de esquemas flexibles para aplicaciones modernas con necesidades de escalado horizontal.",
+        skills: [
+            "Documentos y colecciones",
+            "Consultas y proyecciones",
+            "Pipeline de agregación básico",
+            "Índices y rendimiento",
+            "Estrategias de modelado NoSQL",
+        ],
+        level: "Básico",
+        duration: "1 semestre",
+        year: "2020",
+        projects: "Prototipos y ejercicios de consultas/agregaciones",
+        color: "green",
+        },
+    ] 
 
   const getLevelColor = (level) => {
     switch (level) {
@@ -89,13 +106,13 @@ export default function PrimerosEstudios() {
     }
   }
   const colorClasses = {
-    yellow: "bg-yellow-50 border-yellow-100",
+    purple: "bg-violet-50 border-violet-100",
     blue: "bg-blue-50 border-blue-100",
     red: "bg-red-50 border-red-100",
     green: "bg-green-50 border-green-100",
   };
   const colorClassesUl = {
-    yellow: "bg-yellow-500 border-yellow-100",
+    purple: "bg-violet-500 border-violet-100",
     blue: "bg-blue-500 border-blue-100",
     red: "bg-red-500 border-red-100",
     green: "bg-green-500 border-green-100",
@@ -108,14 +125,13 @@ export default function PrimerosEstudios() {
         <div className="header text-center mb-16">
           <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full mb-6">
             <FaLightbulb className="text-xl" />
-            <span className="font-semibold">Inicio</span>
+            <span className="font-semibold">Formación Universitaria</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-light mb-4">
-            Mis <span className="font-bold">Primeros Pasos</span>
+            Estudios <span className="font-bold">Universitarios</span>
           </h1>
           <p className="text-lg max-w-3xl mx-auto leading-relaxed">
-            El comienzo de mi viaje en el desarrollo web. Aquí aprendí los fundamentos que siguen siendo la base de
-            todo lo que hago hoy.
+            Fundamentos de backend y bases de datos, fortaleciendo la programación orientada a objetos y el diseño de datos.
           </p>
         </div>
 
@@ -134,7 +150,7 @@ export default function PrimerosEstudios() {
               <FaCalendarAlt className="text-blue-600 text-xl" />
             </div>
             <h3 className="font-semibold mb-2">Período</h3>
-            <p className="font-medium">2019</p>
+            <p className="font-medium">2020 - 2022</p>
           </div>
 
           <div className="unidad rounded-xl p-6 shadow-sm border text-center">
@@ -142,7 +158,7 @@ export default function PrimerosEstudios() {
               <FaClock className="text-purple-600 text-xl" />
             </div>
             <h3 className="font-semibold mb-2">Duración Total</h3>
-            <p className="font-medium">6 meses</p>
+            <p className="font-medium">4 semestres</p>
           </div>
         </div>
 
@@ -230,13 +246,13 @@ export default function PrimerosEstudios() {
           <h3 className="text-xl font-semibold mb-6">Continúa explorando mi formación</h3>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
-              to="/universityStudies"
+              to="/primerosEstudios"
               className="px-6 py-3 rounded-lg hover:transition-colors font-bold"
             >
-              Estudios Universitarios →
+              Primeros Estudios →
             </Link>
             <Link
-              to="/laborales"
+              to="/universityStudies"
               className="px-6 py-3 rounded-lg hover:transition-colors font-bold"
             >
               Estudios Laborales →

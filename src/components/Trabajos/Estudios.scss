@@ -1,0 +1,106 @@
+@use "../../styles/variables.scss" as *;
+@use "../../styles/_themes.scss";
+.estudios{
+    .header{
+        div{
+            background-color: color-mix(in srgb, var(--primary-color2) 10%, transparent);
+            svg{
+                color: var(--primary-color2);
+            }
+            span{
+                color: var(--primary-color2);
+            }
+        }
+        h1{
+            span{
+                color: var(--primary-color2);
+            }
+        }
+        p{
+            color: var(--text-color);
+        }
+    }
+    .infoG{
+        .unidad{
+            background-color: var(--white2);
+            border-color: color-mix(in srgb, var(--primary-color2) 10%, transparent);
+            h3{
+                color: var(--secondary-color);
+            }
+            p{
+                color: var(--secondary-color);
+            }
+        }
+    }
+    .info{
+        background-color: var(--white2);
+        border-color: color-mix(in srgb, var(--primary-color2) 10%, transparent);
+        .detalles{
+            h3{
+                color: var(--secondary-color);
+                svg{
+                    color: var(--primary-color2);
+                }
+            }
+            p{
+                color: var(--text-color);
+            }
+            .resaltar{
+                background-color: color-mix(in srgb, var(--secondary-color) 10%, transparent);
+                h4{
+                    color: var(--secondary-color);
+                }
+                p{
+                    color: var(--secondary-color);
+                }
+            }
+        }
+        .habilidades{
+            h3{
+                color: var(--secondary-color);
+            }
+            ul{
+                li{
+                    color: var(--text-color);
+                    span{
+                        color: var(--text-color);
+                    }
+                }
+            }
+        }
+    }
+    .personal{
+        background-color: color-mix(in srgb, var(--white2) 100%, transparent);
+        border-color: color-mix(in srgb, var(--primary-color2) 70%, transparent);
+        h3{
+            color: var(--primary-color2);
+            div{
+                background-color: color-mix(in srgb, var(--primary-color2) 20%, transparent);
+                svg{
+                    color: var(--primary-color2);
+                }
+            }
+        }
+       .texto{
+            background-color: color-mix(in srgb, var(--secondary-color) 10%, transparent);
+            border-color: color-mix(in srgb, var(--secondary-color) 20%, transparent);
+            p{
+                color: var(--text-color);
+            }
+       }
+    }
+    .navegacion{
+        h3{
+            color: var(--secondary-color);
+        }
+        a{
+            background-color: color-mix(in srgb, var(--primary-color2) 20%, transparent);
+            color: var(--primary-color2);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            &:hover{
+                background-color: color-mix(in srgb, var(--primary-color2) 40%, transparent);
+                color: var(--primary-color);
+            }
+        }
+    }
+}

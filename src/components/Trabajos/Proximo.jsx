@@ -2,104 +2,100 @@ import "./Estudios.scss"
 import { useState } from "react"
 import { Link } from "react-router-dom";
 import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
   FaCalendarAlt,
   FaClock,
   FaCheckCircle,
   FaLightbulb,
   FaCode,
 } from "react-icons/fa"
-
-export default function PrimerosEstudios() {
-  const [personalComment, setPersonalComment] = useState(
-    "Mis primeros pasos en el desarrollo web fueron tortuosos, me costaban cosas como 'poner una imagen' pero el reto siempre fue creciendo, la motivacion y creacion de cosas 'simples' pero raras para alguien que nunca habua codificado, eran mi motor."
-  )
-  const technologies = [
-    {
-      name: "HTML5",
-      icon: <FaHtml5 className="text-6xl text-orange-600" />,
-      description: "Lenguaje de marcado para estructurar contenido web",
-      detailedInfo:
-        "HTML5 fue mi primera introducción al desarrollo web. Aprendí sobre elementos semánticos, formularios, multimedia y las mejores prácticas para crear estructuras web sólidas y accesibles.",
-      skills: [
-        "Elementos semánticos (header, nav, main, footer)",
-        "Formularios avanzados con validación",
-        "Multimedia (audio, video, canvas)",
-        "APIs de HTML5 (localStorage, geolocation)",
-        "Accesibilidad web (ARIA, roles)",
-      ],
-      level: "Avanzado",
-      duration: "3 meses",
-      year: "2019",
-      projects: "15+ (páginas / proyectos) de web estáticas",
-      color: "red",
-    },
-    {
-      name: "CSS3",
-      icon: <FaCss3Alt className="text-6xl text-blue-600" />,
-      description: "Hojas de estilo para diseño y presentación visual",
-      detailedInfo:
-        "CSS3 me abrió las puertas al mundo del diseño web. Desde selectores básicos hasta animaciones complejas, aprendí a dar vida visual a las estructuras HTML.",
-      skills: [
-        "Flexbox y CSS Grid para layouts",
-        "Animaciones y transiciones",
-        "Responsive design con media queries",
-        "Preprocesadores (Sass/SCSS)",
-        "Metodologías (BEM, OOCSS)",
-      ],
-      level: "Avanzado",
-      duration: "4 meses",
-      year: "2019",
-      projects: "20+ diseños responsive",
-      color: "blue",
-    },
-    {
-      name: "JavaScript",
-      icon: <FaJs className="text-6xl text-yellow-500" />,
-      description: "Lenguaje de programación para interactividad web",
-      detailedInfo:
-        "JavaScript fue el punto de inflexión en mi aprendizaje. Pasar de páginas estáticas a aplicaciones interactivas fue fascinante. Aprendí desde conceptos básicos hasta manipulación del DOM.",
-      skills: [
-        "Sintaxis y conceptos fundamentales",
-        "Manipulación del DOM",
-        "Eventos y event listeners",
-        "AJAX y fetch API",
-        "ES6+ (arrow functions, destructuring, modules)",
-      ],
-      level: "Avanzado",
-      duration: "6 meses",
-      year: "2019",
-      projects: "10+ aplicaciones interactivas",
-      color: "yellow",
-    },
-  ]
-
-  const getLevelColor = (level) => {
-    switch (level) {
-      case "Avanzado":
-        return "bg-green-100 text-green-800 border-green-200"
-      case "Intermedio":
-        return "bg-yellow-100 text-yellow-800 border-yellow-200"
-      case "Básico":
-        return "bg-blue-100 text-blue-800 border-blue-200"
-      default:
-        return "bg-gray-100 text-gray-800 border-gray-200"
+import { SiNextdotjs, SiTailwindcss, SiTypescript } from "react-icons/si"
+export default function ProximosEstudios() {
+    const [personalComment, setPersonalComment] = useState(
+        "Estas son las tecnologías que planeo dominar próximamente para mantenerme actualizado con las últimas tendencias del desarrollo web moderno."
+    )
+    const technologies = [
+        {
+            name: "Next.js",
+            icon: <SiNextdotjs className="text-6xl text-gray-900" />,
+            description: "Framework de React para apps de producción",
+            detailedInfo:
+                "Planeo profundizar en App Router, Server Components, data fetching, caché y despliegues. También prácticas de rendimiento como streaming e ISR.",
+            skills: [
+                "App Router y layouts",
+                "Server/Client Components",
+                "Data Fetching y caché",
+                "ISR y SEO",
+                "Optimización de rendimiento",
+            ],
+            level: "En aprendizaje",
+            duration: "En curso",
+            year: "2024",
+            projects: "Prototipos y migración de proyectos a Next.js",
+            color: "neutral",
+        },
+        {
+            name: "Tailwind CSS",
+            icon: <SiTailwindcss className="text-6xl text-cyan-400" />,
+            description: "Framework CSS utilitario para construir UI rápido",
+            detailedInfo:
+                "Adoptar un flujo de trabajo utility-first, crear componentes consistentes y aplicar temas (modo oscuro). Integración con shadcn/ui.",
+            skills: [
+                "Responsive y breakpoints",
+                "Dark mode y theming",
+                "Plugins y configuración",
+                "Componentes reutilizables",
+                "Accesibilidad y buenas prácticas",
+            ],
+            level: "En aprendizaje",
+            duration: "En curso",
+            year: "2024",
+            projects: "Sistemas de diseño y UIs escalables",
+            color: "cyan",
+        },
+        {
+            name: "TypeScript",
+            icon: <SiTypescript className="text-6xl text-blue-600" />,
+            description: "Superset de JavaScript con tipado estático",
+            detailedInfo:
+                "Incorporar tipado a proyectos para mejorar robustez: tipos, interfaces, genéricos y utilidades. Integración con React y Node.",
+            skills: [
+                "Tipos e interfaces",
+                "Genéricos y utilidades",
+                "Narrowing y discriminated unions",
+                "Tipos para React/JSX",
+                "Configuración tsconfig",
+            ],
+            level: "Planificado",
+            duration: "Próximamente",
+            year: "2024",
+            projects: "Refactor de proyectos JS a TS",
+            color: "blue",
+        },
+    ]
+    const getLevelColor = (level) => {
+        switch (level) {
+        case "Avanzado":
+            return "bg-green-100 text-green-800 border-green-200"
+        case "Intermedio":
+            return "bg-yellow-100 text-yellow-800 border-yellow-200"
+        case "Básico":
+            return "bg-blue-100 text-blue-800 border-blue-200"
+        default:
+            return "bg-gray-100 text-gray-800 border-gray-200"
+        }
     }
-  }
-  const colorClasses = {
-    yellow: "bg-yellow-50 border-yellow-100",
-    blue: "bg-blue-50 border-blue-100",
-    red: "bg-red-50 border-red-100",
-    green: "bg-green-50 border-green-100",
-  };
-  const colorClassesUl = {
-    yellow: "bg-yellow-500 border-yellow-100",
-    blue: "bg-blue-500 border-blue-100",
-    red: "bg-red-500 border-red-100",
-    green: "bg-green-500 border-green-100",
-  };
+    const colorClasses = {
+        cyan: "bg-cyan-50 border-cyan-100",
+        blue: "bg-blue-50 border-blue-100",
+        red: "bg-red-50 border-red-100",
+        neutral: "bg-slate-50 border-slate-100",
+    };
+    const colorClassesUl = {
+        cyan: "bg-cyan-500 border-cyan-100",
+        blue: "bg-blue-500 border-blue-100",
+        red: "bg-red-500 border-red-100",
+        neutral: "bg-slate-500 border-slate-100",
+    };
   return (
     <div className="estudios py-20">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -108,14 +104,13 @@ export default function PrimerosEstudios() {
         <div className="header text-center mb-16">
           <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full mb-6">
             <FaLightbulb className="text-xl" />
-            <span className="font-semibold">Inicio</span>
+            <span className="font-semibold">Aprendizaje Continuo</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-light mb-4">
-            Mis <span className="font-bold">Primeros Pasos</span>
+            Próximos <span className="font-bold">Estudios</span>
           </h1>
           <p className="text-lg max-w-3xl mx-auto leading-relaxed">
-            El comienzo de mi viaje en el desarrollo web. Aquí aprendí los fundamentos que siguen siendo la base de
-            todo lo que hago hoy.
+            Las siguientes tecnologías están en mi plan de estudio para fortalecer mi stack y mantenerme actualizado.
           </p>
         </div>
 
@@ -126,7 +121,7 @@ export default function PrimerosEstudios() {
               <FaCheckCircle className="text-green-600 text-xl" />
             </div>
             <h3 className="font-semibold mb-2">Estado</h3>
-            <p className="font-medium">Completado</p>
+            <p className="font-medium">En progreso</p>
           </div>
 
           <div className="unidad rounded-xl p-6 shadow-sm border text-center">
@@ -134,7 +129,7 @@ export default function PrimerosEstudios() {
               <FaCalendarAlt className="text-blue-600 text-xl" />
             </div>
             <h3 className="font-semibold mb-2">Período</h3>
-            <p className="font-medium">2019</p>
+            <p className="font-medium">Actual</p>
           </div>
 
           <div className="unidad rounded-xl p-6 shadow-sm border text-center">
@@ -142,7 +137,7 @@ export default function PrimerosEstudios() {
               <FaClock className="text-purple-600 text-xl" />
             </div>
             <h3 className="font-semibold mb-2">Duración Total</h3>
-            <p className="font-medium">6 meses</p>
+            <p className="font-medium">En curso</p>
           </div>
         </div>
 
@@ -230,6 +225,12 @@ export default function PrimerosEstudios() {
           <h3 className="text-xl font-semibold mb-6">Continúa explorando mi formación</h3>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
+              to="/primerosEstudios"
+              className="px-6 py-3 rounded-lg hover:transition-colors font-bold"
+            >
+              Primeros Estudios →
+            </Link>
+            <Link
               to="/universityStudies"
               className="px-6 py-3 rounded-lg hover:transition-colors font-bold"
             >
@@ -240,12 +241,6 @@ export default function PrimerosEstudios() {
               className="px-6 py-3 rounded-lg hover:transition-colors font-bold"
             >
               Estudios Laborales →
-            </Link>
-            <Link
-              to="/proximosEstudios"
-              className="px-6 py-3 rounded-lg hover:transition-colors font-bold"
-            >
-              Próximos Estudios →
             </Link>
           </div>
         </div>
