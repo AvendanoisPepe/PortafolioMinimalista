@@ -22,7 +22,7 @@ import EstudiosUniversitarios from "./components/Trabajos/Universitarios";
 import EstudiosLaborales from "./components/Trabajos/Laborales";
 import ProximosEstudios from "./components/Trabajos/Proximo";
 import ScrollToTop from "./components/Scroll/ScrollToTop";
-
+import References from "./components/Referencias/Referencias";
 function App() {
   const { temaNombre } = useGlobal();
   const fondo = themeBackgrounds[temaNombre] || "";
@@ -70,6 +70,7 @@ function App() {
         <Route path="/universityStudies" element={<EstudiosUniversitarios />} />
         <Route path="/laborales" element={<EstudiosLaborales />} />
         <Route path="/proximosEstudios" element={<ProximosEstudios />} />
+        <Route path="/referencias" element={<References />} />
       </Routes>
       <Temas />
     </div>

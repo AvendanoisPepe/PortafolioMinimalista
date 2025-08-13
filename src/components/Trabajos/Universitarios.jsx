@@ -252,7 +252,7 @@ export default function EstudiosUniversitarios() {
               Primeros Estudios →
             </Link>
             <Link
-              to="/universityStudies"
+              to="/laborales"
               className="px-6 py-3 rounded-lg hover:transition-colors font-bold"
             >
               Estudios Laborales →

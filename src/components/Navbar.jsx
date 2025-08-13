@@ -408,7 +408,7 @@ function Navbar() {
           )}
         </div>
         <Link
-          to="/contact"
+          to="/referencias"
           className="transition text-sm lg:text-lg 2xl:text-2xl"
         >
           {sistemaLenguaje === "Es" ? "Referencias" : "References"}
