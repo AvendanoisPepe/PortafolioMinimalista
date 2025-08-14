@@ -1,0 +1,48 @@
+@use "../../styles/variables.scss" as *;
+@use "../../styles/_themes.scss";
+.referencias{
+    .header{
+        .vineta{
+            background-color: color-mix(in srgb, var(--white2) 80%, transparent);
+            span{
+                color: var(--text-color);
+            }
+        }
+        h1{
+            color: var(--secondary-color);
+        }
+        p{
+            color: var(--text-color);
+        }
+    }
+    .cont{
+        background-color: color-mix(in srgb, var(--white2) 90%, transparent);
+        .contTe{
+            h2{
+                color: var(--secondary-color);
+            }
+            .texto{
+                color: var(--text-color);
+            }
+            .lista{
+                h3{
+                    color: var(--secondary-color);
+                }
+                .compa{
+                    color: var(--text-color);
+                }
+            }
+        }
+    }
+    .final{
+        .uno{
+            background-color: color-mix(in srgb, var(--white2) 90%, transparent);
+            h3{
+                color: var(--secondary-color);
+            }
+            p{
+                color: var(--text-color);
+            }
+        }
+    }
+}
