@@ -3,6 +3,7 @@ import { useState } from "react"
 import { FaChevronLeft, FaChevronRight, FaQuoteLeft, FaStar, FaLinkedin } from "react-icons/fa"
 import { PiGithubLogoBold } from "react-icons/pi";
 import { useGlobal } from "../../context/GlobalContext";
+import nest from "../../assets/imagenes/referencias/nest.jpeg"
 export default function References() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const { sistemaLenguaje } = useGlobal();
@@ -12,7 +13,7 @@ export default function References() {
       name: "Nestor Gomez",
       position: "Jefe de Proyectos",
       company: "Atento Colombia.",
-      image: "/placeholder.svg?height=120&width=120&text=MG",
+      image: nest,
       quote: "Un desarrollador excepcional y confiable.",
       testimonial:
         "Trabajo actualmente con Juan en varios proyectos. Su capacidad para resolver problemas complejos y entregar código limpio es impresionante. Siempre cumple con los plazos y su comunicación es excelente. Lo recomiendo sin dudarlo.",
@@ -56,7 +57,7 @@ export default function References() {
     name: "Nestor Gomez",
     position: "Project Manager",
     company: "Atento Colombia.",
-    image: "/placeholder.svg?height=120&width=120&text=MG",
+    image: nest,
     quote: "An exceptional and reliable developer.",
     testimonial:
       "I currently work with Juan on several projects. His ability to solve complex problems and deliver clean code is impressive. He always meets deadlines and his communication is excellent. I highly recommend him without hesitation.",
@@ -169,12 +170,12 @@ export default function References() {
                 <img
                   src={currentRef.image || "/placeholder.svg"}
                   alt={currentRef.name}
-                  className="w-24 h-24 rounded-full mx-auto shadow-lg object-cover"
+                  className="w-36 h-w-36 rounded-full mx-auto shadow-lg object-cover"
                 />
                 <div
-                  className={`absolute -bottom-2 -right-2 w-8 h-8 ${colorClasses.accent} rounded-full flex items-center justify-center shadow-lg`}
+                  className={`absolute -bottom-2 -right-2 w-12 h-12 ${colorClasses.accent} rounded-full flex items-center justify-center shadow-lg`}
                 >
-                  <FaStar className="text-white text-sm" />
+                  <FaStar className="text-white text-xl" />
                 </div>
               </div>
             </div>

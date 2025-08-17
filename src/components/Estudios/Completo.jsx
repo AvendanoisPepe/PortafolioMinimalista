@@ -8,12 +8,14 @@ import img3 from "../../assets/imagenes/trabajos/ClaroTmk/cla10.png";
 import img4 from "../../assets/imagenes/trabajos/Colombia/tel11.png";
 import img5 from "../../assets/imagenes/trabajos/JetSmart/jet10.png";
 import PopupContacto from "../../pages/Contacto/PopupContacto";
+import { useGlobal } from "../../context/GlobalContext";
 
 export default function Completo() {
+    const { sistemaLenguaje } = useGlobal();
     const [hoveredProject, setHoveredProject] = useState(null);
     const [isContactoOpen, setIsContactoOpen] = useState(false);
     // Datos de ejemplo de todos los proyectos
-    const projects = [
+    const projectsEs = [
       {
         id: "web-ecommerce",
         title: "Web Training Colpatria Sac",
@@ -88,7 +90,70 @@ export default function Completo() {
         ],
       },
     ];
-
+    const projectsEn = [
+      {
+        id: "web-ecommerce",
+        title: "Web Training Colpatria Sac",
+        description:
+          "Information library with a variety of documents such as PDFs, Excel files, PowerPoints, Word documents, among others. Organized in sections with a global search engine.",
+        deviceType: "laptop",
+        image: img2,
+        link: "/colpatriaWebV2",
+        category: "Web Development",
+        technologies: ["React", "Node.js", "WebPack", "LocalBase"],
+      },
+      {
+        id: "web-dashboard",
+        title: "Web Training Bsc Inbound",
+        description:
+          "This project represents an important challenge by leveraging modern tools such as React, shadcn UI, and Tailwind CSS. Bsc Inbound not only modernizes processes but also reflects the commitment to improve interaction and accessibility for users.",
+        deviceType: "tablet",
+        image: img1,
+        link: "/bsc",
+        category: "Web Application",
+        technologies: ["React", "Tailwind", "Ui shadcn", "Node.js", "LocalBase"],
+      },
+      {
+        id: "web-portfolio",
+        title: "Web Training Televentas Colombia",
+        description:
+          "First project with comparative charts, optimized with several updates and integrating key tools such as sales scripts, news, and indicator tracking.",
+        deviceType: "laptop",
+        image: img4,
+        link: "/televentasCol",
+        category: "Web Design",
+        technologies: ["React", "Node.js", "LocalBase", "Chart.js", "WebPack"],
+      },
+      {
+        id: "mobile-social",
+        title: "Web Training JetSmart",
+        description:
+          "Scenario visualization system with key tools to guide new users in solving their needs.",
+        deviceType: "tablet",
+        image: img5,
+        link: "/jetsmart",
+        category: "Web Design",
+        technologies: ["React", "Node.js", "LocalBase", "WebPack", "JavaScript"],
+      },
+      {
+        id: "mobile-fitness",
+        title: "Web Training Claro Tmk",
+        description:
+          "The chart system was optimized to compare different features between two phones, achieving a clearer and more intuitive visualization that facilitates decision-making.",
+        deviceType: "mobile",
+        image: img3,
+        link: "/claroTmk",
+        category: "Mobile App",
+        technologies: [
+          "React Native",
+          "Node.js",
+          "LocalBase",
+          "Chart.js",
+          "WebPack",
+        ],
+      },
+    ];
+    const projects = sistemaLenguaje === "Es" ? projectsEs : projectsEn
     const DeviceFrame = ({ deviceType, image, title, isHovered }) => {
         const baseClasses = "transition-all duration-500 transform";
         
@@ -151,16 +216,15 @@ export default function Completo() {
     };
 
     return (
-        <div className="completo min-h-screen py-10">
+        <div className="completo min-h-screen p-10">
             <div className="max-w-7xl mx-auto ">
                 {/* Header */}
                 <div className="header text-center mb-12">
                     <h1 className="text-4xl md:text-5xl font-light mb-4">
-                        Todos los <span className="font-bold">Proyectos</span>
+                        {sistemaLenguaje === "Es" ? <>Todos los <span className="font-bold">Proyectos</span></> : <>All <span className="font-bold">Projects</span></>}
                     </h1>
                     <p className="text-lg max-w-2xl mx-auto">
-                        Explora mi colección completa de proyectos web, aplicaciones móviles
-                        y soluciones digitales.
+                        {sistemaLenguaje === "Es" ? "Explora mi colección completa de proyectos web, aplicaciones móviles y soluciones digitales." : "Explore my complete collection of web projects, mobile apps, and digital solutions"}                        
                     </p>
                 </div>
 
@@ -217,7 +281,7 @@ export default function Completo() {
                                         to={project.link}
                                         className="enlace inline-flex items-center gap-2 px-6 py-3 font-semibold rounded-lg transition-colors"
                                     >
-                                        <span>Ver Proyecto</span>
+                                        <span>{sistemaLenguaje === "Es" ? "Ver Proyecto" : "See Project"}</span>
                                         <FaExternalLinkAlt className="text-sm" />
                                     </Link>
                                 </div>
@@ -228,15 +292,14 @@ export default function Completo() {
 
                 {/* Call to Action */}
                 <div className="footer text-center mt-20 p-8 rounded-xl shadow-sm">
-                    <h3 className="text-3xl font-semibold mb-4">
-                        ¿Tienes un proyecto en mente?
+                    <h3 className="text-3xl font-semibold mb-4">                        
+                        {sistemaLenguaje === "Es" ? "¿Tienes un proyecto en mente?" : "Do you have a project in mind?"}
                     </h3>
-                    <p className="mb-6">
-                        Me encantaría ayudarte a convertir tu idea en realidad. Hablemos
-                        sobre tu próximo proyecto.
+                    <p className="mb-6">                        
+                        {sistemaLenguaje === "Es" ? "Me encantaría ayudarte a convertir tu idea en realidad. Hablemos sobre tu próximo proyecto." : "I'd love to help you turn your idea into reality. Let's talk about your next project."}
                     </p>
-                    <button onClick={() => setIsContactoOpen(true)} className="inline-flex items-center gap-2 px-8 py-3 font-semibold rounded-lg transition-colors">
-                        Contactar
+                    <button onClick={() => setIsContactoOpen(true)} className="inline-flex items-center gap-2 px-8 py-3 font-semibold rounded-lg transition-colors">                        
+                        {sistemaLenguaje === "Es" ? "Contactar" : "Contact"}
                     </button>
                 </div>
             </div>

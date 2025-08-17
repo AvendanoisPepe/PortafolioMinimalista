@@ -44,7 +44,7 @@ function App() {
         <Route path="/contact" element={<Contacto />} />
         <Route path="/about" element={<SobreMi />} />
         <Route
-          path="/colpatriaWebV2"
+          path="/colpatriaWebV2" 
           element={<Colpatria projectData={ColpatriaV2} />}
         />
         <Route

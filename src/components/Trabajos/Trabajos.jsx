@@ -16,18 +16,32 @@ import {
   FaEdit,
 } from "react-icons/fa"
 import { SiMysql, SiMongodb, SiWebpack, SiNextdotjs, SiTailwindcss, SiTypescript } from "react-icons/si"
+import { useGlobal } from "../../context/GlobalContext";
 
 export default function StudiesDetail() {
+  const { sistemaLenguaje } = useGlobal();
   const [activeCategory, setActiveCategory] = useState("primeros")
   const [comments, setComments] = useState({
-    primeros:
-      "Mis primeros pasos en el desarrollo web fueron tortuosos, me costaban cosas como 'poner una imagen' pero el reto siempre fue creciendo, la motivacion y creacion de cosas 'simples' pero raras para alguien que nunca habua codificado, eran mi motor.",
-    universitarios:
-      "Aprender es un arte y en esta epoca fui tan feliz aprendiendo con mis compañeros, con los retos de los profesores, con los proyectos que combinaban todo, era felicidad pura, aunque a veces me costaba entender conceptos nuevos, siempre encontraba la manera de superarlos.",
-    laborales:
-      "Aca era aprender o aprender, ya que si no rendía no comía, pero la verdad es que me encantaba, cada día era un nuevo desafío, cada proyecto una nueva oportunidad de crecer y aprender, y aunque a veces me sentía abrumado, siempre encontraba la manera de seguir adelante.",
-    proximos:
-      "Estas son las tecnologías que planeo dominar próximamente para mantenerme actualizado con las últimas tendencias del desarrollo web moderno.",
+    Es: {
+      primeros:
+        "Mis primeros pasos en el desarrollo web fueron tortuosos, me costaban cosas como 'poner una imagen' pero el reto siempre fue creciendo, la motivacion y creacion de cosas 'simples' pero raras para alguien que nunca habua codificado, eran mi motor.",
+      universitarios:
+        "Aprender es un arte y en esta epoca fui tan feliz aprendiendo con mis compañeros, con los retos de los profesores, con los proyectos que combinaban todo, era felicidad pura, aunque a veces me costaba entender conceptos nuevos, siempre encontraba la manera de superarlos.",
+      laborales:
+        "Aca era aprender o aprender, ya que si no rendía no comía, pero la verdad es que me encantaba, cada día era un nuevo desafío, cada proyecto una nueva oportunidad de crecer y aprender, y aunque a veces me sentía abrumado, siempre encontraba la manera de seguir adelante.",
+      proximos:
+        "Estas son las tecnologías que planeo dominar próximamente para mantenerme actualizado con las últimas tendencias del desarrollo web moderno.",
+    },
+    En: {
+      primeros:
+        "My first steps in web development were tortuous, even something like 'adding an image' was hard. But challenges kept growing, and the motivation of creating 'simple' things that felt magical to someone who had never coded before was my engine.",
+      universitarios:
+        "Learning is an art, and at this time I was so happy learning with classmates, facing professors' challenges, building projects that combined everything. It was pure joy, even when I struggled with new concepts, I always found a way to overcome them.",
+      laborales:
+        "Here it was 'learn or learn', because if I didn’t perform, I didn’t eat. But truth is, I loved it. Each day was a new challenge, each project a new opportunity to grow. Even when I felt overwhelmed, I always found a way to keep going.",
+      proximos:
+        "These are the technologies I plan to master soon to stay up-to-date with the latest trends in modern web development.",
+    },
   })
 
   const studiesData = {
@@ -194,10 +208,10 @@ export default function StudiesDetail() {
       <div className="max-w-7xl 2xl:max-w-11/12 mx-auto px-4 md:px-8">
         <div className="header text-center mb-12">
           <h1 className="text-4xl 2xl:text-6xl md:text-5xl font-light mb-4">
-            Mi Trayectoria de <span className="font-bold">Estudios</span>
+            {sistemaLenguaje === "Es" ? <>Mi Trayectoria de <span className="font-bold">Estudios</span></> : <>My Study  <span className="font-bold">Path</span></>}            
           </h1>
           <p className="text-lg 2xl:text-xl max-w-2xl 2xl:max-w-3xl mx-auto">
-            Un recorrido por mi formación académica y profesional en el desarrollo web
+            {sistemaLenguaje === "Es" ? "Un recorrido por mi formación académica y profesional en el desarrollo web" : "A tour of my academic and professional training in web development"}
           </p>
         </div>
 
@@ -205,7 +219,9 @@ export default function StudiesDetail() {
           {/* Sidebar de categorías */}
           <div className="lg:w-1/4">
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 sticky top-8">
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">Categorías</h3>
+              <h3 className="text-xl font-semibold text-gray-800 mb-4">
+                {sistemaLenguaje === "Es" ? "Categorías" : "Categories"}
+              </h3>
               <nav className="space-y-2">
                 {Object.entries(studiesData).map(([key, study]) => (
                   <button
@@ -275,7 +291,7 @@ export default function StudiesDetail() {
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="text-lg font-semibold text-gray-800">Mi Experiencia Personal</h3>                    
                   </div>
-                    <p className="text-gray-700 leading-relaxed italic">"{comments[activeCategory]}"</p>
+                    <p className="text-gray-700 leading-relaxed italic">"{comments[sistemaLenguaje][activeCategory]}"</p>
                 </div>
               </div>
             </div>

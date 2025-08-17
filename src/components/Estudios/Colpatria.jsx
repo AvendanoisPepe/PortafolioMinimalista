@@ -9,12 +9,14 @@ import {
     FaTimes,
 } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { useGlobal } from '../../context/GlobalContext';
 
 const Colpatria = ({ projectData }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [activePopup, setActivePopup] = useState(null);
     const [popupImageIndex, setPopupImageIndex] = useState(0);
     const [isImageTransitioning, setIsImageTransitioning] = useState(false);
+    const { sistemaLenguaje } = useGlobal();
 
     const project = projectData || defaultProject;
     const nextImage = () => {
@@ -83,10 +85,10 @@ const Colpatria = ({ projectData }) => {
                                     <FaCalendarAlt className="2xl:text-2xl lg:text-lg" />
                                 </div>
                                 <h3 className="2xl:text-xl lg:text-lg font-semibold">
-                                    Fechas del Proyecto
+                                    {sistemaLenguaje === "Es" ? "Fechas del Proyecto" : "Project Dates"}
                                 </h3>
                             </div>
-                            <p className="pUno font-medium 2xl:text-lg lg:text-base">{project.dates}</p>
+                            <p className="pUno font-medium 2xl:text-lg lg:text-base">{projectData.dates[sistemaLenguaje]}</p>
                         </div>
 
                         {/* Descripción */}
@@ -96,11 +98,11 @@ const Colpatria = ({ projectData }) => {
                                     <FaInfoCircle className="2xl:text-2xl lg:text-lg" />
                                 </div>
                                 <h3 className="2xl:text-xl lg:text-lg font-semibold">
-                                    Descripción
+                                    {sistemaLenguaje === "Es" ? "Descripción del Proyecto" : "Project Description"}
                                 </h3>
                             </div>
                             <p className="pUno leading-relaxed 2xl:text-base lg:text-base">
-                                {project.description}
+                                {project.description[sistemaLenguaje]}
                             </p>
                         </div>
 
@@ -111,7 +113,7 @@ const Colpatria = ({ projectData }) => {
                                     <FaCode className="2xl:text-2xl lg:text-lg" />
                                 </div>
                                 <h3 className="2xl:text-xl lg:text-lg font-semibold">
-                                    Tecnologías
+                                    {sistemaLenguaje === "Es" ? "Tecnologías Utilizadas" : "Technologies Used"}
                                 </h3>
                             </div>
                             <div className="lista flex flex-col gap-2">
@@ -161,7 +163,7 @@ const Colpatria = ({ projectData }) => {
                                 {/* Descripción en la parte inferior */}
                                 <div className="abajo rounded-lg p-4 2xl:w-3/4 lg:w-3/4">
                                     <p className="2xl:text-xl leading-relaxed">
-                                        {project.slideDescription}
+                                        {project.slideDescription[sistemaLenguaje]}
                                     </p>
                                 </div>
                             </div>
@@ -207,14 +209,16 @@ const Colpatria = ({ projectData }) => {
                                         className="link flex items-center gap-2 px-4 py-2 rounded-lg transition-colors"
                                     >
                                         <FaTimes className="2xl:text-3xl mr-1" />
-                                        <span className="2xl:text-xl">{project.button.text}</span>
+                                        <span className="2xl:text-xl">{project.button.text[sistemaLenguaje]}</span>
                                     </Link>
                                 </div>
                             )}
                         </div>
                         {/* Nueva sección de Desarrollos */}
                         <div className="desarrollos mt-6">
-                            <h3 className="2xl:text-3xl lg:text-2xl font-semibold mb-6">Desarrollos</h3>
+                            <h3 className="2xl:text-3xl lg:text-2xl font-semibold mb-6">
+                                {sistemaLenguaje === "Es" ? "Desarrollos del Proyecto" : "Project Developments"}
+                            </h3>
                             <div className="card w-auto flex justify-center items-center flex-wrap gap-4">
                                 {project.developments.filter(dev => !dev.hidden).map((dev) => (
                                 <button
@@ -225,7 +229,7 @@ const Colpatria = ({ projectData }) => {
                                     <div className="2xl:text-4xl 2xl:p-5 text-4xl p-4 rounded-full flex items-center justify-center">
                                         {dev.icon}
                                     </div>
-                                    <span className="2xl:text-2xl font-medium text-center mt-3">{dev.name}</span>
+                                    <span className="2xl:text-2xl font-medium text-center mt-3">{dev.name[sistemaLenguaje]}</span>
                                 </button>
                                 ))} 
                             </div>
@@ -251,7 +255,7 @@ const Colpatria = ({ projectData }) => {
                     <div className="header flex justify-between items-center p-4 border-b w-[94%]">
                         <div className="union flex items-center gap-3">
                             <div className="p-2 rounded-lg 2xl:text-4xl lg:text-3xl">{activeDevelopment.icon}</div>
-                            <h3 className="font-semibold 2xl:text-3xl lg:text-3xl">{activeDevelopment.name}</h3>
+                            <h3 className="font-semibold 2xl:text-3xl lg:text-3xl">{activeDevelopment.name[sistemaLenguaje]}</h3>
                         </div>
                         <button onClick={closePopup} className="p-2 rounded-full transition-colors">
                             <FaTimes className="2xl:text-4xl lg:text-3xl" />
@@ -261,7 +265,7 @@ const Colpatria = ({ projectData }) => {
                     {/* Contenido del popup */}
                     <div className="contenido p-5 overflow-y-auto max-h-[calc(90vh-130px)]">
                         {/* Descripción */}
-                        <p className="2xl:text-base lg:text-lg mb-6 leading-relaxed rounded-lg p-4">{activeDevelopment.description}</p>
+                        <p className="2xl:text-base lg:text-lg mb-6 leading-relaxed rounded-lg p-4">{activeDevelopment.description[sistemaLenguaje]}</p>
 
                         {/* Imagen principal */}
                         <div className="principal relative w-full pt-6 pb-6 rounded-lg overflow-hidden mb-4">

@@ -26,13 +26,13 @@
             .segundo{
                 span{
                     background-color: var(--secondary-color3);
-                    color: var(--primary-color3);
+                    color: var(--primary-color2);
                 }
             }
             .tercero{
                 .enlace{
-                    background-color: var(--secondary-color4);
-                    color: var(--white);
+                    background-color: var(--secondary-color2);
+                    color: var(--white2);
                     transition: all 0.3s;
                     &:hover{
                         transition: all 0.3s;
