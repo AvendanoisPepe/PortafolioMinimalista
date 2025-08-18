@@ -46,125 +46,266 @@ export default function StudiesDetail() {
 
   const studiesData = {
     primeros: {
-      title: "Primeros Estudios",
+      title: {
+        Es: "Primeros Estudios",
+        En: "First Studies"
+      },
       icon: <FaGraduationCap className="text-blue-600" />,
       color: "blue",
-      status: "Completado",
+      status: {
+        Es: "Completado",
+        En: "Filled"
+      },
       technologies: [
         {
           name: "HTML5",
           icon: <FaHtml5 className="text-orange-600" />,
-          description: "Lenguaje de marcado para estructurar contenido web",
-          level: "Avanzado",
-          year: "2019",
+          description: {
+            Es: "Lenguaje de marcado para estructurar contenido web",
+            En: "Markup language for structuring web content"
+          },
+          level: {
+            Es: "Avanzado",
+            En: "Advanced"
+          },
+          year: {
+            Es: "2019",
+            En: "2019"
+          },
         },
         {
           name: "CSS3",
           icon: <FaCss3Alt className="text-blue-600" />,
-          description: "Hojas de estilo para diseño y presentación visual",
-          level: "Avanzado",
-          year: "Todos los años",
+          description: {
+            Es: "Hojas de estilo para diseño y presentación visual",
+            En: "Style sheets for design and visual presentation"
+          },
+          level: {
+            Es: "Avanzado",
+            En: "Advanced"
+          },
+          year: {
+            Es: "Todos los años",
+            En: "Every year"
+          },
         },
         {
           name: "JavaScript",
           icon: <FaJs className="text-yellow-500" />,
-          description: "Lenguaje de programación para interactividad web",
-          level: "Avanzado",
-          year: "Todos los años",
+          description: {
+            Es: "Lenguaje de programación para interactividad web",
+            En: "Programming language for web interactivity"
+          },
+          level: {
+            Es: "Avanzado",
+            En: "Advanced"
+          },
+          year: {
+            Es: "Todos los años",
+            En: "Every year"
+          },
         },
       ],
     },
     universitarios: {
-      title: "Estudios Universitarios",
+      title: {
+        Es: "Estudios Universitarios",
+        En: "University Studies"
+      },
       icon: <FaGraduationCap className="text-green-600" />,
       color: "green",
-      status: "Completado",
+      status: {
+        Es: "Completado",
+        En: "Filled"
+      },
       technologies: [
         {
           name: "PHP",
           icon: <FaPhp className="text-purple-600" />,
-          description: "Lenguaje de programación del lado del servidor",
-          level: "Intermedio",
-          year: "2020-2022",
+          description: {
+            Es: "Lenguaje de programación del lado del servidor",
+            En: "Server-side programming language"
+          },
+          level: {
+            Es: "Intermedio",
+            En: "Intermediate"
+          },
+          year: {
+            Es: "2020-2022",
+            En: "2020-2022"
+          }
         },
         {
           name: "Java",
           icon: <FaJava className="text-red-600" />,
-          description: "Lenguaje de programación orientado a objetos",
-          level: "Intermedio",
-          year: "2020-2022",
+          description: {
+            Es: "Lenguaje de programación orientado a objetos",
+            En: "Object-oriented programming language"
+          },
+          level: {
+            Es: "Intermedio",
+            En: "Intermediate"
+          },
+          year: {
+            Es: "2020-2022",
+            En: "2020-2022"
+          }
         },
         {
           name: "MySQL",
           icon: <SiMysql className="text-blue-700" />,
-          description: "Sistema de gestión de bases de datos relacionales",
-          level: "Avanzado",
-          year: "Todos los años",
+          description: {
+            Es: "Sistema de gestión de bases de datos relacionales",
+            En: "Relational database management system"
+          },
+          level: {
+            Es: "Avanzado",
+            En: "Advanced"
+          },
+          year: {
+            Es: "Todos los años",
+            En: "Every year"
+          },
         },
         {
           name: "MongoDB",
           icon: <SiMongodb className="text-green-700" />,
-          description: "Base de datos NoSQL orientada a documentos",
-          level: "Básico",
-          year: "2020",
+          description: {
+            Es: "Base de datos NoSQL orientada a documentos",
+            En: "Document-oriented NoSQL database"
+          },
+          level: {
+            Es: "Básico",
+            En: "Essential"
+          },
+          year: {
+            Es: "2020",
+            En: "2020"
+          }
         },
       ],
     },
     laborales: {
-      title: "Estudios Laborales",
+      title: {
+        Es: "Estudios Laborales",
+        En: "Labor Studies"
+      },
       icon: <FaBriefcase className="text-purple-600" />,
       color: "purple",
-      status: "Completado",
+      status: {
+        Es: "Completado",
+        En: "Filled"
+      },
       technologies: [
         {
           name: "React.js",
           icon: <FaReact className="text-cyan-500" />,
-          description: "Biblioteca de JavaScript para interfaces de usuario",
-          level: "Avanzado",
-          year: "2023-Actualidad",
+          description: {
+            Es: "Biblioteca de JavaScript para interfaces de usuario",
+            En: "JavaScript library for user interfaces"
+          },
+          level: {
+            Es: "Avanzado",
+            En: "Advanced"
+          },
+          year: {
+            Es: "2023-Actualidad",
+            En: "2023-Present"
+          }
         },
         {
           name: "Node.js",
           icon: <FaNodeJs className="text-green-600" />,
-          description: "Entorno de ejecución de JavaScript del lado del servidor",
-          level: "Intermedio",
-          year: "2023-Actualidad",
+          description: {
+            Es: "Base de datos NoSQL orientada a documentos",
+            En: "Server-side JavaScript runtime environment"
+          },
+          level: {
+            Es: "Intermedio",
+            En: "Intermediate"
+          },
+          year: {
+            Es: "2023-Actualidad",
+            En: "2023-Present"
+          }
         },
         {
           name: "Webpack",
           icon: <SiWebpack className="text-blue-500" />,
-          description: "Empaquetador de módulos para aplicaciones JavaScript",
-          level: "Intermedio",
-          year: "2023-Actualidad",
+          description: {
+            Es: "Empaquetador de módulos para aplicaciones JavaScript",
+            En: "Module packager for JavaScript applications"
+          },
+          level: {
+            Es: "Intermedio",
+            En: "Intermediate"
+          },
+          year: {
+            Es: "2023-Actualidad",
+            En: "2023-Present"
+          }
         },
       ],
     },
     proximos: {
-      title: "Próximos Estudios",
+      title: {
+        Es: "Próximos Estudios",
+        En: "Upcoming Studies"
+      },
       icon: <FaRocket className="text-orange-600" />,
       color: "orange",
-      status: "En progreso",
+      status: {
+        Es: "En progreso",
+        En: "In progress"
+      },
       technologies: [
         {
           name: "Next.js",
           icon: <SiNextdotjs className="text-black" />,
-          description: "Framework de React para aplicaciones web de producción",
-          level: "En aprendizaje",
-          year: "2024",
+          description: {
+            Es: "Framework de React para aplicaciones web de producción",
+            En: "React Framework for Production Web Applications"
+          },
+          level: {
+            Es: "En aprendizaje",
+            En: "In learning"
+          },
+          year: {
+            Es: "2025",
+            En: "2025"
+          }
         },
         {
           name: "Tailwind CSS",
           icon: <SiTailwindcss className="text-cyan-400" />,
-          description: "Framework de CSS utilitario para diseño rápido",
-          level: "En aprendizaje",
-          year: "2024",
+          description: {
+            Es: "Framework de CSS utilitario para diseño rápido",
+            En: "Utilitarian CSS framework for rapid design"
+          },
+          level: {
+            Es: "En aprendizaje",
+            En: "In learning"
+          },
+          year: {
+            Es: "2025",
+            En: "2025"
+          }
         },
         {
           name: "TypeScript",
           icon: <SiTypescript className="text-blue-600" />,
-          description: "Superset de JavaScript con tipado estático",
-          level: "Planificado",
-          year: "2024",
+          description: {
+            Es: "Superset de JavaScript con tipado estático",
+            En: "Statically Typed JavaScript Superset"
+          },
+          level: {
+            Es: "Planificado",
+            En: "Planned"
+          },
+          year: {
+            Es: "2025",
+            En: "2025"
+          }
         },
       ],
     },
@@ -176,13 +317,23 @@ export default function StudiesDetail() {
     switch (level) {
       case "Avanzado":
         return "bg-green-100 text-green-800"
+      case "Advanced":
+        return "bg-green-100 text-green-800"
       case "Intermedio":
+        return "bg-yellow-100 text-yellow-800"
+      case "Intermediate":
         return "bg-yellow-100 text-yellow-800"
       case "Básico":
         return "bg-blue-100 text-blue-800"
+      case "Essential":
+        return "bg-blue-100 text-blue-800"
       case "En aprendizaje":
         return "bg-purple-100 text-purple-800"
+      case "In learning":
+        return "bg-purple-100 text-purple-800"
       case "Planificado":
+        return "bg-gray-100 text-gray-800"
+      case "Planned":
         return "bg-gray-100 text-gray-800"
       default:
         return "bg-gray-100 text-gray-800"
@@ -190,7 +341,7 @@ export default function StudiesDetail() {
   }
 
   const getStatusIcon = (status) => {
-    return status === "Completado" ? (
+    return status === "Completado" || status === "Filled" ? (
       <FaCheckCircle className="text-green-500" />
     ) : (
       <FaClock className="text-orange-500" />
@@ -216,7 +367,6 @@ export default function StudiesDetail() {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Sidebar de categorías */}
           <div className="lg:w-1/4">
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 sticky top-8">
               <h3 className="text-xl font-semibold text-gray-800 mb-4">
@@ -235,37 +385,34 @@ export default function StudiesDetail() {
                   >
                     <div className="text-xl">{study.icon}</div>
                     <div className="text-left">
-                      <div className="font-medium text-base">{study.title}</div>
-                      <div className="text-sm opacity-75">{study.technologies.length} tecnologías</div>
+                      <div className="font-medium text-base">{study.title[sistemaLenguaje]}</div>
+                      <div className="text-sm opacity-75">{study.technologies.length} {sistemaLenguaje === "Es" ? "tecnologías" : "technologies"}</div>
                     </div>
                   </button>
                 ))}
               </nav>
             </div>
           </div>
-
-          {/* Contenido principal */}
           <div className="lg:w-3/4">
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-              {/* Header de la categoría */}
               <div className={`bg-${currentStudy.color}-50 border-b border-${currentStudy.color}-100 p-6`}>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
                     <div className="text-3xl">{currentStudy.icon}</div>
                     <div>
-                      <h2 className="text-2xl font-bold text-gray-800">{currentStudy.title}</h2>
+                      <h2 className="text-2xl font-bold text-gray-800">{currentStudy.title[sistemaLenguaje]}</h2>
                       <div className="flex items-center gap-2 mt-1">
-                        {getStatusIcon(currentStudy.status)}
-                        <span className="text-sm text-gray-600">{currentStudy.status}</span>
+                        {getStatusIcon(currentStudy.status[sistemaLenguaje])}
+                        <span className="text-sm text-gray-600">{currentStudy.status[sistemaLenguaje]}</span>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-
-              {/* Tecnologías */}
               <div className="p-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-4">Tecnologías Estudiadas</h3>
+                <h3 className="text-lg font-semibold text-gray-800 mb-4">
+                  {sistemaLenguaje === "Es" ? "Tecnologías Estudiadas" : "Technologies Studied"}
+                </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                   {currentStudy.technologies.map((tech, index) => (
                     <div key={index} className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors">
@@ -274,12 +421,12 @@ export default function StudiesDetail() {
                         <div className="flex-1">
                           <div className="flex items-center justify-between mb-2">
                             <h4 className="font-semibold text-gray-800">{tech.name}</h4>
-                            <span className={`px-2 py-1 rounded-full text-xs font-medium ${getLevelColor(tech.level)}`}>
-                              {tech.level}
+                            <span className={`px-2 py-1 rounded-full text-xs font-medium ${getLevelColor(tech.level[sistemaLenguaje])}`}>
+                              {tech.level[sistemaLenguaje]}
                             </span>
                           </div>
-                          <p className="text-sm text-gray-600 mb-2">{tech.description}</p>
-                          <div className="text-xs text-gray-500">Estudiado en: {tech.year}</div>
+                          <p className="text-sm text-gray-600 mb-2">{tech.description[sistemaLenguaje]}</p>
+                          <div className="text-xs text-gray-500">{sistemaLenguaje === "Es" ? "Estudiado en:" : "Studied in:"} {tech.year[sistemaLenguaje]}</div>
                         </div>
                       </div>
                     </div>
@@ -289,7 +436,7 @@ export default function StudiesDetail() {
                 {/* Comentario personal */}
                 <div className={`rounded-lg p-6 ${colorClasses[studiesData[activeCategory].color]}`}>
                   <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-lg font-semibold text-gray-800">Mi Experiencia Personal</h3>                    
+                    <h3 className="text-lg font-semibold text-gray-800">{sistemaLenguaje === "Es" ? "Mi Experiencia Personal" : "My Personal Experience"}</h3>                    
                   </div>
                     <p className="text-gray-700 leading-relaxed italic">"{comments[sistemaLenguaje][activeCategory]}"</p>
                 </div>
