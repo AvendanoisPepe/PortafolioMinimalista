@@ -4,6 +4,8 @@ import { FaChevronLeft, FaChevronRight, FaQuoteLeft, FaStar, FaLinkedin } from "
 import { PiGithubLogoBold } from "react-icons/pi";
 import { useGlobal } from "../../context/GlobalContext";
 import nest from "../../assets/imagenes/referencias/nest.jpeg"
+import hugo from "../../assets/imagenes/referencias/hugo.jpg"
+import jerson from "../../assets/imagenes/referencias/jerson.jpg"
 export default function References() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const { sistemaLenguaje } = useGlobal();
@@ -27,7 +29,7 @@ export default function References() {
       name: "Jersson Osma",
       position: "Desarrollador Backend",
       company: "Atento Colombia.",
-      image: "/placeholder.svg?height=120&width=120&text=CR",
+      image:  jerson,
       quote: "Código de calidad y gran capacidad de aprendizaje.",
       testimonial:
         "Juan se integró perfectamente a nuestro equipo. Su dominio de React y Node.js nos permitió acelerar el desarrollo significativamente. Es proactivo, creativo y siempre busca las mejores soluciones. Un gran profesional.",
@@ -41,14 +43,14 @@ export default function References() {
       name: "Hugo Machacon",
       position: "Desarrollador Full Stack",
       company: "3 Metas",
-      image: "/placeholder.svg?height=120&width=120&text=AM",
+      image: hugo,
       quote: "Colaboración perfecta entre diseño y desarrollo.",
       testimonial:
         "La colaboración con Juan fue fantástica. Entiende perfectamente los diseños y los implementa con precisión pixel-perfect. Su atención al detalle y conocimiento de UX hacen que trabajar juntos sea muy fluido y productivo.",
       rating: 5,
       color: "purple",
       linkedin: "https://www.linkedin.com/in/hmachacom/",
-      email: "ana.martinez@creativestudio.com",
+      email: "https://github.com/hmachacom?tab=repositories",
     },
   ]
   const testimonialsEn = [
@@ -71,7 +73,7 @@ export default function References() {
     name: "Jersson Osma",
     position: "Backend Developer",
     company: "Atento Colombia.",
-    image: "/placeholder.svg?height=120&width=120&text=CR",
+    image:  jerson,
     quote: "Quality code and great learning ability.",
     testimonial:
       "Juan integrated perfectly into our team. His mastery of React and Node.js allowed us to accelerate development significantly. He is proactive, creative, and always seeks the best solutions. A great professional.",
@@ -85,14 +87,14 @@ export default function References() {
     name: "Hugo Machacon",
     position: "Full Stack Developer",
     company: "3 Metas",
-    image: "/placeholder.svg?height=120&width=120&text=AM",
+    image: hugo,
     quote: "Perfect collaboration between design and development.",
     testimonial:
       "Collaboration with Juan was fantastic. He perfectly understands the designs and implements them with pixel-perfect precision. His attention to detail and UX knowledge make working together smooth and productive.",
     rating: 5,
     color: "purple",
     linkedin: "https://www.linkedin.com/in/hmachacom/",
-    email: "ana.martinez@creativestudio.com",
+    email: "https://github.com/hmachacom?tab=repositories",
   },
 ];
 
