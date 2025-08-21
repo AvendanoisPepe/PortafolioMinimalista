@@ -29,11 +29,13 @@ function App() {
 
   const style = {
     backgroundImage: `url(${fondo})`,
-    backgroundSize: "cover",
+    backgroundSize: "cover",       // Se ajusta al viewport, sin estirarse
     backgroundPosition: "center",
+    backgroundAttachment: "fixed", // 🔑 Hace que el fondo quede fijo
     minHeight: "100vh",
     transition: "background-image 0.5s ease-in-out",
   };
+
   return (
     <div style={style}>
       <Toaster position="top-center" reverseOrder={false} />

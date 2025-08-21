@@ -40,3 +40,21 @@
         }
     }
 }
+.numeros{
+    h2{
+        color: color-mix(in srgb, var(--primary-color) 80%, transparent);
+    }
+    p{
+        color: color-mix(in srgb, var(--text-color) 90%, transparent);
+    }
+    .conte{
+        background-color: var(--white2);
+        div{
+            background-color: color-mix(in srgb, var(--primary-color2) 20%, transparent);
+            color: color-mix(in srgb, var(--primary-color2) 100%, transparent);
+        }
+    }
+    h3{
+        color: color-mix(in srgb, var(--secondary-color) 100%, transparent);
+    }
+}
