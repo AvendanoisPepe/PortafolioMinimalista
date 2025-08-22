@@ -96,3 +96,45 @@
     }
     
 }
+.proyectos{
+    background-color: color-mix(in srgb, var(--primary-color) 20%, transparent);
+    h2{
+        color: color-mix(in srgb, var(--primary-color) 80%, transparent);
+    }
+    p{
+        color: color-mix(in srgb, var(--text-color) 90%, transparent);
+    }
+    .cont{
+        background-color: var(--white2);
+        border-color: var(--secondary-color3);
+        .img{
+            background-color: color-mix(in srgb, var(--primary-color) 80%, transparent);
+        }
+        h3{
+            color: color-mix(in srgb, var(--primary-color) 100%, transparent);
+        }
+        span{
+            background-color: color-mix(in srgb, var(--primary-color2) 30%, transparent);
+            color: color-mix(in srgb, var(--primary-color2) 100%, transparent);
+        }
+        a{
+            color: color-mix(in srgb, var(--primary-color) 100%, transparent);
+        }
+    }
+    .todos{
+        a{
+            background-color: color-mix(in srgb, var(--primary-color) 30%, transparent);
+            color: color-mix(in srgb, var(--primary-color) 100%, transparent);
+        }
+    }
+}
+.referencia{
+    .cabecera{
+        h2{
+            color: color-mix(in srgb, var(--primary-color) 80%, transparent);
+        }
+        p{
+            color: color-mix(in srgb, var(--text-color) 90%, transparent);
+        }
+    }
+}

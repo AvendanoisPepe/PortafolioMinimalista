@@ -14,22 +14,16 @@ import {
   FaReact,
   FaNodeJs,
   FaJs,
-  FaHtml5,
   FaJava,
-  FaChevronDown,
-  FaQuoteLeft,
   FaStar,
-  FaLaptopCode,
-  FaMobile,
-  FaDatabase,
   FaRocket,
-  FaUniversity,
-  FaBriefcase,
-  FaChartLine, // Declared FaChartLine here
 } from "react-icons/fa"
 import { SiNextdotjs } from "react-icons/si"
 import { GrMysql } from "react-icons/gr";
 import { useEffect, useState } from "react";
+import img1 from "../assets/imagenes/trabajos/Colpatria/V2/col13.png"
+import img2 from "../assets/imagenes/trabajos/JetSmart/jet10.png"
+import img3 from "../assets/imagenes/trabajos/Bsc/bsc8.png"
 function Home() {
   const [currentSkill, setCurrentSkill] = useState(0)
   const { sistemaLenguaje } = useGlobal();
@@ -43,25 +37,25 @@ function Home() {
   ]
   const projects = [
     {
-      title: "E-commerce Platform",
-      description: "Plataforma completa con React y Node.js",
-      image: "/placeholder.svg?height=200&width=300&text=E-commerce",
-      tech: ["React", "Node.js", "MongoDB"],
-      link: "/projects/web",
+      title: "Web Training Colpatria",
+      description: "Biblioteca de información con variación de documentos tantos pdfa, excel, power ponts, words, entre otros. Seccionado de forma ordenada con buscador general y global",
+      image: img1,
+      tech: ["React", "Node.js", "LocalBase"],
+      link: "/colpatriaWebV2",
     },
     {
-      title: "Mobile App",
-      description: "Aplicación móvil con React Native",
-      image: "/placeholder.svg?height=200&width=300&text=Mobile-App",
-      tech: ["React Native", "Firebase"],
-      link: "/projects/mobile",
+      title: "Web Training JetSmart",
+      description: "Sistema de visualización de escenarios con herramientas clave para guiar a nuevos usuarios en la resolución de sus necesidades.",
+      image: img2,
+      tech: ["React", "JavaScript", "Node.js"],
+      link: "/jetsmart",
     },
     {
-      title: "Dashboard Analytics",
-      description: "Panel de control con visualizaciones",
-      image: "/placeholder.svg?height=200&width=300&text=Dashboard",
-      tech: ["Vue.js", "D3.js", "Express"],
-      link: "/projects/backend",
+      title: "Web Training Bsc Inbound",
+      description: "Este proyecto representa un desafío importante al apostar por herramientas modernas como React, shadcn UI y Tailwind CSS",
+      image: img3,
+      tech: ["React","Tailwind","Ui shadcn"],
+      link: "/bsc",
     },
   ]
   const stats = [
@@ -215,14 +209,14 @@ function Home() {
         </div>
       </section>
        {/* Sección de Proyectos Destacados */}
-      <section className="relative py-10 bg-gradient-to-br overflow-hidden">        
+      <section className="proyectos relative py-20 bg-gradient-to-br overflow-hidden">        
         <div className="max-w-6xl mx-auto px-4 md:px-8 relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-light mb-4">
               {sistemaLenguaje === "Es" ? "Proyectos" : "Featured"}{" "}
-              <span className="font-bold text-purple-600">Destacados</span>
+              <span className="font-bold">Destacados</span>
             </h2>
-            <p className="text-gray-600 text-lg">
+            <p className="text-lg">
               {sistemaLenguaje === "Es" ? "Algunos de mis trabajos más recientes" : "Some of my most recent work"}
             </p>
           </div>
@@ -231,28 +225,28 @@ function Home() {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="bg-white/80 backdrop-blur-sm rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group hover:scale-105 border border-white/50"
+                className="cont backdrop-blur-sm rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group hover:scale-105 border"
               >
-                <div className="aspect-video bg-gray-100 overflow-hidden">
+                <div className="aspect-video flex justify-center items-center img overflow-hidden">
                   <img
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="font-bold text-gray-800 mb-2">{project.title}</h3>
-                  <p className="text-gray-600 mb-4">{project.description}</p>
+                  <h3 className="font-bold mb-2">{project.title}</h3>
+                  <p className="mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((tech, techIndex) => (
-                      <span key={techIndex} className="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded-full">
+                      <span key={techIndex} className="px-2 py-1 text-xs rounded-full">
                         {tech}
                       </span>
                     ))}
                   </div>
                   <Link
-                    href={project.link}
-                    className="inline-flex items-center gap-2 text-purple-600 hover:text-purple-700 font-medium transition-colors"
+                    to={project.link}
+                    className="inline-flex items-center gap-2 font-medium transition-colors"
                   >
                     {sistemaLenguaje === "Es" ? "Ver Proyecto" : "View Project"}
                     <FaArrowRight className="text-sm group-hover:translate-x-1 transition-transform" />
@@ -262,10 +256,10 @@ function Home() {
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="todos text-center mt-12">
             <Link
-              href="/projects"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all duration-300 font-semibold hover:scale-105 shadow-lg"
+              to="/CompletoEstudios"
+              className="inline-flex items-center gap-2 px-8 py-3 rounded-lg transition-all duration-300 font-semibold hover:scale-105 shadow-lg"
             >
               {sistemaLenguaje === "Es" ? "Ver Todos los Proyectos" : "View All Projects"}
               <FaArrowRight />
@@ -273,131 +267,15 @@ function Home() {
           </div>
         </div>
       </section>
-      {/* Sección de Formación */}
-      <section className="relative py-20 bg-white overflow-hidden">
-        {/* Elementos de fondo */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 right-10 text-orange-100 text-9xl opacity-15">
-            <FaGraduationCap />
-          </div>
-          <div className="absolute bottom-20 left-10 text-orange-100 text-7xl opacity-20">
-            <FaUniversity />
-          </div>
-          <div className="absolute top-1/2 right-1/3 text-orange-100 text-6xl opacity-10">
-            <FaBriefcase />
-          </div>
-        </div>
-
-        <div className="max-w-6xl mx-auto px-4 md:px-8 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="lg:w-1/2">
-              <h2 className="text-3xl md:text-4xl font-light mb-6">
-                {sistemaLenguaje === "Es" ? "Mi" : "My"} <span className="font-bold text-orange-600">Formación</span>
-              </h2>
-              <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-                {sistemaLenguaje === "Es"
-                  ? "Un recorrido continuo de aprendizaje desde los fundamentos hasta las tecnologías más modernas del desarrollo web."
-                  : "A continuous learning journey from fundamentals to the most modern web development technologies."}
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-center gap-4 p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                    <FaGraduationCap className="text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-800">Primeros Estudios</h3>
-                    <p className="text-gray-600 text-sm">HTML, CSS, JavaScript</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4 p-4 bg-green-50 rounded-lg hover:bg-green-100 transition-colors">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                    <FaUniversity className="text-green-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-800">Estudios Universitarios</h3>
-                    <p className="text-gray-600 text-sm">PHP, Java, MySQL, MongoDB</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4 p-4 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors">
-                  <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
-                    <FaBriefcase className="text-purple-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-800">Estudios Laborales</h3>
-                    <p className="text-gray-600 text-sm">React, Node.js, Webpack</p>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-8">
-                <Link
-                  href="/studies"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-all duration-300 font-semibold hover:scale-105 shadow-lg"
-                >
-                  {sistemaLenguaje === "Es" ? "Ver Mi Formación" : "View My Education"}
-                  <FaArrowRight />
-                </Link>
-              </div>
-            </div>
-            <div className="lg:w-1/2">
-              <div className="bg-gradient-to-br from-orange-100 to-orange-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="text-center">
-                  <div className="w-24 h-24 bg-orange-200 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <FaGraduationCap className="text-orange-600 text-3xl" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                    {sistemaLenguaje === "Es" ? "Aprendizaje Continuo" : "Continuous Learning"}
-                  </h3>
-                  <p className="text-gray-600 mb-6">
-                    {sistemaLenguaje === "Es"
-                      ? "Siempre en busca de nuevas tecnologías y mejores prácticas para crear soluciones innovadoras."
-                      : "Always looking for new technologies and best practices to create innovative solutions."}
-                  </p>
-                  <div className="grid grid-cols-3 gap-4 text-center">
-                    <div>
-                      <div className="text-2xl font-bold text-orange-600">4+</div>
-                      <div className="text-sm text-gray-600">
-                        {sistemaLenguaje === "Es" ? "Categorías" : "Categories"}
-                      </div>
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold text-orange-600">15+</div>
-                      <div className="text-sm text-gray-600">
-                        {sistemaLenguaje === "Es" ? "Tecnologías" : "Technologies"}
-                      </div>
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold text-orange-600">3+</div>
-                      <div className="text-sm text-gray-600">{sistemaLenguaje === "Es" ? "Años" : "Years"}</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       {/* Sección de Referencias */}
-      <section className="relative py-20 bg-gradient-to-br from-pink-50 to-purple-50 overflow-hidden">
-        {/* Elementos de fondo */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-10 left-10 text-pink-100 text-8xl opacity-20">
-            <FaQuoteLeft />
-          </div>
-          <div className="absolute bottom-10 right-10 text-pink-100 text-6xl opacity-15">
-            <FaUsers />
-          </div>
-          <div className="absolute top-1/2 left-1/2 text-pink-100 text-5xl opacity-10">
-            <FaStar />
-          </div>
-        </div>
-
+      <section className="referencia relative py-10 bg-gradient-to-br overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 md:px-8 relative z-10">
-          <div className="text-center mb-12">
+          <div className="cabecera text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-light mb-4">
               {sistemaLenguaje === "Es" ? "Lo que dicen" : "What they say"}{" "}
-              <span className="font-bold text-pink-600">de mí</span>
+              <span className="font-bold">de mí</span>
             </h2>
-            <p className="text-gray-600 text-lg">
+            <p className="text-lg">
               {sistemaLenguaje === "Es"
                 ? "Testimonios de colegas y clientes con los que he trabajado"
                 : "Testimonials from colleagues and clients I've worked with"}
