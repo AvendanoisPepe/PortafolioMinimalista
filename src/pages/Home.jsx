@@ -15,7 +15,7 @@ import {
   FaNodeJs,
   FaJs,
   FaHtml5,
-  FaCss3Alt,
+  FaJava,
   FaChevronDown,
   FaQuoteLeft,
   FaStar,
@@ -28,17 +28,18 @@ import {
   FaChartLine, // Declared FaChartLine here
 } from "react-icons/fa"
 import { SiNextdotjs } from "react-icons/si"
+import { GrMysql } from "react-icons/gr";
 import { useEffect, useState } from "react";
 function Home() {
   const [currentSkill, setCurrentSkill] = useState(0)
   const { sistemaLenguaje } = useGlobal();
   const skills = [
     { name: "React", icon: <FaReact className="text-cyan-500" />, level: 90 },
-    { name: "JavaScript", icon: <FaJs className="text-yellow-500" />, level: 85 },
-    { name: "Node.js", icon: <FaNodeJs className="text-green-600" />, level: 80 },
-    { name: "HTML5", icon: <FaHtml5 className="text-orange-600" />, level: 95 },
-    { name: "CSS3", icon: <FaCss3Alt className="text-blue-600" />, level: 90 },
-    { name: "Next.js", icon: <SiNextdotjs className="text-black" />, level: 75 },
+    { name: "JavaScript", icon: <FaJs className="text-yellow-500" />, level: 100 },
+    { name: "Node.js", icon: <FaNodeJs className="text-green-600" />, level: 70 },
+    { name: "Java", icon: <FaJava className="text-red-600" />, level: 70 },
+    { name: "MySql", icon: <GrMysql className="text-blue-600" />, level: 100 },
+    { name: "Next.js", icon: <SiNextdotjs className="text-slate-700" />, level: 50 },
   ]
   const projects = [
     {
@@ -178,26 +179,13 @@ function Home() {
         </div>
       </section>
       {/* Sección de Habilidades */}
-      <section className="relative py-20 bg-white overflow-hidden">
-        {/* Elementos de fondo */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-10 text-green-100 text-9xl opacity-15">
-            <FaJs />
-          </div>
-          <div className="absolute bottom-20 right-10 text-green-100 text-7xl opacity-20">
-            <FaReact />
-          </div>
-          <div className="absolute top-1/2 right-1/4 text-green-100 text-5xl opacity-10">
-            <FaNodeJs />
-          </div>
-        </div>
-
+      <section className="habilidades relative py-10 overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 md:px-8 relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-light mb-4">
-              {sistemaLenguaje === "Es" ? "Mis" : "My"} <span className="font-bold text-green-600">Habilidades</span>
+              {sistemaLenguaje === "Es" ? "Mis" : "My"} <span className="font-bold">Habilidades</span>
             </h2>
-            <p className="text-gray-600 text-lg">
+            <p className="text-lg">
               {sistemaLenguaje === "Es"
                 ? "Tecnologías que domino y utilizo en mis proyectos"
                 : "Technologies I master and use in my projects"}
@@ -208,39 +196,26 @@ function Home() {
             {skills.map((skill, index) => (
               <div
                 key={index}
-                className={`bg-gray-50 rounded-xl p-6 text-center hover:bg-gray-100 transition-all duration-300 hover:scale-105 ${
-                  currentSkill === index ? "ring-2 ring-green-500 bg-green-50 shadow-lg" : ""
+                className={`cont border-1 border-amber-50 rounded-xl p-6 text-center hover:transition-all duration-300 hover:scale-105 ${
+                  currentSkill === index ? "ring-2 active shadow-lg" : ""
                 }`}
               >
                 <div className="text-4xl mb-4">{skill.icon}</div>
-                <h3 className="font-semibold text-gray-800 mb-2">{skill.name}</h3>
-                <div className="w-full bg-gray-200 rounded-full h-2">
+                <h3 className="font-semibold mb-2">{skill.name}</h3>
+                <div className="w-full bg-gray-300 rounded-full h-2">
                   <div
-                    className="bg-green-500 h-2 rounded-full transition-all duration-1000"
+                    className="barra h-2 rounded-full transition-all duration-1000"
                     style={{ width: `${skill.level}%` }}
                   ></div>
                 </div>
-                <span className="text-sm text-gray-600 mt-1 block">{skill.level}%</span>
+                <span className="text-sm mt-1 block">{skill.level}%</span>
               </div>
             ))}
           </div>
         </div>
       </section>
        {/* Sección de Proyectos Destacados */}
-      <section className="relative py-20 bg-gradient-to-br from-purple-50 to-pink-50 overflow-hidden">
-        {/* Elementos de fondo */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-10 left-20 text-purple-100 text-8xl opacity-20">
-            <FaLaptopCode />
-          </div>
-          <div className="absolute bottom-10 right-20 text-purple-100 text-6xl opacity-15">
-            <FaMobile />
-          </div>
-          <div className="absolute top-1/2 left-1/3 text-purple-100 text-5xl opacity-10">
-            <FaDatabase />
-          </div>
-        </div>
-
+      <section className="relative py-10 bg-gradient-to-br overflow-hidden">        
         <div className="max-w-6xl mx-auto px-4 md:px-8 relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-light mb-4">
