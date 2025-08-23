@@ -97,7 +97,7 @@
     
 }
 .proyectos{
-    background-color: color-mix(in srgb, var(--primary-color) 20%, transparent);
+    background-color: color-mix(in srgb, var(--primary-color2) 20%, transparent);
     h2{
         color: color-mix(in srgb, var(--primary-color) 80%, transparent);
     }
@@ -135,6 +135,56 @@
         }
         p{
             color: color-mix(in srgb, var(--text-color) 90%, transparent);
+        }        
+    }
+    .cont{
+        background-color: var(--white2);
+        border-color: var(--secondary-color3);
+        .estrella{
+            color: var(--primary-color2);
         }
+        blockquote{
+            color: var(--text-color);
+        }
+        h4{
+            color: var(--secondary-color);
+        }
+        p{
+            color: var(--secondary-color);
+        }
+        .especi{
+            color: var(--primary-color2);
+        }
+    }
+    a{
+        background-color: color-mix(in srgb, var(--primary-color) 30%, transparent);
+        color: color-mix(in srgb, var(--primary-color) 100%, transparent);
+    }
+}
+.footer{
+    background-color: color-mix(in srgb, var(--secondary-color2) 100%, transparent);
+    color: color-mix(in srgb, var(--white2) 100%, transparent);
+    span{
+        color: var(--primary-color2);
+    }
+    p{
+        color: color-mix(in srgb, var(--white2) 100%, transparent);
+    }
+    .botones{
+        .uno{
+            background-color: color-mix(in srgb, var(--primary-color2) 100%, transparent);
+            color: color-mix(in srgb, var(--white2) 100%, transparent);
+            cursor: pointer;
+        }
+        .dos{
+            border-color: color-mix(in srgb, var(--white2) 100%, transparent);
+            color: color-mix(in srgb, var(--white2) 100%, transparent);
+            cursor: pointer;
+        }
+    }
+    a{
+        background-color: color-mix(in srgb, var(--primary-color2) 100%, transparent);
+        color: color-mix(in srgb, var(--white2) 100%, transparent);
+        cursor: pointer;
     }
 }

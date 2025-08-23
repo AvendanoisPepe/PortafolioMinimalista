@@ -24,7 +24,12 @@ import { useEffect, useState } from "react";
 import img1 from "../assets/imagenes/trabajos/Colpatria/V2/col13.png"
 import img2 from "../assets/imagenes/trabajos/JetSmart/jet10.png"
 import img3 from "../assets/imagenes/trabajos/Bsc/bsc8.png"
+import hugo from "../assets/imagenes/referencias/hugo.jpg"
+import PopupContacto from "../pages/Contacto/PopupContacto";
+import PdfEn from "../assets/documents/En.pdf";
+import PdfEs from "../assets/documents/Es.pdf";
 function Home() {
+  const [isContactoOpen, setIsContactoOpen] = useState(false);
   const [currentSkill, setCurrentSkill] = useState(0)
   const { sistemaLenguaje } = useGlobal();
   const skills = [
@@ -63,6 +68,17 @@ function Home() {
     { number: "5+", label: "Años de Experiencia", icon: <FaGraduationCap /> },
     { number: "5★", label: "Calificación Promedio", icon: <FaUsers /> },
   ]
+  const descargarCV = () => {
+    const link = document.createElement("a");
+    link.href = sistemaLenguaje === "Es" ? PdfEs : PdfEn;
+    link.setAttribute(
+      "download",
+      sistemaLenguaje === "Es" ? "SebastianAvendano_CV_Es.pdf" : "SebastianAvendano_CV_En.pdf"
+    );
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  };
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSkill((prev) => (prev + 1) % skills.length)
@@ -282,39 +298,39 @@ function Home() {
             </p>
           </div>
 
-          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-xl max-w-4xl mx-auto border border-white/50 hover:shadow-2xl transition-shadow">
+          <div className="cont backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-xl max-w-4xl mx-auto border hover:shadow-2xl transition-shadow">
             <div className="text-center">
-              <div className="w-20 h-20 bg-pink-100 rounded-full mx-auto mb-6 overflow-hidden">
+              <div className="w-30 h-30 bg-pink-100 rounded-full mx-auto mb-6 overflow-hidden">
                 <img
-                  src="/placeholder.svg?height=80&width=80&text=MG"
+                  src={hugo}
                   alt="María González"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="flex justify-center gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <FaStar key={i} className="text-yellow-400 text-lg" />
+                  <FaStar key={i} className="estrella text-lg" />
                 ))}
               </div>
-              <blockquote className="text-xl md:text-2xl font-light text-gray-800 mb-6 italic">
+              <blockquote className="text-xl md:text-2xl font-light mb-6 italic">
                 "
                 {sistemaLenguaje === "Es"
-                  ? "Un desarrollador excepcional y confiable. Su capacidad para resolver problemas complejos es impresionante."
-                  : "An exceptional and reliable developer. His ability to solve complex problems is impressive."}
+                  ? "Colaboración perfecta entre diseño y desarrollo."
+                  : "Perfect collaboration between design and development."}
                 "
               </blockquote>
               <div className="text-center">
-                <h4 className="font-semibold text-gray-800">María González</h4>
-                <p className="text-pink-600 font-medium">Project Manager</p>
-                <p className="text-gray-500 text-sm">TechSolutions Inc.</p>
+                <h4 className="font-semibold">Hugo Machacon</h4>
+                <p className="especi font-medium">Full Stack Developer</p>
+                <p className="text-sm">3 Metas</p>
               </div>
             </div>
           </div>
 
           <div className="text-center mt-12">
             <Link
-              href="/references"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition-all duration-300 font-semibold hover:scale-105 shadow-lg"
+              to="/referencias"
+              className="inline-flex items-center gap-2 px-8 py-3 rounded-lg hover:transition-all duration-300 font-semibold hover:scale-105 shadow-lg"
             >
               {sistemaLenguaje === "Es" ? "Ver Todas las Referencias" : "View All References"}
               <FaArrowRight />
@@ -323,55 +339,51 @@ function Home() {
         </div>
       </section>
       {/* Sección de Contacto/CTA */}
-      <section className="relative py-20 bg-gray-900 text-white overflow-hidden">
-        {/* Elementos de fondo */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 right-20 text-gray-700 text-8xl opacity-30">
-            <FaEnvelope />
-          </div>
-          <div className="absolute bottom-20 left-20 text-gray-700 text-6xl opacity-20">
-            <FaRocket />
-          </div>
-        </div>
-
+      <section className="footer relative py-10 overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 md:px-8 text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-light mb-6">
             {sistemaLenguaje === "Es" ? "¿Tienes un proyecto en" : "Do you have a project in"}{" "}
-            <span className="font-bold text-blue-400">mente?</span>
+            <span className="font-bold">mente?</span>
           </h2>
-          <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-lg mb-8 max-w-2xl mx-auto">
             {sistemaLenguaje === "Es"
               ? "Me encantaría ayudarte a convertir tu idea en realidad. Hablemos sobre tu próximo proyecto."
               : "I'd love to help you turn your idea into reality. Let's talk about your next project."}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <button className="inline-flex items-center gap-2 px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 font-semibold hover:scale-105 shadow-lg">
+          <div className="botones flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            <button onClick={() => setIsContactoOpen(true)} className="uno inline-flex items-center gap-2 px-8 py-3 rounded-lg hover:transition-all duration-300 font-semibold hover:scale-105 shadow-lg">
               <FaEnvelope />
               {sistemaLenguaje === "Es" ? "Contactar Ahora" : "Contact Now"}
             </button>
-            <button className="inline-flex items-center gap-2 px-8 py-3 border border-gray-600 text-gray-300 rounded-lg hover:bg-gray-800 transition-all duration-300 font-semibold hover:scale-105">
+            <button onClick={descargarCV} className="dos inline-flex items-center gap-2 px-8 py-3 border rounded-lg hover:transition-all duration-300 font-semibold hover:scale-105">
               <FaDownload />
               {sistemaLenguaje === "Es" ? "Descargar CV" : "Download CV"}
             </button>
           </div>
 
           <div className="flex justify-center gap-6">
-            <a
-              href="#"
-              className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-all duration-300 hover:scale-110"
+            <Link
+              to="https://github.com/AvendanoisPepe"
+              target="_blank"
+              className="w-16 h-16 rounded-full flex items-center justify-center hover:transition-all duration-300 hover:scale-110"
             >
-              <FaGithub className="text-xl" />
-            </a>
-            <a
-              href="#"
-              className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-all duration-300 hover:scale-110"
+              <FaGithub className="text-3xl" />
+            </Link>
+            <Link
+              to="https://www.linkedin.com/in/sebastian-aven/"
+              target="_blank"
+              className="w-16 h-16 rounded-full flex items-center justify-center hover:transition-all duration-300 hover:scale-110"
             >
-              <FaLinkedin className="text-xl" />
-            </a>
+              <FaLinkedin className="text-3xl" />
+            </Link>
           </div>
         </div>
       </section>
+      <PopupContacto
+        isOpen={isContactoOpen}
+        onClose={() => setIsContactoOpen(false)}
+      />
     </main>
   );
 }
