@@ -42,7 +42,7 @@ function App() {
       <Navbar />
       <ScrollToTop />
       <Routes>
-        <Route path="/PortafolioMinimalista/" element={<Home />} />
+        <Route path="" element={<Home />} />
         <Route path="/contact" element={<Contacto />} />
         <Route path="/about" element={<SobreMi />} />
         <Route

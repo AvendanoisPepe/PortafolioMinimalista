@@ -8,7 +8,7 @@ import { GlobalProvider } from './context/GlobalContext'; // Ajusta ruta si camb
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <GlobalProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/PortafolioMinimalista/">
         <App />
       </BrowserRouter>
     </GlobalProvider>

@@ -87,7 +87,7 @@ export default function Movil({ onContactClick, toggleMenu }) {
           <nav className="space-y-2">            
             <div className="pere rounded-xl">
               <Link
-                to="/PortafolioMinimalista/"
+                to=""
                 onClick={closeMenu}
                 className="transition-all duration-300 group">
                   <div className="flex gap-4 p-4  items-center w-[100%] ">

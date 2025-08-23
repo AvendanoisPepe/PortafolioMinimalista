@@ -74,7 +74,7 @@ function Navbar() {
       </div>
       <div className="menupeque flex lg:hidden text-5xl mb-4 md:mb-0"><MdOutlineMenuBook onClick={toggleMenu}/></div>
       <nav className="menu w-full hidden md:w-[50%] lg:flex justify-center items-center gap-6">
-        <Link to="/PortafolioMinimalista/" className="transition text-sm lg:text-lg 2xl:text-2xl">
+        <Link to="" className="transition text-sm lg:text-lg 2xl:text-2xl">
           {sistemaLenguaje === "Es" ? "Inicio" : "Home"}
         </Link>
         <Link
