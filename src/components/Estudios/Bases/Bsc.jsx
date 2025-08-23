@@ -72,7 +72,6 @@ const Bsc = {
     },
     {
       id: "argumentario",
-      name: "",
       name: {
         Es: "Arbol de Tipologías",
         En: "Tree of Typologies"

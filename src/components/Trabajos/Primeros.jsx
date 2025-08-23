@@ -157,7 +157,6 @@ export default function PrimerosEstudios() {
         En: "6 months"
       },
       year: "2019",
-      projects: "",
       projects: {
         Es: "10+ aplicaciones interactivas",
         En: "10+ interactive apps"

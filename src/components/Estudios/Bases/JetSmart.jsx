@@ -145,8 +145,6 @@ const JetSmart = {
         Es: "Sistema de visualización de escenarios con herramientas clave para guiar a nuevos usuarios en la resolución de sus necesidades.",
         En: "Scenario visualization system with key tools to guide new users in solving their needs."
       },
-      description:
-        "",
       images: [
         images[0],
         images[2],
