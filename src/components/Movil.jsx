@@ -47,18 +47,18 @@ export default function Movil({ onContactClick, toggleMenu }) {
 
   // Proyectos del submenú
   const projects = [
-    { name: "Web Tr. Colpatria", icon: <IoLibrary />, link: "/colpatriaWebV2" },
-    { name: "Web Tr. JetSmart", icon: <PiStudentBold />, link: "/jetsmart" },
-    { name: "Web Tr. Televentas Col.", icon: <GrCompare />, link: "/televentasCol" },
-    { name: "Web Tr. Claro TMK", icon: <FaTree />, link: "/claroTmk" },
-    { name: "Web Tr. Bsc Inbound", icon: <MdCalculate />, link: "/bsc" },
-    { name: "Ver todos los proyectos", icon: <FaCode />, link: "/CompletoEstudios" },
+    { name: "Web Tr. Colpatria", icon: <IoLibrary />, link: "colpatriaWebV2" },
+    { name: "Web Tr. JetSmart", icon: <PiStudentBold />, link: "jetsmart" },
+    { name: "Web Tr. Televentas Col.", icon: <GrCompare />, link: "televentasCol" },
+    { name: "Web Tr. Claro TMK", icon: <FaTree />, link: "claroTmk" },
+    { name: "Web Tr. Bsc Inbound", icon: <MdCalculate />, link: "bsc" },
+    { name: "Ver todos los proyectos", icon: <FaCode />, link: "CompletoEstudios" },
   ];
   const estudi = [
-    { name: "Proximos Estudios", icon: <SiTypescript />, link: "/colpatriaWebV2" },
-    { name: "Estudios Laborales", icon: <FaReact />, link: "/jetsmart" },
-    { name: "Estudios Universitarios", icon: <TbFileTypeSql />, link: "/televentasCol" },
-    { name: "Primeros Estudios", icon: <FaHtml5 />, link: "/claroTmk" },
+    { name: "Proximos Estudios", icon: <SiTypescript />, link: "colpatriaWebV2" },
+    { name: "Estudios Laborales", icon: <FaReact />, link: "jetsmart" },
+    { name: "Estudios Universitarios", icon: <TbFileTypeSql />, link: "televentasCol" },
+    { name: "Primeros Estudios", icon: <FaHtml5 />, link: "claroTmk" },
   ];
 
   return (
@@ -194,7 +194,7 @@ export default function Movil({ onContactClick, toggleMenu }) {
                     </Link>
                   ))}
                   <Link
-                    to="/CompletoEstudios"
+                    to="CompletoEstudios"
                     onClick={closeMenu}
                     className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-100/80 transition-colors"
                   >
@@ -208,7 +208,7 @@ export default function Movil({ onContactClick, toggleMenu }) {
             </div>
             <div className="pere rounded-xl">
               <Link
-                  to="/references"
+                  to="referencias"
                   onClick={closeMenu}
                   className="transition-all duration-300 group"
               >
