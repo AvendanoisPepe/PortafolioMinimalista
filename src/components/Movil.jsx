@@ -100,7 +100,7 @@ export default function Movil({ onContactClick, toggleMenu }) {
             </div>    
             <div className="pere rounded-xl">
               <Link
-                  to="/about"
+                  to="about"
                   onClick={closeMenu}
                   className="transition-all duration-300 group"
               >
