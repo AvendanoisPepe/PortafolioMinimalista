@@ -134,7 +134,7 @@ function Home() {
           </div>
 
           <div className="otroP pt-6">
-            <Link href="/v1">
+            <Link to="https://avendanoispepe.github.io/portafolio/" target="_blank">
               <button className="px-6 py-3 transition-colors rounded-none tracking-wide text-xs sm:text-sm md:text-base 2xl:text-2xl md:w-[46%] 2xl:w-[50%]">
                 {sistemaLenguaje === "Es"
                   ? "Portafolio Versión 1.0.0"

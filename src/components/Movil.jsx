@@ -147,7 +147,7 @@ export default function Movil({ onContactClick, toggleMenu }) {
                     </Link>
                   ))}
                   <Link
-                    to="/CompletoEstudios"
+                    to="CompletoEstudios"
                     onClick={closeMenu}
                     className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-100/80 transition-colors"
                   >
