@@ -27,12 +27,14 @@ import { PiStudentBold } from "react-icons/pi";
 import { IoLibrary } from "react-icons/io5";
 import { GrCompare } from "react-icons/gr";
 import { TbFileTypeSql } from "react-icons/tb";
+import { useGlobal } from "../context/GlobalContext";
 
 export default function Movil({ toggleMenu }) {
   const [isProjectsExpanded, setIsProjectsExpanded] = useState(false);
   const [isStudiesExpanded, setIsStudiesExpanded] = useState(false);
   const [isContactoOpen, setIsContactoOpen] = useState(false);
   const [cv, setCv] = useState(false);
+  const { sistemaLenguaje } = useGlobal();
 
   // Proyectos del submenú
   const projects = [
@@ -41,15 +43,20 @@ export default function Movil({ toggleMenu }) {
     { name: "Web Tr. Televentas Col.", icon: <GrCompare />, link: "televentasCol" },
     { name: "Web Tr. Claro TMK", icon: <FaTree />, link: "claroTmk" },
     { name: "Web Tr. Bsc Inbound", icon: <MdCalculate />, link: "bsc" },
-    { name: "Ver todos los proyectos", icon: <FaCode />, link: "CompletoEstudios" },
   ];
-  const estudi = [
-    { name: "Proximos Estudios", icon: <SiTypescript />, link: "colpatriaWebV2" },
-    { name: "Estudios Laborales", icon: <FaReact />, link: "jetsmart" },
-    { name: "Estudios Universitarios", icon: <TbFileTypeSql />, link: "televentasCol" },
-    { name: "Primeros Estudios", icon: <FaHtml5 />, link: "claroTmk" },
+  const estudiEs = [
+    { name: "Proximos Estudios", icon: <SiTypescript />, link: "proximosEstudios" },
+    { name: "Estudios Laborales", icon: <FaReact />, link: "laborales" },
+    { name: "Estudios Universitarios", icon: <TbFileTypeSql />, link: "universityStudies" },
+    { name: "Primeros Estudios", icon: <FaHtml5 />, link: "primerosEstudios" },
   ];
-
+  const estudiEn = [
+    { name: "Future Studies", icon: <SiTypescript />, link: "proximosEstudios" },
+    { name: "Labor Studies", icon: <FaReact />, link: "laborales" },
+    { name: "University Studies", icon: <TbFileTypeSql />, link: "universityStudies" },
+    { name: "First Studies", icon: <FaHtml5 />, link: "primerosEstudios" },
+  ];
+  const estudi = sistemaLenguaje === "Es" ? estudiEs : estudiEn
   return (
     <div className="movil fixed inset-0 z-50 lg:hidden">
       {/* Fondo con blur */}
@@ -82,7 +89,7 @@ export default function Movil({ toggleMenu }) {
                     <div className="icono py-2 pr-2 rounded-lg group-hover:bg-blue-200 transition-colors">
                         <MdHome className="text-xl" />
                     </div>
-                    <span className="font-medium">Inicio</span>
+                    <span className="font-medium">{sistemaLenguaje === "Es" ? "Inicio" : "Start"}</span>
                   </div>
                 </Link>     
             </div>    
@@ -96,7 +103,7 @@ export default function Movil({ toggleMenu }) {
                   <div className="icono py-2 pr-2 rounded-lg group-hover:bg-green-200 transition-colors">
                       <MdPerson className="text-xl" />
                   </div>
-                  <span className="font-medium">Sobre mí</span>
+                  <span className="font-medium">{sistemaLenguaje === "Es" ? "Sobre mí" : "About"}</span>
                 </div>
               </Link>
             </div>       
@@ -109,7 +116,7 @@ export default function Movil({ toggleMenu }) {
                   <div className="p-2 rounded-lg group-hover:bg-purple-200 transition-colors">
                     <MdWork className="text-xl" />
                   </div>
-                  <span className="font-medium">Proyectos</span>
+                  <span className="font-medium">{sistemaLenguaje === "Es" ? "Proyectos" : "Projects"}</span>
                 </div>
                 {isProjectsExpanded ? (
                   <MdExpandLess className="text-gray-500 text-xl" />
@@ -156,7 +163,7 @@ export default function Movil({ toggleMenu }) {
                   <div className="p-2 rounded-lg group-hover:bg-orange-200 transition-colors">
                     <MdSchool className="text-xl" />
                   </div>
-                  <span className="font-medium">Estudios</span>
+                  <span className="font-medium">{sistemaLenguaje === "Es" ? "Estudios" : "Studies"}</span>
                 </div>
                 {isStudiesExpanded ? (
                   <MdExpandLess className="text-gray-500 text-xl" />
@@ -182,7 +189,7 @@ export default function Movil({ toggleMenu }) {
                     </Link>
                   ))}
                   <Link
-                    to="CompletoEstudios"
+                    to="allStudies"
                     onClick={toggleMenu}
                     className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-100/80 transition-colors"
                   >
@@ -204,7 +211,7 @@ export default function Movil({ toggleMenu }) {
                   <div className="icono py-2 pr-2 rounded-lg group-hover:bg-pink-200 transition-colors">
                       <MdContacts className="text-xl" />
                   </div>
-                  <span className="font-medium">Referencias</span>
+                  <span className="font-medium">{sistemaLenguaje === "Es" ? "Referencias" : "References"}</span>
                 </div>
               </Link>
             </div>       
@@ -219,7 +226,7 @@ export default function Movil({ toggleMenu }) {
               onClick={() => setIsContactoOpen(true)}
               className="flex-1 py-3 px-4 hover:bg-gray-700 font-medium rounded-lg transition-colors"
             >
-              Contacto
+              {sistemaLenguaje === "Es" ? "Contacto" : "Contact"}
             </button>
           </div>
         </div>

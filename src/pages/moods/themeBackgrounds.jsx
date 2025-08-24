@@ -20,9 +20,9 @@ import red1 from "../../assets/imagenes/TeamRed/red1.png";
 import green1 from "../../assets/imagenes/TeamGreen/green2.png";
 
 export const themeBackgrounds = {
-    claro: claro4,
-    oscuro: dark4,
-    violeta: violeta1,
-    rojo: red1,
-    camila: green1
-};
+    claro: [claro4, claro3, claro2, claro1], // 👈 ahora es lista
+    oscuro: [dark4, dark3, dark2, dark1],
+    violeta: [violeta1], // solo 1
+    rojo: [red1],        // solo 1
+    camila: [green1],    // solo 1
+  };

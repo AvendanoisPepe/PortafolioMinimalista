@@ -23,12 +23,33 @@ import EstudiosLaborales from "./components/Trabajos/Laborales";
 import ProximosEstudios from "./components/Trabajos/Proximo";
 import ScrollToTop from "./components/Scroll/ScrollToTop";
 import References from "./components/Referencias/Referencias";
+import { useEffect, useState } from "react";
 function App() {
   const { temaNombre } = useGlobal();
   const fondo = themeBackgrounds[temaNombre] || "";
+  const [index, setIndex] = useState(0);
+  const [actual, setActual] = useState(fondo[0] || "");
 
+  // 🔄 cada 10s cambia de fondo SOLO si hay más de 1
+  useEffect(() => {
+    if (fondo.length > 1) {
+      const interval = setInterval(() => {
+        setIndex((prev) => (prev + 1) % fondo.length);
+      }, 10000);
+      return () => clearInterval(interval);
+    } else {
+      setActual(fondo[0] || "");
+    }
+  }, [fondo]);
+
+  // cuando index cambia → cambia el fondo con efecto fade
+  useEffect(() => {
+    if (fondo.length > 0) {
+      setActual(fondo[index]);
+    }
+  }, [index, fondo]);
   const style = {
-    backgroundImage: `url(${fondo})`,
+    backgroundImage: `url(${actual})`,
     backgroundSize: "cover",       // Se ajusta al viewport, sin estirarse
     backgroundPosition: "center",
     backgroundAttachment: "fixed", // 🔑 Hace que el fondo quede fijo

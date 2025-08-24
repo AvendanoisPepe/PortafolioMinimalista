@@ -1,4 +1,5 @@
 import img from "../assets/imagenes/yop.png";
+import yop2 from "../assets/imagenes/yop2.jpg";
 import { Link } from "react-router-dom";
 import "./home.scss";
 import { useGlobal } from "../context/GlobalContext";
@@ -16,7 +17,6 @@ import {
   FaJs,
   FaJava,
   FaStar,
-  FaRocket,
 } from "react-icons/fa"
 import { SiNextdotjs } from "react-icons/si"
 import { GrMysql } from "react-icons/gr";
@@ -29,6 +29,8 @@ import PopupContacto from "../pages/Contacto/PopupContacto";
 import PdfEn from "../assets/documents/En.pdf";
 import PdfEs from "../assets/documents/Es.pdf";
 function Home() {
+  const images = [img, yop2];
+  const [currentImage, setCurrentImage] = useState(0);
   const [isContactoOpen, setIsContactoOpen] = useState(false);
   const [currentSkill, setCurrentSkill] = useState(0)
   const { sistemaLenguaje } = useGlobal();
@@ -85,6 +87,13 @@ function Home() {
     }, 2000)
     return () => clearInterval(interval)
   }, [skills.length])
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 5000); // 5 segundos
+
+    return () => clearInterval(interval); // limpiar al desmontar
+  }, []);
   return (
     <main className="min-h-screen overflow-x-hidden">
       <section className="Inicio w-full max-w-screen-2xl mx-auto px-4 flex items-center justify-between gap-8 flex-col lg:flex-row sm:px-8 xl:px-24 md:p-16 overflow-hidden">
@@ -150,7 +159,16 @@ function Home() {
 
             <div className="imagen relative z-10 h-full w-full border">
               <div className="relative h-full w-full overflow-hidden">
-                <img src={img} alt="" />
+                {images.map((image, index) => (
+                  <img
+                    key={index}
+                    src={image}
+                    alt=""
+                    className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                      currentImage === index ? "opacity-100" : "opacity-0"
+                    }`}
+                  />
+                ))}
               </div>
             </div>
 
