@@ -71,7 +71,7 @@ export default function Movil({ toggleMenu }) {
           </button>
         </div>
         <Link
-                to="/"
+                to="about"
                 onClick={toggleMenu}
                 className="transition-all duration-300 group">
                   <div className="flex gap-4 p-4  items-center w-[100%] ">
