@@ -70,17 +70,6 @@ export default function Movil({ toggleMenu }) {
             <MdClose className="text-3xl font-bold" />
           </button>
         </div>
-        <Link
-                to="about"
-                onClick={toggleMenu}
-                className="transition-all duration-300 group">
-                  <div className="flex gap-4 p-4  items-center w-[100%] ">
-                    <div className="icono py-2 pr-2 rounded-lg group-hover:bg-blue-200 transition-colors">
-                        <MdHome className="text-xl" />
-                    </div>
-                    <span className="font-medium">Inicio</span>
-                  </div>
-                </Link>     
         {/* Navegación principal */}
         <div className="flex-1 overflow-y-auto p-6">
           <nav className="space-y-2">            
