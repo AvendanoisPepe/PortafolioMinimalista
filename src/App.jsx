@@ -43,36 +43,36 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path="" element={<Home />} />
-        <Route path="/contact" element={<Contacto />} />
-        <Route path="/about" element={<SobreMi />} />
+        <Route path="contact" element={<Contacto />} />
+        <Route path="about" element={<SobreMi />} />
         <Route
-          path="/colpatriaWebV2" 
+          path="colpatriaWebV2" 
           element={<Colpatria projectData={ColpatriaV2} />}
         />
         <Route
-          path="/colpatriaWeb"
+          path="colpatriaWeb"
           element={<Colpatria projectData={ColpatriaV1} />}
         />
         <Route
-          path="/claroTmk"
+          path="claroTmk"
           element={<Colpatria projectData={ClaroTmk} />}
         />
         <Route
-          path="/jetsmart"
+          path="jetsmart"
           element={<Colpatria projectData={JetSmart} />}
         />
         <Route
-          path="/televentasCol"
+          path="televentasCol"
           element={<Colpatria projectData={TelColombia} />}
         />
-        <Route path="/bsc" element={<Colpatria projectData={Bsc} />} />
-        <Route path="/CompletoEstudios" element={<Completo />} />
-        <Route path="/allStudies" element={<Trabajos />} />
-        <Route path="/primerosEstudios" element={<PrimerosEstudios />} />
-        <Route path="/universityStudies" element={<EstudiosUniversitarios />} />
-        <Route path="/laborales" element={<EstudiosLaborales />} />
-        <Route path="/proximosEstudios" element={<ProximosEstudios />} />
-        <Route path="/referencias" element={<References />} />
+        <Route path="bsc" element={<Colpatria projectData={Bsc} />} />
+        <Route path="CompletoEstudios" element={<Completo />} />
+        <Route path="allStudies" element={<Trabajos />} />
+        <Route path="primerosEstudios" element={<PrimerosEstudios />} />
+        <Route path="universityStudies" element={<EstudiosUniversitarios />} />
+        <Route path="laborales" element={<EstudiosLaborales />} />
+        <Route path="proximosEstudios" element={<ProximosEstudios />} />
+        <Route path="referencias" element={<References />} />
       </Routes>
       <Temas />
     </div>
