@@ -28,22 +28,11 @@ import { IoLibrary } from "react-icons/io5";
 import { GrCompare } from "react-icons/gr";
 import { TbFileTypeSql } from "react-icons/tb";
 
-export default function Movil({ onContactClick, toggleMenu }) {
+export default function Movil({ toggleMenu }) {
   const [isProjectsExpanded, setIsProjectsExpanded] = useState(false);
   const [isStudiesExpanded, setIsStudiesExpanded] = useState(false);
   const [isContactoOpen, setIsContactoOpen] = useState(false);
   const [cv, setCv] = useState(false);
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-    document.body.style.overflow = "auto";
-  };
-
-  const handleContactClick = () => {
-    closeMenu();
-    if (onContactClick) {
-      onContactClick();
-    }
-  };
 
   // Proyectos del submenú
   const projects = [
@@ -87,8 +76,8 @@ export default function Movil({ onContactClick, toggleMenu }) {
           <nav className="space-y-2">            
             <div className="pere rounded-xl">
               <Link
-                to=""
-                onClick={closeMenu}
+                to="/"
+                onClick={toggleMenu}
                 className="transition-all duration-300 group">
                   <div className="flex gap-4 p-4  items-center w-[100%] ">
                     <div className="icono py-2 pr-2 rounded-lg group-hover:bg-blue-200 transition-colors">
@@ -101,7 +90,7 @@ export default function Movil({ onContactClick, toggleMenu }) {
             <div className="pere rounded-xl">
               <Link
                   to="about"
-                  onClick={closeMenu}
+                  onClick={toggleMenu}
                   className="transition-all duration-300 group"
               >
                 <div className="flex gap-4 p-4  items-center w-[100%] rounded-xl">
@@ -135,7 +124,7 @@ export default function Movil({ onContactClick, toggleMenu }) {
                     <Link
                       key={index}
                       to={project.link}
-                      onClick={closeMenu}
+                      onClick={toggleMenu}
                       className="flex items-center p-3 rounded-lg hover:bg-gray-100/80 transition-colors"
                     >
                       <div className="w-full flex items-start gap-2">
@@ -148,7 +137,7 @@ export default function Movil({ onContactClick, toggleMenu }) {
                   ))}
                   <Link
                     to="CompletoEstudios"
-                    onClick={closeMenu}
+                    onClick={toggleMenu}
                     className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-100/80 transition-colors"
                   >
                     <FaExternalLinkAlt className="" />
@@ -182,7 +171,7 @@ export default function Movil({ onContactClick, toggleMenu }) {
                     <Link
                       key={index}
                       to={estu.link}
-                      onClick={closeMenu}
+                      onClick={toggleMenu}
                       className="flex items-center p-3 rounded-lg hover:bg-gray-100/80 transition-colors"
                     >
                       <div className="w-full flex items-start gap-2">
@@ -195,7 +184,7 @@ export default function Movil({ onContactClick, toggleMenu }) {
                   ))}
                   <Link
                     to="CompletoEstudios"
-                    onClick={closeMenu}
+                    onClick={toggleMenu}
                     className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-100/80 transition-colors"
                   >
                     <FaExternalLinkAlt className="" />
@@ -209,7 +198,7 @@ export default function Movil({ onContactClick, toggleMenu }) {
             <div className="pere rounded-xl">
               <Link
                   to="referencias"
-                  onClick={closeMenu}
+                  onClick={toggleMenu}
                   className="transition-all duration-300 group"
               >
                 <div className="flex gap-4 p-4 items-center w-[100%] rounded-xl">
